@@ -1,13 +1,13 @@
 {
   "name": "stylestats",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "lib/stylestats.js",
-  "description": "The best module ever.",
-  "homepage": "https://github.com//stylestats",
+  "description": "Stylesheet statistics.",
+  "homepage": "https://github.com/stylestats",
   "bugs": "https://github.com//stylestats/issues",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Koji Ishimoto",
+    "email": "ijok.ijok@gmail.com"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,18 @@
   "files": [
     ""
   ],
-  "keywords": [],
+  "keywords": [
+    "css",
+    "style",
+    "property"
+  ],
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+    "css-parse": "~1.7.0",
+    "underscore": "~1.6.0"
+  },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.7.0",
     "grunt-contrib-nodeunit": "~0.2.0",
@@ -29,11 +40,5 @@
     "load-grunt-tasks": "~0.2.0",
     "time-grunt": "~0.2.0",
     "jshint-stylish": "~0.1.3"
-  },
-  "scripts": {
-    "test": "grunt"
-  },
-  "dependencies": {
-    "css-parse": "~1.7.0"
   }
 }
