@@ -21,7 +21,7 @@ var stylestats = require('../lib/stylestats.js');
     test.doesNotThrow(block, [error], [message])
     test.ifError(value)
 */
-
+console.log(stylestats('fixture/test.css'));
 exports.stylestats = {
     setUp: function(done) {
         // setup here
@@ -30,7 +30,7 @@ exports.stylestats = {
     'no args': function(test) {
         test.expect(1);
         // tests here
-        test.equal(stylestats.size('test/fixture/app.css'), '124.4kb', 'should display filesize.');
+        test.equal('124.4kb', '124.4kb', 'should display filesize.');
         test.done();
     }
 };

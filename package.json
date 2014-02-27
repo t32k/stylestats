@@ -2,7 +2,7 @@
     "name": "stylestats",
     "version": "0.0.1",
     "main": "lib/stylestats.js",
-    "description": "Stylesheet statistics.",
+    "description": "Stylesheet statistics tool.",
     "homepage": "https://github.com/stylestats",
     "bugs": "https://github.com//stylestats/issues",
     "author": {
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com//stylestats"
+        "url": "git@github.com:t32k/stylestats.git"
     },
     "licenses": [{
         "type": "MIT"
@@ -30,17 +30,17 @@
     "dependencies": {
         "css-parse": "~1.7.0",
         "underscore": "~1.6.0",
-        "commander": "~2.1.0",
-        "chalk": "~0.4.0",
         "zlib-browserify": "0.0.3",
-        "bytes": "~0.2.1"
+        "bytes": "~0.2.1",
+        "commander": "~2.1.0",
+        "chalk": "~0.4.0"
     },
     "devDependencies": {
-        "grunt-contrib-jshint": "~0.7.0",
-        "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-jshint": "~0.7.0",
+        "grunt-contrib-nodeunit": "~0.3.2",
         "grunt-contrib-watch": "~0.5.0",
         "load-grunt-tasks": "~0.2.0",
-        "time-grunt": "~0.2.0",
+        "time-grunt": "~0.2.9",
         "jshint-stylish": "~0.1.3"
     }
 }
