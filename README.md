@@ -1,9 +1,10 @@
 # stylestats 
 
 ## TODO
-+ File Size
-+ total rules
-+ total selectors
++ ✓ File Size
++ ✓ Gzip Size
++ ✓ total rules
++ ✓ total selectors
 + total declarations
 + unique property
 + unique value

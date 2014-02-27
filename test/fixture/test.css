@@ -1,0 +1,21 @@
+body {
+	margin: 10px;
+}
+div {
+	margin: 10px;
+}
+.foo {
+	margin: 10px;
+}
+.foo .bar {
+	padding: 10px;
+	color: #ccc;
+}
+.a{}
+i, ul {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+i > ul:before {
+	content: ";;;";
+}

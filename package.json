@@ -1,44 +1,46 @@
 {
-  "name": "stylestats",
-  "version": "0.0.1",
-  "main": "lib/stylestats.js",
-  "description": "Stylesheet statistics.",
-  "homepage": "https://github.com/stylestats",
-  "bugs": "https://github.com//stylestats/issues",
-  "author": {
-    "name": "Koji Ishimoto",
-    "email": "ijok.ijok@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com//stylestats"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
+    "name": "stylestats",
+    "version": "0.0.1",
+    "main": "lib/stylestats.js",
+    "description": "Stylesheet statistics.",
+    "homepage": "https://github.com/stylestats",
+    "bugs": "https://github.com//stylestats/issues",
+    "author": {
+        "name": "Koji Ishimoto",
+        "email": "ijok.ijok@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com//stylestats"
+    },
+    "licenses": [{
+        "type": "MIT"
+    }],
+    "files": [
+        ""
+    ],
+    "keywords": [
+        "css",
+        "style",
+        "property"
+    ],
+    "scripts": {
+        "test": "grunt"
+    },
+    "dependencies": {
+        "css-parse": "~1.7.0",
+        "underscore": "~1.6.0",
+        "commander": "~2.1.0",
+        "chalk": "~0.4.0",
+        "zlib-browserify": "0.0.3",
+        "bytes": "~0.2.1"
+    },
+    "devDependencies": {
+        "grunt-contrib-jshint": "~0.7.0",
+        "grunt-contrib-nodeunit": "~0.2.0",
+        "grunt-contrib-watch": "~0.5.0",
+        "load-grunt-tasks": "~0.2.0",
+        "time-grunt": "~0.2.0",
+        "jshint-stylish": "~0.1.3"
     }
-  ],
-  "files": [
-    ""
-  ],
-  "keywords": [
-    "css",
-    "style",
-    "property"
-  ],
-  "scripts": {
-    "test": "grunt"
-  },
-  "dependencies": {
-    "css-parse": "~1.7.0",
-    "underscore": "~1.6.0"
-  },
-  "devDependencies": {
-    "grunt-contrib-jshint": "~0.7.0",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-watch": "~0.5.0",
-    "load-grunt-tasks": "~0.2.0",
-    "time-grunt": "~0.2.0",
-    "jshint-stylish": "~0.1.3"
-  }
 }

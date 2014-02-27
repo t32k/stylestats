@@ -23,14 +23,14 @@ var stylestats = require('../lib/stylestats.js');
 */
 
 exports.stylestats = {
-  setUp: function(done) {
-    // setup here
-    done();
-  },
-  'no args': function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(stylestats.awesome(), 'awesome', 'should be awesome.');
-    test.done();
-  }
+    setUp: function(done) {
+        // setup here
+        done();
+    },
+    'no args': function(test) {
+        test.expect(1);
+        // tests here
+        test.equal(stylestats.size('test/fixture/app.css'), '124.4kb', 'should display filesize.');
+        test.done();
+    }
 };
