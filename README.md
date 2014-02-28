@@ -3,15 +3,13 @@
 Stylestats is a efficient Node.js library for keeping stylesheet statistics.
 
 ## TODO
-+ ✓ File Size
-+ ✓ Gzip Size
-+ ✓ total rules
-+ ✓ total selectors
-+ total declarations
-+ unique property
-+ unique value
-+ property ranking
-+ value ranking
++ ✓ File size
++ ✓ Gzipped size
++ ✓ Total rules
++ ✓ Total selectors
++ Total declarations
++ ✓ Property ranking
++ Value ranking
 
 
 ## Installation
@@ -24,7 +22,7 @@ $ npm install stylestats
 
 ### Node.js module
 
-```
+```javascript
 var stylestats = require('stylestats');
 
 var obj = stylestats('path/to/stylesheet.css');
@@ -32,9 +30,11 @@ var obj = stylestats('path/to/stylesheet.css');
 console.log(JSON.stringify(obj, null, 2));
 ```
 
-#### example
+#### Example
 
-```
+stats tree:
+
+```json
 {
   "size": 278,
   "gzippedSize": 89,
