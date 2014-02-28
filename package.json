@@ -3,7 +3,7 @@
     "version": "0.0.3",
     "main": "lib/stylestats.js",
     "bin": {
-    "stylestats": "./bin/stylestats"
+        "stylestats": "./bin/stylestats"
     },
     "description": "Stylestats is a efficient Node.js library for keeping stylesheet statistics.",
     "homepage": "https://github.com/stylestats",
@@ -36,7 +36,8 @@
         "zlib-browserify": "0.0.3",
         "bytes": "~0.2.1",
         "commander": "~2.1.0",
-        "chalk": "~0.4.0"
+        "chalk": "~0.4.0",
+        "properties": "~1.2.1"
     },
     "devDependencies": {
         "grunt-contrib-jshint": "~0.8.0",
