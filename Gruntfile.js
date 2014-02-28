@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                 tasks: ['jshint:lib', 'nodeunit']
             },
             test: {
-                files: ['lib/*.js'],
+                files: ['lib/*.js', 'test/**/*.js'],
                 tasks: ['nodeunit']
             }
         }

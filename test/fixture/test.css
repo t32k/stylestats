@@ -3,19 +3,22 @@ body {
 }
 div {
 	margin: 10px;
+	font-size: 16px;
 }
 .foo {
 	margin: 10px;
+	font-size: 14px;
 }
 .foo .bar {
 	padding: 10px;
 	color: #ccc;
+	font-size: 12px;
 }
-.a{}
 i, ul {
 	margin: 0 !important;
 	padding: 0 !important;
 }
 i > ul:before {
 	content: ";;;";
+	font-size: 10px;
 }

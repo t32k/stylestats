@@ -21,16 +21,21 @@ var stylestats = require('../lib/stylestats.js');
     test.doesNotThrow(block, [error], [message])
     test.ifError(value)
 */
-console.log(stylestats('fixture/test.css'));
+
+var stats = stylestats('test/fixture/test.css');
+
 exports.stylestats = {
+
     setUp: function(done) {
         // setup here
         done();
     },
-    'no args': function(test) {
+    'size': function(test) {
         test.expect(1);
         // tests here
-        test.equal('124.4kb', '124.4kb', 'should display filesize.');
+        test.equal(stats.size, 278, 'should display filesize.');
         test.done();
     }
 };
+
+console.log(JSON.stringify(stats, null, 2));
