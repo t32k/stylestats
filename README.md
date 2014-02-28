@@ -14,7 +14,6 @@ __This is alpha version, yet.__
 + ✓ Gzipped size
 + ✓ Total rules
 + ✓ Total selectors
-+ Total declarations
 + ✓ Property ranking
 + Value ranking
 
@@ -68,7 +67,26 @@ stats tree:
 
 ### Command-line interface (CLI)
 
-_(Coming soon)_
+```
+$ stylestats path/to/stylesheet.css
+ size: 278
+ gzippedSize: 89
+ simplicity: 0.8571428571428571
+ rules: 6
+ selectors: 7
+ totalUniqueFontSizes: 4
+ uniqueFontSize:
+  10px
+  12px
+  14px
+  16px
+ propertiesRank:
+  margin: 4
+  font-size: 4
+  padding: 2
+  color: 1
+  content: 1
+```
 
 
 ### Online tool

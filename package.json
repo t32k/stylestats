@@ -1,8 +1,11 @@
 {
     "name": "stylestats",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "lib/stylestats.js",
-    "description": "Stylesheet statistics tool.",
+    "bin": {
+    "stylestats": "./bin/stylestats"
+    },
+    "description": "Stylestats is a efficient Node.js library for keeping stylesheet statistics.",
     "homepage": "https://github.com/stylestats",
     "bugs": "https://github.com//stylestats/issues",
     "author": {
