@@ -10,12 +10,13 @@
 __This is alpha version, yet.__
 
 ## TODO
-+ ✓ File Size
-+ ✓ Gzipped Size
-+ ✓ Total Rules
-+ ✓ Total Selectors
-+ ✓ Properties ranking
-+ Values ranking
++ option setting
++ cli progress bar
++ input: multiple file
++ stats
+  + color list
+  + Top Declarations
+  + Important Keywords
 
 
 ## Installation
