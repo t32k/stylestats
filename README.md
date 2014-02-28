@@ -67,6 +67,8 @@ stats tree:
 
 ### Command-line interface (CLI)
 
+$ stylestats -
+
 ```
 $ stylestats path/to/stylesheet.css
  size: 278

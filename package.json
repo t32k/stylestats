@@ -1,6 +1,6 @@
 {
     "name": "stylestats",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "lib/stylestats.js",
     "bin": {
         "stylestats": "./bin/stylestats"
