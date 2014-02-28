@@ -7,6 +7,8 @@
 
 > Stylestats is a efficient Node.js library for keeping stylesheet statistics.
 
+__This is alpha version, yet.__
+
 ## TODO
 + ✓ File size
 + ✓ Gzipped size
