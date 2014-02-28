@@ -1,6 +1,6 @@
 'use strict';
 
-var stylestats = require('../lib/stylestats.js');
+var StyleStats = require('../lib/stylestats.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -22,7 +22,7 @@ var stylestats = require('../lib/stylestats.js');
     test.ifError(value)
 */
 
-var stats = stylestats('test/fixture/test.css');
+var stats = new StyleStats('test/fixture/test.css');
 
 exports.stylestats = {
 
@@ -38,4 +38,4 @@ exports.stylestats = {
     }
 };
 
-console.log(JSON.stringify(stats, null, 2));
+console.log(JSON.stringify(stats.parse(), null, 2));
