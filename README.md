@@ -13,6 +13,7 @@ __This is alpha version, yet.__
 + option setting
 + cli progress bar
 + input: multiple file
++ online tool
 + stats
   + color list
   + Top Declarations
