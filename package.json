@@ -1,27 +1,28 @@
 {
     "name": "stylestats",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "main": "lib/stylestats.js",
     "bin": {
         "stylestats": "./bin/stylestats"
     },
     "description": "Stylestats is a efficient Node.js library for keeping stylesheet statistics.",
     "homepage": "https://github.com/stylestats",
-    "bugs": "https://github.com//stylestats/issues",
+    "bugs": "https://github.com/stylestats/issues",
     "author": {
         "name": "Koji Ishimoto",
-        "email": "ijok.ijok@gmail.com"
+        "email": "ijok.ijok@gmail.com",
+        "web": "http://t32k.me/"
+    },
+    "maintainers": {
+        "name": "Shogo Sensui",
+        "email": "shogo.sensui@gmail.com",
+        "web": "http://1000ch.net/"
     },
     "repository": {
         "type": "git",
         "url": "git@github.com:t32k/stylestats.git"
     },
-    "licenses": [{
-        "type": "MIT"
-    }],
-    "files": [
-        ""
-    ],
+    "license": "MIT",
     "keywords": [
         "css",
         "style",
@@ -31,20 +32,21 @@
         "test": "grunt"
     },
     "dependencies": {
+        "bytes": "~0.2.1",
+        "chalk": "~0.4.0",
+        "commander": "~2.1.0",
         "css-parse": "~1.7.0",
         "underscore": "~1.6.0",
+        "properties": "~1.2.1",
         "zlib-browserify": "0.0.3",
-        "bytes": "~0.2.1",
-        "commander": "~2.1.0",
-        "chalk": "~0.4.0",
-        "properties": "~1.2.1"
+        "underscore.string": "~2.3.3"
     },
     "devDependencies": {
-        "grunt-contrib-jshint": "~0.8.0",
-        "grunt-contrib-nodeunit": "~0.3.2",
-        "grunt-contrib-watch": "~0.5.3",
-        "load-grunt-tasks": "~0.4.0",
         "time-grunt": "~0.2.9",
-        "jshint-stylish": "~0.1.5"
+        "jshint-stylish": "~0.1.5",
+        "load-grunt-tasks": "~0.4.0",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-contrib-jshint": "~0.8.0",
+        "grunt-contrib-nodeunit": "~0.3.2"
     }
 }

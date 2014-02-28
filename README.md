@@ -10,12 +10,12 @@
 __This is alpha version, yet.__
 
 ## TODO
-+ ✓ File size
-+ ✓ Gzipped size
-+ ✓ Total rules
-+ ✓ Total selectors
-+ ✓ Property ranking
-+ Value ranking
++ ✓ File Size
++ ✓ Gzipped Size
++ ✓ Total Rules
++ ✓ Total Selectors
++ ✓ Properties ranking
++ Values ranking
 
 
 ## Installation
@@ -29,11 +29,10 @@ $ npm install stylestats
 ### Node.js module
 
 ```javascript
-var stylestats = require('stylestats');
+var StyleStats = require('stylestats');
+var stats = new StyleStats('path/to/stylesheet.css');
 
-var obj = stylestats('path/to/stylesheet.css');
-
-console.log(JSON.stringify(obj, null, 2));
+console.log(JSON.stringify(stats.parse(), null, 2));
 ```
 
 #### Example
@@ -54,40 +53,46 @@ stats tree:
     "14px",
     "16px"
   ],
-  "propertiesRank": {
-    "margin": 4,
-    "font-size": 4,
-    "padding": 2,
-    "color": 1,
-    "content": 1
-  }
+  "propertiesCount": [
+    [ "margin", 4 ],
+    [ "padding", 2 ],
+    [ "color", 1 ]
+  ]
 }
 ```
 
 
-### Command-line interface (CLI)
+### Command Line Interface (CLI)
 
-$ stylestats -
+```shell
+$ stylestats -h
 
+  Usage: cli.js [options] <file ...>
+
+  Options:
+
+    -h, --help             output usage information
+    -V, --version          output the version number
+    -c, --config [path]    Path and name of the incoming json file.
+    -o, --output [format]   Specify the format to convert. [json|properties]
 ```
+
+```shell
 $ stylestats path/to/stylesheet.css
- size: 278
- gzippedSize: 89
- simplicity: 0.8571428571428571
- rules: 6
- selectors: 7
- totalUniqueFontSizes: 4
- uniqueFontSize:
-  10px
-  12px
-  14px
-  16px
- propertiesRank:
-  margin: 4
-  font-size: 4
-  padding: 2
-  color: 1
-  content: 1
+                                                StyleStats!
+  Size: 278B
+  Gzipped Size: 89B
+  Simplicity: 0.8571428571428571
+  Rules: 6
+  Selectors: 7
+  Total Unique Font Sizes: 4
+  Unique Font Size: 10px, 12px, 14px, 16px
+  Properties Count:
+    margin: 4
+    font-size: 4
+    padding: 2
+    color: 1
+    content: 1
 ```
 
 
