@@ -10,15 +10,10 @@
 __This is alpha version, yet.__
 
 ## TODO
-+ option setting
-+ cli progress bar
-+ input: multiple file
-+ online tool
-+ stats
-  + ✓ color list
-  + Top Declarations
-  + Important Keywords
-
++ Option setting
++ Cli progress bar
++ Input: multiple file
++ Online tool
 
 ## Installation
 
@@ -48,6 +43,10 @@ stats tree:
   "simplicity": 0.8571428571428571,
   "rules": 6,
   "selectors": 7,
+  "lowCohesion": 3,
+  "lowCohesionSelecotor": [
+    ".foo .bar"
+  ],
   "totalUniqueFontSizes": 4,
   "uniqueFontSize": [
     "10px",
@@ -55,6 +54,11 @@ stats tree:
     "14px",
     "16px"
   ],
+  "totalUniqueColors": 1,
+  "uniqueColor": [
+    "#CCC"
+  ],
+  "importantKeywords": 2,
   "propertiesCount": [
     [ "margin", 4 ],
     [ "padding", 2 ],
@@ -87,8 +91,13 @@ $ stylestats path/to/stylesheet.css
   Simplicity: 0.8571428571428571
   Rules: 6
   Selectors: 7
+  Low Cohesion: 3
+  Low Cohesion Selecotor: .foo .bar
   Total Unique Font Sizes: 4
   Unique Font Size: 10px, 12px, 14px, 16px
+  Total Unique Colors: 1
+  Unique Color: #CCC
+  Important Keywords: 2
   Properties Count:
     margin: 4
     font-size: 4
