@@ -15,7 +15,7 @@ __This is alpha version, yet.__
 + input: multiple file
 + online tool
 + stats
-  + color list
+  + ✓ color list
   + Top Declarations
   + Important Keywords
 
