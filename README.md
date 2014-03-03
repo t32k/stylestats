@@ -10,10 +10,9 @@
 __This is alpha version, yet.__
 
 ## TODO
-+ Option setting
-+ Cli progress bar
-+ Input: multiple file
-+ Online tool
++ Option Setting
++ Input Multiple File
++ CLI Progress Bar
 
 ## Installation
 
@@ -23,7 +22,7 @@ $ npm install stylestats
 
 ## Usage
 
-### Node.js module
+### API
 
 ```javascript
 var StyleStats = require('stylestats');
@@ -68,7 +67,7 @@ stats tree:
 ```
 
 
-### Command Line Interface (CLI)
+### CLI
 
 ```shell
 $ stylestats -h
@@ -100,14 +99,12 @@ $ stylestats path/to/stylesheet.css
   Important Keywords: 2
   Properties Count:
     margin: 4
-    font-size: 4
     padding: 2
     color: 1
-    content: 1
 ```
 
 
-### Online tool
+### Online Tool
 
 _(Coming soon)_
 
