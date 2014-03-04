@@ -9,6 +9,16 @@
 
 __This is alpha version, yet.__
 
+
+```
+ ____  _         _      ____  _        _       _ 
+/ ___|| |_ _   _| | ___/ ___|| |_ __ _| |_ ___| |
+\___ \| __| | | | |/ _ \___ \| __/ _` | __/ __| |
+ ___) | |_| |_| | |  __/___) | || (_| | |_\__ \_|
+|____/ \__|\__, |_|\___|____/ \__\__,_|\__|___(_)
+           |___/                                 
+```
+
 ## Installation
 
 ```
@@ -74,7 +84,7 @@ $ stylestats -h
     -h, --help             output usage information
     -V, --version          output the version number
     -c, --config [path]    Path and name of the incoming JSON file.
-    -o, --output [format]  Specify the format to convert. [json|properties]
+    -e, --extension [format]  Specify the format to convert. [json|csv]
 ```
 
 ```shell
