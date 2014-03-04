@@ -9,10 +9,6 @@
 
 __This is alpha version, yet.__
 
-## TODO
-+ Option Setting
-+ Input Multiple File
-
 ## Installation
 
 ```
@@ -77,8 +73,8 @@ $ stylestats -h
 
     -h, --help             output usage information
     -V, --version          output the version number
-    -c, --config [path]    Path and name of the incoming json file.
-    -o, --output [format]   Specify the format to convert. [json|properties]
+    -c, --config [path]    Path and name of the incoming JSON file.
+    -o, --output [format]  Specify the format to convert. [json|properties]
 ```
 
 ```shell

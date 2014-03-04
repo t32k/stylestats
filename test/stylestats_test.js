@@ -23,7 +23,6 @@ var StyleStats = require('../lib/stylestats.js');
 */
 var stats = new StyleStats('test/fixture/test.css');
 var result;
-
 exports.stylestats = {
     setUp: function(done) {
         result = stats.parse();
@@ -44,3 +43,4 @@ exports.stylestats = {
         test.done();
     }
 };
+console.log(result);

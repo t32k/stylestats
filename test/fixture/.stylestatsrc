@@ -1,0 +1,15 @@
+{
+    "size": true,
+    "gzippedSize": true,
+    "simplicity": false,
+    "rules": false,
+    "selectors": false,
+    "lowestCohesion": false,
+    "lowestCohesionSelecotor": false,
+    "totalUniqueFontSizes": false,
+    "uniqueFontSize": false,
+    "totalUniqueColors": false,
+    "uniqueColor": false,
+    "importantKeywords": false,
+    "propertiesCount": false
+}
