@@ -12,7 +12,6 @@ __This is alpha version, yet.__
 ## TODO
 + Option Setting
 + Input Multiple File
-+ CLI Progress Bar
 
 ## Installation
 
@@ -42,8 +41,8 @@ stats tree:
   "simplicity": 0.8571428571428571,
   "rules": 6,
   "selectors": 7,
-  "lowCohesion": 3,
-  "lowCohesionSelecotor": [
+  "lowestCohesion": 3,
+  "lowestCohesionSelecotor": [
     ".foo .bar"
   ],
   "totalUniqueFontSizes": 4,
@@ -84,23 +83,42 @@ $ stylestats -h
 
 ```shell
 $ stylestats path/to/stylesheet.css
-                                                StyleStats!
-  Size: 278B
-  Gzipped Size: 89B
-  Simplicity: 0.8571428571428571
-  Rules: 6
-  Selectors: 7
-  Low Cohesion: 3
-  Low Cohesion Selecotor: .foo .bar
-  Total Unique Font Sizes: 4
-  Unique Font Size: 10px, 12px, 14px, 16px
-  Total Unique Colors: 1
-  Unique Color: #CCC
-  Important Keywords: 2
-  Properties Count:
-    margin: 4
-    padding: 2
-    color: 1
+
+ StyleStats!
+┌───────────────────────────┬────────────────────┐
+│ Size                      │ 278 B              │
+├───────────────────────────┼────────────────────┤
+│ Gzipped Size              │ 89 B               │
+├───────────────────────────┼────────────────────┤
+│ Simplicity                │ 0.8571428571428571 │
+├───────────────────────────┼────────────────────┤
+│ Rules                     │ 6                  │
+├───────────────────────────┼────────────────────┤
+│ Selectors                 │ 7                  │
+├───────────────────────────┼────────────────────┤
+│ Lowest Cohesion           │ 3                  │
+├───────────────────────────┼────────────────────┤
+│ Lowest Cohesion Selecotor │ .foo .bar          │
+├───────────────────────────┼────────────────────┤
+│ Total Unique Font Sizes   │ 4                  │
+├───────────────────────────┼────────────────────┤
+│ Unique Font Size          │ 10px               │
+│                           │ 12px               │
+│                           │ 14px               │
+│                           │ 16px               │
+├───────────────────────────┼────────────────────┤
+│ Total Unique Colors       │ 1                  │
+├───────────────────────────┼────────────────────┤
+│ Unique Color              │ #CCC               │
+├───────────────────────────┼────────────────────┤
+│ Important Keywords        │ 2                  │
+├───────────────────────────┼────────────────────┤
+│ Properties Count          │ margin,4           │
+│                           │ font-size,4        │
+│                           │ padding,2          │
+│                           │ color,1            │
+│                           │ content,1          │
+└───────────────────────────┴────────────────────┘
 ```
 
 
@@ -113,7 +131,7 @@ _(Coming soon)_
 
 The MIT License
 
-Copyright (c) 2014 Koji Ishimoto
+Copyright (c) 2014 Koji Ishimoto <ijok.ijok@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
