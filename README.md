@@ -7,9 +7,6 @@
 
 > Stylestats is a efficient Node.js library for keeping stylesheet statistics.
 
-__This is alpha version, yet.__
-
-
 ```
  ____  _         _      ____  _        _       _ 
 / ___|| |_ _   _| | ___/ ___|| |_ __ _| |_ ___| |
@@ -18,6 +15,9 @@ __This is alpha version, yet.__
 |____/ \__|\__, |_|\___|____/ \__\__,_|\__|___(_)
            |___/                                 
 ```
+
+__This is alpha version, yet.__
+
 
 ## Installation
 
@@ -81,10 +81,10 @@ $ stylestats -h
 
   Options:
 
-    -h, --help             output usage information
-    -V, --version          output the version number
-    -c, --config [path]    Path and name of the incoming JSON file.
-    -e, --extension [format]  Specify the format to convert. [json|csv]
+    -h, --help                output usage information
+    -V, --version             output the version number
+    -c, --config [path]       Path and name of the incoming JSON file.
+    -e, --extension [format]  Specify the format to convert. <json|csv>
 ```
 
 ```shell
