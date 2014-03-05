@@ -1,11 +1,11 @@
+![StyleStats](http://i.imgur.com/81kKnxH.png)
+
 [![Build Status](https://secure.travis-ci.org/t32k/stylestats.png?branch=master)](http://travis-ci.org/t32k/stylestats)
 [![NPM version](https://badge.fury.io/js/stylestats.png)](http://badge.fury.io/js/stylestats)
 [![Dependency Status](https://david-dm.org/t32k/stylestats.png)](https://david-dm.org/t32k/stylestats)
 [![devDependency Status](https://david-dm.org/t32k/stylestats/dev-status.png)](https://david-dm.org/t32k/stylestats#info=devDependencies)
 
-
-![StyleStats](http://i.imgur.com/81kKnxH.png)
-
+Stylestats is a efficient Node.js library for keeping stylesheet statistics.
 
 ## Installation
 
@@ -62,6 +62,32 @@ StyleStats!
 └───────────────────────────┴───────────────┘
 ```
 
+## Configuration
+
+You must configure Stylestats before use. 
+
+CLI: 
+
+```shell
+$ stylestats -c path/to/.stylestatsrc
+```
+
+API: 
+
+```js
+var StyleStats = require('stylestats');
+var stats = new StyleStats('path/to/stylesheet.css', 'path/to/.stylestatsrc');
+```
+
+Default configuration is [here](lib/defaultOptions.js).
+
+Here is configuration's JSON example of enabling display gzipped size:
+
+```
+{
+  "gzippedSize": true
+}
+```
 
 ## CLI Reference
 
