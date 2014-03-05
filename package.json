@@ -1,13 +1,13 @@
 {
     "name": "stylestats",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "main": "lib/stylestats.js",
     "bin": {
         "stylestats": "./bin/stylestats"
     },
     "description": "Stylestats is a efficient Node.js library for keeping stylesheet statistics.",
-    "homepage": "https://github.com/stylestats",
-    "bugs": "https://github.com/stylestats/issues",
+    "homepage": "https://github.com/t32k/stylestats",
+    "bugs": "https://github.com/t32k/stylestats/issues",
     "author": {
         "name": "Koji Ishimoto",
         "email": "ijok.ijok@gmail.com",
@@ -37,22 +37,22 @@
         "bin"
     ],
     "dependencies": {
+        "numeral": "~1.5.3",
         "json2csv": "~2.2.1",
-        "css-parse": "^1.7.0",
-        "commander": "^2.1.0",
-        "cli-table": "^0.3.0",
-        "gzip-size": "^0.1.0",
-        "underscore": "^1.6.0",
-        "properties": "^1.2.1",
-        "pretty-bytes": "^0.1.0",
-        "underscore.string": "^2.3.3"
+        "css-parse": "~1.7.0",
+        "commander": "~2.1.0",
+        "cli-table": "~0.3.0",
+        "gzip-size": "~0.1.0",
+        "underscore": "~1.6.0",
+        "properties": "~1.2.1",
+        "underscore.string": "~2.3.3"
     },
     "devDependencies": {
-        "time-grunt": "^0.2.9",
-        "jshint-stylish": "^0.1.5",
-        "load-grunt-tasks": "^0.4.0",
-        "grunt-contrib-watch": "^0.5.3",
-        "grunt-contrib-jshint": "^0.8.0",
-        "grunt-contrib-nodeunit": "^0.3.2"
+        "time-grunt": "~0.2.9",
+        "jshint-stylish": "~0.1.5",
+        "load-grunt-tasks": "~0.4.0",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-contrib-jshint": "~0.8.0",
+        "grunt-contrib-nodeunit": "~0.3.2"
     }
 }

@@ -1,6 +1,8 @@
 'use strict';
 
 var StyleStats = require('../lib/stylestats.js');
+var stats = new StyleStats('test/fixture/test.css');
+var result;
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -21,26 +23,24 @@ var StyleStats = require('../lib/stylestats.js');
     test.doesNotThrow(block, [error], [message])
     test.ifError(value)
 */
-var stats = new StyleStats('test/fixture/test.css');
-var result;
+
 exports.stylestats = {
     setUp: function(done) {
         result = stats.parse();
         done();
     },
     log: function(test) {
-        console.log('\n' + JSON.stringify(result, null, 2));
+        //console.log('\n' + JSON.stringify(result, null, 2));
         test.done();
     },
     size: function(test) {
         test.expect(1);
-        test.equal(result.size, 278, 'should display file size.');
+        test.equal(result.size, 498, 'should display file size.');
         test.done();
     },
     rules: function(test) {
         test.expect(1);
-        test.equal(result.rules, 6, 'should parse stylesheet.');
+        test.equal(result.rules, 8, 'should parse stylesheet.');
         test.done();
     }
 };
-console.log(result);
