@@ -1,11 +1,12 @@
 ![StyleStats](http://i.imgur.com/81kKnxH.png)
 
+Stylestats is a efficient Node.js library for keeping stylesheet statistics.
+
 [![Build Status](https://secure.travis-ci.org/t32k/stylestats.png?branch=master)](http://travis-ci.org/t32k/stylestats)
 [![NPM version](https://badge.fury.io/js/stylestats.png)](http://badge.fury.io/js/stylestats)
 [![Dependency Status](https://david-dm.org/t32k/stylestats.png)](https://david-dm.org/t32k/stylestats)
 [![devDependency Status](https://david-dm.org/t32k/stylestats/dev-status.png)](https://david-dm.org/t32k/stylestats#info=devDependencies)
 
-Stylestats is a efficient Node.js library for keeping stylesheet statistics.
 
 ## Installation
 
@@ -61,6 +62,21 @@ StyleStats!
 │                           │ border-top: 1 │
 └───────────────────────────┴───────────────┘
 ```
+
+## Metrics
+
+#### Simplicity
+
+The __Simplicity__ is measured as __Rules__ divided by __Selectors__.
+
+#### Lowest Cohesion
+
+The __Lowest Cohesion__ metric is the count of the declarations of the most declared selector.
+
+#### Properties Count
+
+The __Properties Count__ is ranking of declared properties. Default option is display the top `10`.
+
 
 ## Configuration
 
@@ -131,9 +147,9 @@ var stats = new StyleStats('path/to/stylesheet.css');
 console.log(JSON.stringify(stats.parse(), null, 2));
 ```
 
-#### Example
+### Example
 
-stats tree:
+[This stylesheet](test/fixture/test.css)'s stats tree:
 
 ```json
 {
