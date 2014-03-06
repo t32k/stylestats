@@ -22,47 +22,49 @@ $ npm install -g stylestats
 ```sh
 $ stylestats path/to/stylesheet.css
 StyleStats!
-┌───────────────────────────┬───────────────┐
-│ Size                      │ 498.0B        │
-├───────────────────────────┼───────────────┤
-│ Rules                     │ 7             │
-├───────────────────────────┼───────────────┤
-│ Selectors                 │ 11            │
-├───────────────────────────┼───────────────┤
-│ Simplicity                │ 72.73%        │
-├───────────────────────────┼───────────────┤
-│ Lowest Cohesion           │ 6             │
-├───────────────────────────┼───────────────┤
-│ Lowest Cohesion Selecotor │ hr            │
-├───────────────────────────┼───────────────┤
-│ Total Unique Font Sizes   │ 5             │
-├───────────────────────────┼───────────────┤
-│ Unique Font Size          │ 10px          │
-│                           │ 12px          │
-│                           │ 14px          │
-│                           │ 16px          │
-│                           │ 18px          │
-├───────────────────────────┼───────────────┤
-│ Total Unique Colors       │ 2             │
-├───────────────────────────┼───────────────┤
-│ Unique Color              │ #333          │
-│                           │ #CCC          │
-├───────────────────────────┼───────────────┤
-│ Id Selectors              │ 1             │
-├───────────────────────────┼───────────────┤
-│ Important Keywords        │ 1             │
-├───────────────────────────┼───────────────┤
-│ Media Queries             │ 1             │
-├───────────────────────────┼───────────────┤
-│ Properties Count          │ font-size: 5  │
-│                           │ margin: 4     │
-│                           │ padding: 3    │
-│                           │ color: 2      │
-│                           │ display: 1    │
-│                           │ height: 1     │
-│                           │ border: 1     │
-│                           │ border-top: 1 │
-└───────────────────────────┴───────────────┘
+┌──────────────────────────┬───────────────┐
+│ Size                     │ 498.0B        │
+├──────────────────────────┼───────────────┤
+│ Rules                    │ 7             │
+├──────────────────────────┼───────────────┤
+│ Selectors                │ 11            │
+├──────────────────────────┼───────────────┤
+│ Simplicity               │ 63.64%        │
+├──────────────────────────┼───────────────┤
+│ Lowest Cohesion          │ 6             │
+├──────────────────────────┼───────────────┤
+│ Lowest Cohesion Selector │ hr            │
+├──────────────────────────┼───────────────┤
+│ Total Unique Font Sizes  │ 5             │
+├──────────────────────────┼───────────────┤
+│ Unique Font Size         │ 10px          │
+│                          │ 12px          │
+│                          │ 14px          │
+│                          │ 16px          │
+│                          │ 18px          │
+├──────────────────────────┼───────────────┤
+│ Total Unique Colors      │ 2             │
+├──────────────────────────┼───────────────┤
+│ Unique Color             │ #333          │
+│                          │ #CCC          │
+├──────────────────────────┼───────────────┤
+│ Id Selectors             │ 1             │
+├──────────────────────────┼───────────────┤
+│ Universal Selectors      │ 0             │
+├──────────────────────────┼───────────────┤
+│ Important Keywords       │ 1             │
+├──────────────────────────┼───────────────┤
+│ Media Queries            │ 1             │
+├──────────────────────────┼───────────────┤
+│ Properties Count         │ font-size: 5  │
+│                          │ margin: 4     │
+│                          │ padding: 3    │
+│                          │ color: 2      │
+│                          │ display: 1    │
+│                          │ height: 1     │
+│                          │ border: 1     │
+│                          │ border-top: 1 │
+└──────────────────────────┴───────────────┘
 ```
 
 ## Metrics
@@ -226,6 +228,7 @@ Above the stylesheet's stats tree:
   "totalUniqueColors": 2,
   "uniqueColor": [ "#333", "#CCC" ],
   "idSelectors": 1,
+  "universalSelectors": 0,
   "importantKeywords": 1,
   "mediaQueries": 1,
   "propertiesCount": [
@@ -245,6 +248,11 @@ Above the stylesheet's stats tree:
 
 _(Coming soon)_
 
+
+## Release History
+
++ v1.1.0: Add `universalSelectors` metrics.
++ v1.0.0: Major release.
 
 # License
 
