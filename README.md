@@ -107,6 +107,9 @@ Here is configuration's JSON example of enabling display gzipped size:
 }
 ```
 
+`gzippedSize` is default `false`. because, pretty slow.
+
+
 ## CLI Reference
 
 
@@ -121,7 +124,7 @@ $ stylestats -h
     -V, --version             output the version number
     -c, --config [path]       Path and name of the incoming JSON file.
     -e, --extension [format]  Specify the format to convert. <json|csv>
-    -s, --simple              Display compact log.
+    -s, --simple              Show compact style's log.
 ```
 
 ```shell
@@ -142,6 +145,22 @@ StyleStats!
 + [Plot Stylestats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
 
 ## API Reference
+
+### StyleStats(stylesheet, config)
+
+#### stylesheet
+
+Required
+Type: `String`
+
+Stylesheet file path.
+
+#### config
+
+Optional
+Type: `String`
+
+Configuration's JSON file path.
 
 ```javascript
 var StyleStats = require('stylestats');

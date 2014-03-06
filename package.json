@@ -1,6 +1,6 @@
 {
     "name": "stylestats",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "lib/stylestats.js",
     "bin": {
         "stylestats": "./bin/stylestats"
@@ -44,7 +44,6 @@
         "cli-table": "~0.3.0",
         "gzip-size": "~0.1.0",
         "underscore": "~1.6.0",
-        "properties": "~1.2.1",
         "underscore.string": "~2.3.3"
     },
     "devDependencies": {
