@@ -137,6 +137,7 @@ StyleStats!
 └───────────────────────────┴───────────────┘
 ```
 
++ [Plot Stylestats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
 
 ## API Reference
 
