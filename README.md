@@ -17,7 +17,7 @@ $ npm install stylestats
 ## Usage
 
 
-```shell
+```sh
 $ stylestats path/to/stylesheet.css
 StyleStats!
 ┌───────────────────────────┬───────────────┐
@@ -80,15 +80,15 @@ The __Properties Count__ is ranking of declared properties. Default option is di
 
 ## Configuration
 
-You must configure Stylestats before use. 
+You must configure Stylestats before use.
 
-CLI: 
+CLI:
 
 ```shell
 $ stylestats -c path/to/.stylestatsrc
 ```
 
-API: 
+API:
 
 ```js
 var StyleStats = require('stylestats');
@@ -182,4 +182,4 @@ _(Coming soon)_
 
 # License
 
- Code released under [the MIT license](LICENSE).
+ Code is released under [the MIT license](LICENSE).
