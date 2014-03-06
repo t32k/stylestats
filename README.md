@@ -29,7 +29,7 @@ StyleStats!
 ├───────────────────────────┼───────────────┤
 │ Selectors                 │ 11            │
 ├───────────────────────────┼───────────────┤
-│ Simplicity                │ 72.73%        │
+│ Simplicity                │ 63.64%        │
 ├───────────────────────────┼───────────────┤
 │ Lowest Cohesion           │ 6             │
 ├───────────────────────────┼───────────────┤
@@ -67,7 +67,7 @@ StyleStats!
 
 ## Metrics
 
-![](http://i.imgur.com/DlCfWNw.png)
+![](http://i.imgur.com/kdCndXt.png)
 
 #### Simplicity
 
@@ -218,7 +218,7 @@ Above the stylesheet's stats tree:
   "size": 498,
   "rules": 7,
   "selectors": 11,
-  "simplicity": 0.7272727272727273,
+  "simplicity": 0.6363636363636364,
   "lowestCohesion": 6,
   "lowestCohesionSelecotor": [ "hr" ],
   "totalUniqueFontSizes": 5,
