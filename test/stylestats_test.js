@@ -30,7 +30,7 @@ exports.stylestats = {
         done();
     },
     log: function(test) {
-        console.log('\n' + JSON.stringify(result, null, 2));
+        // console.log('\n' + JSON.stringify(result, null, 2));
         test.done();
     },
     size: function(test) {
@@ -41,6 +41,21 @@ exports.stylestats = {
     rules: function(test) {
         test.expect(1);
         test.equal(result.rules, 8, 'should parse stylesheet.');
+        test.done();
+    },
+    selectors: function(test) {
+        test.expect(1);
+        test.equal(result.selectors, 11, 'should parse selector.');
+        test.done();
+    },
+    lowestCohesion: function(test) {
+        test.expect(1);
+        test.equal(result.lowestCohesion, 6, 'should parse lowest cohesion.');
+        test.done();
+    },
+    lowestCohesionSelector: function(test) {
+        test.expect(1);
+        test.equal(result.lowestCohesionSelector, 'hr', 'should parse lowest cohesion selector.');
         test.done();
     }
 };

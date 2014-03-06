@@ -152,7 +152,45 @@ console.log(JSON.stringify(stats.parse(), null, 2));
 
 ### Example
 
-[This stylesheet](test/fixture/test.css)'s stats tree:
+```css
+body {
+  color: #333;
+  font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+section {
+  margin: 10px;
+  padding: 10px;
+  font-size: 10px;
+}
+.foo .bar .baz .qux .quux {
+  color: #ccc;
+  font-size: 12px;
+}
+#foo {
+  margin: 10px;
+  font-size: 16px;
+}
+/* Lowest Cohesion Selecotor */
+hr {
+  display: block;
+  margin: 10px 0;
+  padding: 0 !important;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid red;
+}
+@media (max-width: 600px) {
+  .media-queries {
+    display: none;
+  }
+}
+```
+Above the stylesheet's stats tree:
 
 ```json
 {
@@ -170,12 +208,17 @@ console.log(JSON.stringify(stats.parse(), null, 2));
   "importantKeywords": 1,
   "mediaQueries": 1,
   "propertiesCount": [
-    [ "font-size", 5], [ "margin", 4 ], [ "padding", 3 ], [ "color", 2 ], [ "display", 1 ], [ "height", 1 ], [ "border", 1 ], [ "border-top", 1 ]
+        { "property": "font-size", "count": 5},
+        { "property": "margin", "count": 4},
+        { "property": "padding", "count": 3},
+        { "property": "color", "count": 2},
+        { "property": "display", "count": 1},
+        { "property": "height", "count": 1},
+        { "property": "border", "count": 1},
+        { "property": "border-top", "count": 1}
   ]
 }
 ```
-
-
 
 ## Online Tool
 
@@ -184,4 +227,4 @@ _(Coming soon)_
 
 # License
 
- Code is released under [the MIT license](LICENSE).
+Code is released under [the MIT license](LICENSE).

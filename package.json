@@ -1,6 +1,6 @@
 {
     "name": "stylestats",
-    "version": "0.0.10",
+    "version": "1.0.0",
     "main": "lib/stylestats.js",
     "bin": {
         "stylestats": "./bin/stylestats"
@@ -48,7 +48,6 @@
         "underscore.string": "~2.3.3"
     },
     "devDependencies": {
-        "time-grunt": "~0.2.9",
         "jshint-stylish": "~0.1.5",
         "load-grunt-tasks": "~0.4.0",
         "grunt-contrib-watch": "~0.5.3",
