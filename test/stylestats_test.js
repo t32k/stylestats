@@ -38,9 +38,61 @@ exports.stylestats = {
         test.equal(result.size, 498, 'should display file size.');
         test.done();
     },
+    gzipedSize: function(test) {
+        test.expect(1);
+        test.done();
+    },
     rules: function(test) {
         test.expect(1);
         test.equal(result.rules, 8, 'should parse stylesheet.');
+        test.done();
+    },
+    selectors: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    simplicity: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    lowestCohesion: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    lowestCohesionSelector: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    totalUniqueFontSizes: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    uniqueFontSize: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    totalUniqueColors: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    uniqueColor: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    idSelectors: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    importantKeywords: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    mediaQueries: function(test) {
+        test.expect(1);
+        test.done();
+    },
+    propertiesCount: function(test) {
+        test.expect(1);
         test.done();
     }
 };
