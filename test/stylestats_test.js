@@ -40,7 +40,7 @@ exports.stylestats = {
     },
     rules: function(test) {
         test.expect(1);
-        test.equal(result.rules, 8, 'should parse stylesheet.');
+        test.equal(result.rules, 7, 'should parse stylesheet.');
         test.done();
     },
     selectors: function(test) {

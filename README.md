@@ -25,7 +25,7 @@ StyleStats!
 ┌───────────────────────────┬───────────────┐
 │ Size                      │ 498.0B        │
 ├───────────────────────────┼───────────────┤
-│ Rules                     │ 8             │
+│ Rules                     │ 7             │
 ├───────────────────────────┼───────────────┤
 │ Selectors                 │ 11            │
 ├───────────────────────────┼───────────────┤
@@ -133,7 +133,7 @@ $ stylestats -h
 $ stylestats path/to/stylesheet.css -s -c path/to/.stylestatsrc
 StyleStats!
 ┌───────────────────────────┬───────────────┐
-│ Rules                     │ 8             │
+│ Rules                     │ 7             │
 │ Selectors                 │ 11            │
 │ Lowest Cohesion           │ 6             │
 │ Total Unique Font Sizes   │ 5             │
@@ -216,7 +216,7 @@ Above the stylesheet's stats tree:
 ```json
 {
   "size": 498,
-  "rules": 8,
+  "rules": 7,
   "selectors": 11,
   "simplicity": 0.7272727272727273,
   "lowestCohesion": 6,
