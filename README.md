@@ -10,6 +10,8 @@ Stylestats is a efficient Node.js library for keeping stylesheet statistics.
 
 ## Installation
 
+Requires Node.js v`0.10.x`
+
 ```
 $ npm install -g stylestats
 ```
