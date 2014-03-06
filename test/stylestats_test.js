@@ -30,7 +30,7 @@ exports.stylestats = {
         done();
     },
     log: function(test) {
-        //console.log('\n' + JSON.stringify(result, null, 2));
+        console.log('\n' + JSON.stringify(result, null, 2));
         test.done();
     },
     size: function(test) {
