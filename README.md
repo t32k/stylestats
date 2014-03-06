@@ -65,6 +65,8 @@ StyleStats!
 
 ## Metrics
 
+![](http://i.imgur.com/DlCfWNw.png)
+
 #### Simplicity
 
 The __Simplicity__ is measured as __Rules__ divided by __Selectors__.
