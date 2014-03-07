@@ -10,8 +10,10 @@ Stylestats is a efficient Node.js library for keeping stylesheet statistics.
 
 ## Installation
 
+Requires Node.js v`0.10.x`
+
 ```
-$ npm install stylestats
+$ npm install -g stylestats
 ```
 
 ## Usage
@@ -20,52 +22,54 @@ $ npm install stylestats
 ```sh
 $ stylestats path/to/stylesheet.css
 StyleStats!
-┌───────────────────────────┬───────────────┐
-│ Size                      │ 498.0B        │
-├───────────────────────────┼───────────────┤
-│ Rules                     │ 8             │
-├───────────────────────────┼───────────────┤
-│ Selectors                 │ 11            │
-├───────────────────────────┼───────────────┤
-│ Simplicity                │ 72.73%        │
-├───────────────────────────┼───────────────┤
-│ Lowest Cohesion           │ 6             │
-├───────────────────────────┼───────────────┤
-│ Lowest Cohesion Selecotor │ hr            │
-├───────────────────────────┼───────────────┤
-│ Total Unique Font Sizes   │ 5             │
-├───────────────────────────┼───────────────┤
-│ Unique Font Size          │ 10px          │
-│                           │ 12px          │
-│                           │ 14px          │
-│                           │ 16px          │
-│                           │ 18px          │
-├───────────────────────────┼───────────────┤
-│ Total Unique Colors       │ 2             │
-├───────────────────────────┼───────────────┤
-│ Unique Color              │ #333          │
-│                           │ #CCC          │
-├───────────────────────────┼───────────────┤
-│ Id Selectors              │ 1             │
-├───────────────────────────┼───────────────┤
-│ Important Keywords        │ 1             │
-├───────────────────────────┼───────────────┤
-│ Media Queries             │ 1             │
-├───────────────────────────┼───────────────┤
-│ Properties Count          │ font-size: 5  │
-│                           │ margin: 4     │
-│                           │ padding: 3    │
-│                           │ color: 2      │
-│                           │ display: 1    │
-│                           │ height: 1     │
-│                           │ border: 1     │
-│                           │ border-top: 1 │
-└───────────────────────────┴───────────────┘
+┌──────────────────────────┬───────────────┐
+│ Size                     │ 498.0B        │
+├──────────────────────────┼───────────────┤
+│ Rules                    │ 7             │
+├──────────────────────────┼───────────────┤
+│ Selectors                │ 11            │
+├──────────────────────────┼───────────────┤
+│ Simplicity               │ 63.64%        │
+├──────────────────────────┼───────────────┤
+│ Lowest Cohesion          │ 6             │
+├──────────────────────────┼───────────────┤
+│ Lowest Cohesion Selector │ hr            │
+├──────────────────────────┼───────────────┤
+│ Total Unique Font Sizes  │ 5             │
+├──────────────────────────┼───────────────┤
+│ Unique Font Size         │ 10px          │
+│                          │ 12px          │
+│                          │ 14px          │
+│                          │ 16px          │
+│                          │ 18px          │
+├──────────────────────────┼───────────────┤
+│ Total Unique Colors      │ 2             │
+├──────────────────────────┼───────────────┤
+│ Unique Color             │ #333          │
+│                          │ #CCC          │
+├──────────────────────────┼───────────────┤
+│ Id Selectors             │ 1             │
+├──────────────────────────┼───────────────┤
+│ Universal Selectors      │ 0             │
+├──────────────────────────┼───────────────┤
+│ Important Keywords       │ 1             │
+├──────────────────────────┼───────────────┤
+│ Media Queries            │ 1             │
+├──────────────────────────┼───────────────┤
+│ Properties Count         │ font-size: 5  │
+│                          │ margin: 4     │
+│                          │ padding: 3    │
+│                          │ color: 2      │
+│                          │ display: 1    │
+│                          │ height: 1     │
+│                          │ border: 1     │
+│                          │ border-top: 1 │
+└──────────────────────────┴───────────────┘
 ```
 
 ## Metrics
 
-![](http://i.imgur.com/DlCfWNw.png)
+![](http://i.imgur.com/kdCndXt.png)
 
 #### Simplicity
 
@@ -107,6 +111,9 @@ Here is configuration's JSON example of enabling display gzipped size:
 }
 ```
 
+`gzippedSize` is default `false`. because, pretty slow.
+
+
 ## CLI Reference
 
 
@@ -121,14 +128,14 @@ $ stylestats -h
     -V, --version             output the version number
     -c, --config [path]       Path and name of the incoming JSON file.
     -e, --extension [format]  Specify the format to convert. <json|csv>
-    -s, --simple              Display compact log.
+    -s, --simple              Show compact style's log.
 ```
 
 ```shell
 $ stylestats path/to/stylesheet.css -s -c path/to/.stylestatsrc
 StyleStats!
 ┌───────────────────────────┬───────────────┐
-│ Rules                     │ 8             │
+│ Rules                     │ 7             │
 │ Selectors                 │ 11            │
 │ Lowest Cohesion           │ 6             │
 │ Total Unique Font Sizes   │ 5             │
@@ -143,6 +150,22 @@ StyleStats!
 
 ## API Reference
 
+### StyleStats(stylesheet, config)
+
+#### stylesheet
+
+Required
+Type: `String`
+
+Stylesheet file path.
+
+#### config
+
+Optional
+Type: `String`
+
+Configuration's JSON file path.
+
 ```javascript
 var StyleStats = require('stylestats');
 var stats = new StyleStats('path/to/stylesheet.css');
@@ -152,14 +175,52 @@ console.log(JSON.stringify(stats.parse(), null, 2));
 
 ### Example
 
-[This stylesheet](test/fixture/test.css)'s stats tree:
+```css
+body {
+  color: #333;
+  font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+section {
+  margin: 10px;
+  padding: 10px;
+  font-size: 10px;
+}
+.foo .bar .baz .qux .quux {
+  color: #ccc;
+  font-size: 12px;
+}
+#foo {
+  margin: 10px;
+  font-size: 16px;
+}
+/* Lowest Cohesion Selecotor */
+hr {
+  display: block;
+  margin: 10px 0;
+  padding: 0 !important;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid red;
+}
+@media (max-width: 600px) {
+  .media-queries {
+    display: none;
+  }
+}
+```
+Above the stylesheet's stats tree:
 
 ```json
 {
   "size": 498,
-  "rules": 8,
+  "rules": 7,
   "selectors": 11,
-  "simplicity": 0.7272727272727273,
+  "simplicity": 0.6363636363636364,
   "lowestCohesion": 6,
   "lowestCohesionSelecotor": [ "hr" ],
   "totalUniqueFontSizes": 5,
@@ -167,21 +228,32 @@ console.log(JSON.stringify(stats.parse(), null, 2));
   "totalUniqueColors": 2,
   "uniqueColor": [ "#333", "#CCC" ],
   "idSelectors": 1,
+  "universalSelectors": 0,
   "importantKeywords": 1,
   "mediaQueries": 1,
   "propertiesCount": [
-    [ "font-size", 5], [ "margin", 4 ], [ "padding", 3 ], [ "color", 2 ], [ "display", 1 ], [ "height", 1 ], [ "border", 1 ], [ "border-top", 1 ]
+        { "property": "font-size", "count": 5},
+        { "property": "margin", "count": 4},
+        { "property": "padding", "count": 3},
+        { "property": "color", "count": 2},
+        { "property": "display", "count": 1},
+        { "property": "height", "count": 1},
+        { "property": "border", "count": 1},
+        { "property": "border-top", "count": 1}
   ]
 }
 ```
-
-
 
 ## Online Tool
 
 _(Coming soon)_
 
 
+## Release History
+
++ v1.1.0: Add `universalSelectors` metrics.
++ v1.0.0: Major release.
+
 # License
 
- Code is released under [the MIT license](LICENSE).
+Code is released under [the MIT license](LICENSE).
