@@ -1,0 +1,12 @@
+{
+    "launchers": {
+        "Node": {
+            "command": "mocha test/stylestats_test.js"
+        }
+    },
+    "src_files": [
+        "test/*_test.js"
+    ],
+    "launch_in_dev": ["Node"],
+    "launch_in_ci": ["Node"]
+}

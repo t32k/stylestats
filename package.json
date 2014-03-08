@@ -1,6 +1,6 @@
 {
     "name": "stylestats",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "main": "lib/stylestats.js",
     "bin": {
         "stylestats": "./bin/stylestats"
@@ -30,7 +30,7 @@
         "property"
     ],
     "scripts": {
-        "test": "grunt"
+        "test": "mocha"
     },
     "files": [
         "lib",
@@ -43,13 +43,11 @@
         "commander": "~2.1.0",
         "cli-table": "~0.3.0",
         "gzip-size": "~0.1.0",
-        "underscore": "~1.6.0"
+        "underscore": "~1.6.0",
+        "underscore.string": "~2.3.3"
     },
     "devDependencies": {
-        "jshint-stylish": "~0.1.5",
-        "load-grunt-tasks": "~0.4.0",
-        "grunt-contrib-watch": "~0.5.3",
-        "grunt-contrib-jshint": "~0.8.0",
-        "grunt-contrib-nodeunit": "~0.3.2"
+        "testem": "~0.6.8",
+        "mocha": "~1.17.1"
     }
 }

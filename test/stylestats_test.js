@@ -1,61 +1,53 @@
-'use strict';
-
+var assert = require('assert');
 var StyleStats = require('../lib/stylestats.js');
+
 var stats = new StyleStats('test/fixture/test.css');
-var result;
+var result = stats.parse();
 
-/*
-  ======== A Handy Little Nodeunit Reference ========
-  https://github.com/caolan/nodeunit
+var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
+var customResult = customStats.parse();
 
-  Test methods:
-    test.expect(numAssertions)
-    test.done()
-  Test assertions:
-    test.ok(value, [message])
-    test.equal(actual, expected, [message])
-    test.notEqual(actual, expected, [message])
-    test.deepEqual(actual, expected, [message])
-    test.notDeepEqual(actual, expected, [message])
-    test.strictEqual(actual, expected, [message])
-    test.notStrictEqual(actual, expected, [message])
-    test.throws(block, [error], [message])
-    test.doesNotThrow(block, [error], [message])
-    test.ifError(value)
-*/
+describe('StyleStats!.', function() {
+    it('should returns file size.', function() {
+        assert.equal(result.size, 498);
+    });
+    it('should returns css rules.', function() {
+        assert.equal(result.rules, 7);
+    });
+    it('should returns css selectors.', function() {
+        assert.equal(result.selectors, 11);
+    });
+    it('should returns simplicity.', function() {
+        assert.equal(result.simplicity, 0.6363636363636364);
+    });
+    it('should returns file lowestCohesion.', function() {
+        assert.equal(result.lowestCohesion, 6);
+    });
+    it('should returns file lowestCohesionSelector.', function() {
+        assert.equal(result.lowestCohesionSelector, 'hr');
+    });
+    it('should returns file totalUniqueFontSizes.', function() {
+        assert.equal(result.totalUniqueFontSizes, 5);
+    });
+    it('should returns file totalUniqueColors.', function() {
+        assert.equal(result.totalUniqueColors, 2);
+    });
+    it('should returns file idSelectors.', function() {
+        assert.equal(result.idSelectors, 1);
+    });
+    it('should returns file universalSelectors.', function() {
+        assert.equal(result.universalSelectors, 0);
+    });
+    it('should returns file importantKeywords.', function() {
+        assert.equal(result.importantKeywords, 1);
+    });
+    it('should returns file mediaQueries".', function() {
+        assert.equal(result.mediaQueries, 1);
+    });
+});
 
-exports.stylestats = {
-    setUp: function(done) {
-        result = stats.parse();
-        done();
-    },
-    log: function(test) {
-        // console.log('\n' + JSON.stringify(result, null, 2));
-        test.done();
-    },
-    size: function(test) {
-        test.expect(1);
-        test.equal(result.size, 498, 'should display file size.');
-        test.done();
-    },
-    rules: function(test) {
-        test.expect(1);
-        test.equal(result.rules, 7, 'should parse stylesheet.');
-        test.done();
-    },
-    selectors: function(test) {
-        test.expect(1);
-        test.equal(result.selectors, 11, 'should parse selector.');
-        test.done();
-    },
-    lowestCohesion: function(test) {
-        test.expect(1);
-        test.equal(result.lowestCohesion, 6, 'should parse lowest cohesion.');
-        test.done();
-    },
-    lowestCohesionSelector: function(test) {
-        test.expect(1);
-        test.equal(result.lowestCohesionSelector, 'hr', 'should parse lowest cohesion selector.');
-        test.done();
-    }
-};
+describe('Custom StyleStats!', function() {
+    it('should returns gzippedSize.', function() {
+        assert.equal(customResult.gzippedSize, 155);
+    });
+});
