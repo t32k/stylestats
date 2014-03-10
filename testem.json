@@ -5,7 +5,8 @@
         }
     },
     "src_files": [
-        "test/*_test.js"
+        "test/*_test.js",
+        "lib/*.js"
     ],
     "launch_in_dev": ["Node"],
     "launch_in_ci": ["Node"]

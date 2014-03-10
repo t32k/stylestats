@@ -7,47 +7,55 @@ var result = stats.parse();
 var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
 var customResult = customStats.parse();
 
-describe('StyleStats!.', function() {
-    it('should returns file size.', function() {
+describe('StyleStats!', function() {
+    it('should returns file size', function() {
         assert.equal(result.size, 498);
     });
-    it('should returns css rules.', function() {
+    it('should returns css rules', function() {
         assert.equal(result.rules, 7);
     });
-    it('should returns css selectors.', function() {
+    it('should returns css selectors', function() {
         assert.equal(result.selectors, 11);
     });
-    it('should returns simplicity.', function() {
+    it('should returns simplicity', function() {
         assert.equal(result.simplicity, 0.6363636363636364);
     });
-    it('should returns file lowestCohesion.', function() {
+    it('should returns lowest cohesion', function() {
         assert.equal(result.lowestCohesion, 6);
     });
-    it('should returns file lowestCohesionSelector.', function() {
+    it('should returns lowest cohesion selector', function() {
         assert.equal(result.lowestCohesionSelector, 'hr');
     });
-    it('should returns file totalUniqueFontSizes.', function() {
+    it('should returns total unique font sizes', function() {
         assert.equal(result.totalUniqueFontSizes, 5);
     });
-    it('should returns file totalUniqueColors.', function() {
+    it('should returns total unique colors', function() {
         assert.equal(result.totalUniqueColors, 2);
     });
-    it('should returns file idSelectors.', function() {
+    it('should returns id selectors', function() {
         assert.equal(result.idSelectors, 1);
     });
-    it('should returns file universalSelectors.', function() {
+    it('should returns universal selectors', function() {
         assert.equal(result.universalSelectors, 0);
     });
-    it('should returns file importantKeywords.', function() {
+    it('should returns important keywords', function() {
         assert.equal(result.importantKeywords, 1);
     });
-    it('should returns file mediaQueries".', function() {
+    it('should returns media queries"', function() {
         assert.equal(result.mediaQueries, 1);
     });
 });
 
 describe('Custom StyleStats!', function() {
-    it('should returns gzippedSize.', function() {
+    it('should returns gzipped size', function() {
         assert.equal(customResult.gzippedSize, 155);
     });
 });
+
+//describe('Remote StyleStats!', function() {
+//    it('should returns size', function(done) {
+//        var remoteStats = new StyleStats('http://t32k.me/static/blog/skelton.css', 'test/fixture/.stylestatsrc', done);
+//        var remoteResult = remoteStats.parse();
+//        assert.equal(remoteResult.size, 155);
+//    });
+//});
