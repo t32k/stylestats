@@ -69,7 +69,7 @@ StyleStats!
 
 ## Metrics
 
-![](http://i.imgur.com/kdCndXt.png)
+![](http://i.imgur.com/qUvaK1B.png)
 
 #### Simplicity
 
