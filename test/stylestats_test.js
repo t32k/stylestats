@@ -4,9 +4,6 @@ var StyleStats = require('../lib/stylestats.js');
 var stats = new StyleStats('test/fixture/test.css');
 var result = stats.parse();
 
-var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
-var customResult = customStats.parse();
-
 describe('StyleStats!', function() {
     it('should returns file size', function() {
         assert.equal(result.size, 498);
@@ -46,16 +43,19 @@ describe('StyleStats!', function() {
     });
 });
 
+var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
+var customResult = customStats.parse();
+
 describe('Custom StyleStats!', function() {
     it('should returns gzipped size', function() {
         assert.equal(customResult.gzippedSize, 155);
     });
 });
 
-//describe('Remote StyleStats!', function() {
-//    it('should returns size', function(done) {
-//        var remoteStats = new StyleStats('http://t32k.me/static/blog/skelton.css', 'test/fixture/.stylestatsrc', done);
-//        var remoteResult = remoteStats.parse();
-//        assert.equal(remoteResult.size, 155);
-//    });
-//});
+var stringStats = new StyleStats('html{color:red}');
+var stringResult = stringStats.parse();
+describe('String StyleStats!', function() {
+    it('should returns file size', function() {
+        assert.equal(stringResult.size, 15);
+    });
+});
