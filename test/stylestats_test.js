@@ -59,3 +59,12 @@ describe('String StyleStats!', function() {
         assert.equal(stringResult.size, 15);
     });
 });
+
+
+var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
+var multipleResult = multipleStats.parse();
+describe('multiple StyleStats!', function() {
+    it('should returns file size', function() {
+        assert.equal(multipleResult.stylesheets, 2);
+    });
+});
