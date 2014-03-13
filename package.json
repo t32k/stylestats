@@ -47,7 +47,8 @@
         "cli-table": "~0.3.0",
         "gzip-size": "~0.1.0",
         "underscore": "~1.6.0",
-        "underscore.string": "~2.3.3"
+        "underscore.string": "~2.3.3",
+        "glob": "^3.2.9"
     },
     "devDependencies": {
         "mocha": "~1.17.1",
