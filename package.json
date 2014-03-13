@@ -40,6 +40,7 @@
         "bin"
     ],
     "dependencies": {
+        "glob": "~3.2.9",
         "numeral": "~1.5.3",
         "json2csv": "~2.2.1",
         "css-parse": "~1.7.0",
@@ -47,8 +48,7 @@
         "cli-table": "~0.3.0",
         "gzip-size": "~0.1.0",
         "underscore": "~1.6.0",
-        "underscore.string": "~2.3.3",
-        "glob": "^3.2.9"
+        "underscore.string": "~2.3.3"
     },
     "devDependencies": {
         "mocha": "~1.17.1",
