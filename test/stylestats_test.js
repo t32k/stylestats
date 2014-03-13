@@ -52,6 +52,18 @@ describe('Custom StyleStats!', function() {
     });
 });
 
+var configObj = {
+    gzippedSize: true
+};
+var customObjectStats = new StyleStats('test/fixture/test.css', configObj);
+var customObjectResult = customStats.parse();
+
+describe('CustomObject StyleStats!', function() {
+    it('should returns gzipped size', function() {
+        assert.equal(customObjectResult.gzippedSize, 155);
+    });
+});
+
 var stringStats = new StyleStats('html{color:red}');
 var stringResult = stringStats.parse();
 describe('String StyleStats!', function() {
@@ -59,7 +71,6 @@ describe('String StyleStats!', function() {
         assert.equal(stringResult.size, 15);
     });
 });
-
 
 var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
 var multipleResult = multipleStats.parse();
