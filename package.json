@@ -1,6 +1,6 @@
 {
     "name": "stylestats",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "main": "lib/stylestats.js",
     "bin": {
         "stylestats": "./bin/stylestats"
@@ -32,6 +32,9 @@
     "scripts": {
         "test": "mocha"
     },
+    "engines": {
+        "node": "0.10.x"
+    },
     "files": [
         "lib",
         "bin"
@@ -47,7 +50,7 @@
         "underscore.string": "~2.3.3"
     },
     "devDependencies": {
-        "testem": "~0.6.8",
-        "mocha": "~1.17.1"
+        "mocha": "~1.17.1",
+        "testem": "~0.6.8"
     }
 }

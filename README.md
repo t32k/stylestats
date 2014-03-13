@@ -23,6 +23,8 @@ $ npm install -g stylestats
 $ stylestats path/to/stylesheet.css
 StyleStats!
 ┌──────────────────────────┬───────────────┐
+│ Stylesheets              │ 1             │
+├──────────────────────────┼───────────────┤
 │ Size                     │ 498.0B        │
 ├──────────────────────────┼───────────────┤
 │ Rules                    │ 7             │
@@ -67,6 +69,17 @@ StyleStats!
 └──────────────────────────┴───────────────┘
 ```
 
+StyleStats support multiple input files.
+
+```sh
+$ stylestats foo.css bar.css baz.css
+```
+
+`-e` option output JSON or CSV.
+
+```sh
+$ stylestats foo.css -e [json|csv]
+```
 ## Metrics
 
 ![](http://i.imgur.com/qUvaK1B.png)
@@ -155,16 +168,16 @@ StyleStats!
 #### stylesheet
 
 Required
-Type: `String`
+Type: `String|Array`
 
-Stylesheet file path.
+Stylesheet file path or path's array.
 
 #### config
 
 Optional
-Type: `String`
+Type: `String|Object`
 
-Configuration's JSON file path.
+Configuration's JSON file path or object.
 
 ```javascript
 var StyleStats = require('stylestats');
@@ -217,6 +230,7 @@ Above the stylesheet's stats tree:
 
 ```json
 {
+  "stylesheets": 1,
   "size": 498,
   "rules": 7,
   "selectors": 11,
@@ -251,6 +265,7 @@ _(Coming soon)_
 
 ## Release History
 
++ v1.2.0: Support multiple input files.
 + v1.1.0: Add `universalSelectors` metrics.
 + v1.0.0: Major release.
 
