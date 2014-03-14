@@ -2,7 +2,7 @@ var assert = require('assert');
 var StyleStats = require('../lib/stylestats.js');
 
 var stats = new StyleStats('test/fixture/test.css');
-stats.parse(function (result) {
+stats.parse(function(result) {
     describe('StyleStats!', function() {
         it('should returns file size', function() {
             assert.equal(result.size, 498);
@@ -44,7 +44,7 @@ stats.parse(function (result) {
 });
 
 var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
-customStats.parse(function (customResult) {
+customStats.parse(function(customResult) {
     describe('Custom StyleStats!', function() {
         it('should returns gzipped size', function() {
             assert.equal(customResult.gzippedSize, 155);
@@ -56,7 +56,7 @@ var configObj = {
     gzippedSize: true
 };
 var customObjectStats = new StyleStats('test/fixture/test.css', configObj);
-customObjectStats.parse(function (customObjectResult) {
+customObjectStats.parse(function(customObjectResult) {
     describe('CustomObject StyleStats!', function() {
         it('should returns gzipped size', function() {
             assert.equal(customObjectResult.gzippedSize, 155);
@@ -65,7 +65,7 @@ customObjectStats.parse(function (customObjectResult) {
 });
 
 var globStats = new StyleStats('test/**/*.css');
-globStats.parse(function (globResult) {
+globStats.parse(function(globResult) {
     describe('Glob Pattern StyleStats!', function() {
         it('should returns file size', function() {
             assert.equal(globResult.size, 19967);
@@ -74,7 +74,7 @@ globStats.parse(function (globResult) {
 });
 
 var requestStats = new StyleStats('http://t32k.me/mol/assets/main.css');
-requestStats.parse(function (requestResult) {
+requestStats.parse(function(requestResult) {
     describe('Remote Pattern StyleStats!', function() {
         it('should returns file size', function() {
             assert.equal(requestResult.size, 19967);
@@ -83,7 +83,7 @@ requestStats.parse(function (requestResult) {
 });
 
 var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
-multipleStats.parse(function (multipleResult) {
+multipleStats.parse(function(multipleResult) {
     describe('Multiple Files StyleStats!', function() {
         it('should returns file size', function() {
             assert.equal(multipleResult.stylesheets, 2);

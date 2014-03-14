@@ -5,7 +5,7 @@
     "bin": {
         "stylestats": "./bin/stylestats"
     },
-    "description": "Stylestats is a efficient Node.js library for keeping stylesheet statistics.",
+    "description": "StyleStats is Node.js library to collect css statistics!",
     "homepage": "https://github.com/t32k/stylestats",
     "bugs": "https://github.com/t32k/stylestats/issues",
     "author": {
@@ -40,17 +40,17 @@
         "bin"
     ],
     "dependencies": {
+        "glob": "~3.2.9",
+        "async": "~0.2.10",
         "numeral": "~1.5.3",
+        "request": "~2.34.0",
         "json2csv": "~2.2.1",
         "css-parse": "~1.7.0",
         "commander": "~2.1.0",
         "cli-table": "~0.3.0",
         "gzip-size": "~0.1.0",
         "underscore": "~1.6.0",
-        "underscore.string": "~2.3.3",
-        "glob": "^3.2.9",
-        "async": "^0.2.10",
-        "request": "^2.34.0"
+        "underscore.string": "~2.3.3"
     },
     "devDependencies": {
         "mocha": "~1.17.1",
