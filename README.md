@@ -1,6 +1,6 @@
 ![StyleStats](http://i.imgur.com/81kKnxH.png)
 
-Stylestats is a efficient Node.js library for keeping stylesheet statistics.
+StyleStats is Node.js library collect css statistics.
 
 [![Build Status](https://secure.travis-ci.org/t32k/stylestats.png?branch=master)](http://travis-ci.org/t32k/stylestats)
 [![NPM version](https://badge.fury.io/js/stylestats.png)](http://badge.fury.io/js/stylestats)
@@ -78,13 +78,13 @@ StyleStats!
 ```
 
 
-Support remote files!!!
+StyleStats supports remote file analysis!!!
 
 ```sh
 $ stylestats http://t32k.me/static/blog/skelton.css
 ```
 
-Support multiple input files.
+StyleStats supports multiple input.
 
 ```sh
 $ stylestats foo.css bar.css baz.css
@@ -105,13 +105,13 @@ The __Simplicity__ is measured as __Rules__ divided by __Selectors__.
 
 ### Lowest Cohesion
 
-The __Lowest Cohesion__ metric is the count of the declarations of the most declared selector.
+The __Lowest Cohesion__ metric is the number of selector declaration.
 
 ### Unqualified Attribute Selectors
 
-The __Unqualified Attribute Selectors__ metric is the count of the Selectors of the unqualified attribute selectors.
+The __Unqualified Attribute Selectors__ metric is the number of unqualified attribute selectors.
 
-The following patterns are counted:
+The following patterns will be counted:
 
 ```css
 [type=text] {
@@ -123,7 +123,7 @@ The following patterns are counted:
 }
 ```
 
-The following patterns are considered okay and do not count:
+The following patterns are considered as okay and will not be counted:
 
 ```
 /* unqualified attribute selector is not key */
@@ -138,12 +138,12 @@ See also:
 
 ### Properties Count
 
-The __Properties Count__ is ranking of declared properties. Default option is display the top `10`.
+The __Properties Count__ is number of property declaration. Default option is set to display the top `10` properties.
 
 
 ## Configuration
 
-You must configure StyleStats before use.
+You can configure StyleStats.
 
 CLI:
 
@@ -160,7 +160,7 @@ var stats = new StyleStats('path/to/stylesheet.css', 'path/to/.stylestatsrc');
 
 Default configuration is [here](lib/defaultOptions.js).
 
-Here is configuration's JSON example of enabling display gzipped size:
+Here is an example of enabling display gzipped size:
 
 ```
 {
@@ -168,7 +168,7 @@ Here is configuration's JSON example of enabling display gzipped size:
 }
 ```
 
-`gzippedSize` is default `false`. because, pretty slow.
+`gzippedSize` attribute is `false` by default. Because it is pretty slow.
 
 
 ## CLI Reference
@@ -203,16 +203,16 @@ StyleStats!
 └───────────────────────────┴───────────────┘
 ```
 
-+ [Plot Stylestats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
++ [Plot StyleStats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
 
 ## API Reference
 
-### new StyleStats(stylesheet, config)
+### `new StyleStats(stylesheet, config)`
 
 1. `stylesheet` Required `String|Array` Stylesheet file path or path's array.
 2. `config` Optional `String|Object` Configuration's JSON file path or object.
 
-### StyleStats.parse(fn)
+### `StyleStats.parse(fn)`
 
 ```javascript
 var StyleStats = require('stylestats');
@@ -263,6 +263,7 @@ hr {
   }
 }
 ```
+
 Above the stylesheet's stats tree:
 
 ```json
@@ -287,14 +288,14 @@ Above the stylesheet's stats tree:
   "floatProperties": 0,
   "mediaQueries": 1,
   "propertiesCount": [
-        { "property": "font-size", "count": 5},
-        { "property": "margin", "count": 4},
-        { "property": "padding", "count": 3},
-        { "property": "color", "count": 2},
-        { "property": "display", "count": 1},
-        { "property": "height", "count": 1},
-        { "property": "border", "count": 1},
-        { "property": "border-top", "count": 1}
+    { "property": "font-size", "count": 5},
+    { "property": "margin", "count": 4},
+    { "property": "padding", "count": 3},
+    { "property": "color", "count": 2},
+    { "property": "display", "count": 1},
+    { "property": "height", "count": 1},
+    { "property": "border", "count": 1},
+    { "property": "border-top", "count": 1}
   ]
 }
 ```
@@ -306,7 +307,7 @@ _(Coming soon)_
 
 ## Release History
 
-+ v2.0.0: __API is changed:__`StyleStats.parse()`. Add metrics.
++ v2.0.0: __API is changed:__ `StyleStats.parse()`. Add metrics.
 + v1.2.0: Support multiple input files.
 + v1.1.0: Add `universalSelectors` metrics.
 + v1.0.0: Major release.
