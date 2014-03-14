@@ -1,6 +1,6 @@
 ![StyleStats](http://i.imgur.com/81kKnxH.png)
 
-Stylestats is a efficient Node.js library for keeping stylesheet statistics.
+Stylestats is Node.js library collect css statistics.
 
 [![Build Status](https://secure.travis-ci.org/t32k/stylestats.png?branch=master)](http://travis-ci.org/t32k/stylestats)
 [![NPM version](https://badge.fury.io/js/stylestats.png)](http://badge.fury.io/js/stylestats)
@@ -90,16 +90,16 @@ The __Simplicity__ is measured as __Rules__ divided by __Selectors__.
 
 #### Lowest Cohesion
 
-The __Lowest Cohesion__ metric is the count of the declarations of the most declared selector.
+The __Lowest Cohesion__ metric is the number of selector declaration.
 
 #### Properties Count
 
-The __Properties Count__ is ranking of declared properties. Default option is display the top `10`.
+The __Properties Count__ is count ranking of property declaration. Default option is display the top `10`.
 
 
 ## Configuration
 
-You must configure Stylestats before use.
+You can configure StyleStats.
 
 CLI:
 
@@ -116,7 +116,7 @@ var stats = new StyleStats('path/to/stylesheet.css', 'path/to/.stylestatsrc');
 
 Default configuration is [here](lib/defaultOptions.js).
 
-Here is configuration's JSON example of enabling display gzipped size:
+Here is an example of enabling display gzipped size:
 
 ```
 {
@@ -124,7 +124,7 @@ Here is configuration's JSON example of enabling display gzipped size:
 }
 ```
 
-`gzippedSize` is default `false`. because, pretty slow.
+`gzippedSize` attribute is `false` by default. Because it is pretty slow.
 
 
 ## CLI Reference
@@ -159,7 +159,7 @@ StyleStats!
 └───────────────────────────┴───────────────┘
 ```
 
-+ [Plot Stylestats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
++ [Plot StyleStats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
 
 ## API Reference
 
@@ -226,6 +226,7 @@ hr {
   }
 }
 ```
+
 Above the stylesheet's stats tree:
 
 ```json
