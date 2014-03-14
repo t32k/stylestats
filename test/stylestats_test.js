@@ -4,8 +4,11 @@ var StyleStats = require('../lib/stylestats.js');
 var stats = new StyleStats('test/fixture/test.css');
 stats.parse(function(result) {
     describe('StyleStats!', function() {
+        it('should returns stylesheets', function() {
+            assert.equal(result.stylesheets, 1);
+        });
         it('should returns file size', function() {
-            assert.equal(result.size, 498);
+            assert.equal(result.size, 518);
         });
         it('should returns css rules', function() {
             assert.equal(result.rules, 7);
@@ -15,6 +18,12 @@ stats.parse(function(result) {
         });
         it('should returns simplicity', function() {
             assert.equal(result.simplicity, 0.6363636363636364);
+        });
+        it('should returns most identifers', function() {
+            assert.equal(result.mostIdentifers, 5);
+        });
+        it('should returns most identifers selector', function() {
+            assert.equal(result.mostIdentifersSelector, '.foo  .bar > .baz + .qux ~ .quux:before');
         });
         it('should returns lowest cohesion', function() {
             assert.equal(result.lowestCohesion, 6);
@@ -34,8 +43,14 @@ stats.parse(function(result) {
         it('should returns universal selectors', function() {
             assert.equal(result.universalSelectors, 0);
         });
+        it('should returns unqualified attribute selectors', function() {
+            assert.equal(result.unqualifiedAttributeSelectors, 1);
+        });
         it('should returns important keywords', function() {
             assert.equal(result.importantKeywords, 1);
+        });
+        it('should returns float properties', function() {
+            assert.equal(result.floatProperties, 0);
         });
         it('should returns media queries"', function() {
             assert.equal(result.mediaQueries, 1);
@@ -47,7 +62,7 @@ var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylest
 customStats.parse(function(customResult) {
     describe('Custom StyleStats!', function() {
         it('should returns gzipped size', function() {
-            assert.equal(customResult.gzippedSize, 155);
+            assert.equal(customResult.gzippedSize, 163);
         });
     });
 });
@@ -59,7 +74,7 @@ var customObjectStats = new StyleStats('test/fixture/test.css', configObj);
 customObjectStats.parse(function(customObjectResult) {
     describe('CustomObject StyleStats!', function() {
         it('should returns gzipped size', function() {
-            assert.equal(customObjectResult.gzippedSize, 155);
+            assert.equal(customObjectResult.gzippedSize, 163);
         });
     });
 });
@@ -68,7 +83,7 @@ var globStats = new StyleStats('test/**/*.css');
 globStats.parse(function(globResult) {
     describe('Glob Pattern StyleStats!', function() {
         it('should returns file size', function() {
-            assert.equal(globResult.size, 19967);
+            assert.equal(globResult.size, 19987);
         });
     });
 });
@@ -77,7 +92,7 @@ var requestStats = new StyleStats('http://t32k.me/mol/assets/main.css');
 requestStats.parse(function(requestResult) {
     describe('Remote Pattern StyleStats!', function() {
         it('should returns file size', function() {
-            assert.equal(requestResult.size, 19967);
+            assert.equal(requestResult.size, 19987);
         });
     });
 });

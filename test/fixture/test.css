@@ -12,11 +12,11 @@ section {
 	padding: 10px;
 	font-size: 10px;
 }
-.foo .bar .baz .qux .quux {
+.foo  .bar > .baz + .qux ~ .quux:before {
 	color: #ccc;
 	font-size: 12px;
 }
-#foo {
+#foo [src] {
 	margin: 10px;
 	font-size: 16px;
 }
