@@ -1,13 +1,13 @@
 {
     "launchers": {
         "Node": {
-            "command": "mocha test/stylestats_test.js"
+            "command": "mocha -R spec"
         }
     },
     "src_files": [
-        "test/*_test.js",
+        "test/**/*",
         "lib/*.js"
+
     ],
-    "launch_in_dev": ["Node"],
-    "launch_in_ci": ["Node"]
+    "launch_in_dev": ["Node"]
 }
