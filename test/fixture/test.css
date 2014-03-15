@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 section {
 	margin: 10px;
-	padding: 10px;
+	/* padding: 10px; */
 	font-size: 10px;
 }
 .foo  .bar > .baz + .qux ~ .quux:before {
@@ -23,14 +23,22 @@ section {
 /* Lowest Cohesion Selecotor */
 hr {
 	display: block;
+	float: left;
 	margin: 10px 0;
 	padding: 0 !important;
 	height: 1px;
 	border: 0;
 	border-top: 1px solid red;
 }
+.js-foo { display: block; }
 @media (max-width: 600px) {
-  .media-queries {
+  .media-queries-01 {
+    display: none;
+  }
+  * {
+    display: none;
+  }
+  .media-queries-02 {
     display: none;
   }
 }
