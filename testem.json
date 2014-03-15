@@ -1,7 +1,7 @@
 {
     "launchers": {
         "Node": {
-            "command": "mocha"
+            "command": "mocha -R spec"
         }
     },
     "src_files": [
