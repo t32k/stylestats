@@ -22,61 +22,56 @@ $ npm install -g stylestats
 ```sh
 $ stylestats path/to/stylesheet.css
 StyleStats!
-┌─────────────────────────────────┬─────────────────────────────────────────┐
-│ Stylesheets                     │ 1                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Size                            │ 518.0B                                  │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Rules                           │ 7                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Selectors                       │ 11                                      │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Simplicity                      │ 63.64%                                  │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Most Identifers                 │ 5                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Most Identifers Selector        │ .foo  .bar > .baz + .qux ~ .quux:before │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Lowest Cohesion                 │ 6                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Lowest Cohesion Selector        │ hr                                      │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Total Unique Font Sizes         │ 5                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Unique Font Size                │ 10px                                    │
-│                                 │ 12px                                    │
-│                                 │ 14px                                    │
-│                                 │ 16px                                    │
-│                                 │ 18px                                    │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Total Unique Colors             │ 2                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Unique Color                    │ #333                                    │
-│                                 │ #CCC                                    │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Id Selectors                    │ 1                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Universal Selectors             │ 0                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Unqualified Attribute Selectors │ 1                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Important Keywords              │ 1                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Float Properties                │ 0                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Media Queries                   │ 1                                       │
-├─────────────────────────────────┼─────────────────────────────────────────┤
-│ Properties Count                │ font-size: 5                            │
-│                                 │ margin: 4                               │
-│                                 │ padding: 3                              │
-│                                 │ color: 2                                │
-│                                 │ display: 1                              │
-│                                 │ height: 1                               │
-│                                 │ border: 1                               │
-│                                 │ border-top: 1                           │
-└─────────────────────────────────┴─────────────────────────────────────────┘
+┌─────────────────────────────────┬────────────────┐
+│ Stylesheets                     │ 1              │
+├─────────────────────────────────┼────────────────┤
+│ Size                            │ 240.0B         │
+├─────────────────────────────────┼────────────────┤
+│ Rules                           │ 7              │
+├─────────────────────────────────┼────────────────┤
+│ Selectors                       │ 12             │
+├─────────────────────────────────┼────────────────┤
+│ Simplicity                      │ 58.33%         │
+├─────────────────────────────────┼────────────────┤
+│ Most Identifers                 │ 3              │
+├─────────────────────────────────┼────────────────┤
+│ Most Identifers Selector        │ .foo .bar .baz │
+├─────────────────────────────────┼────────────────┤
+│ Lowest Cohesion                 │ 2              │
+├─────────────────────────────────┼────────────────┤
+│ Lowest Cohesion Selector        │ .foo           │
+├─────────────────────────────────┼────────────────┤
+│ Total Unique Font Sizes         │ 2              │
+├─────────────────────────────────┼────────────────┤
+│ Unique Font Size                │ 12px           │
+│                                 │ 16px           │
+├─────────────────────────────────┼────────────────┤
+│ Total Unique Colors             │ 3              │
+├─────────────────────────────────┼────────────────┤
+│ Unique Color                    │ #333           │
+│                                 │ #CCC           │
+│                                 │ RED            │
+├─────────────────────────────────┼────────────────┤
+│ Id Selectors                    │ 1              │
+├─────────────────────────────────┼────────────────┤
+│ Universal Selectors             │ 1              │
+├─────────────────────────────────┼────────────────┤
+│ Unqualified Attribute Selectors │ 1              │
+├─────────────────────────────────┼────────────────┤
+│ Javascript Specific Selectors   │ 0              │
+├─────────────────────────────────┼────────────────┤
+│ Important Keywords              │ 1              │
+├─────────────────────────────────┼────────────────┤
+│ Float Properties                │ 1              │
+├─────────────────────────────────┼────────────────┤
+│ Media Queries                   │ 0              │
+├─────────────────────────────────┼────────────────┤
+│ Properties Count                │ color: 4       │
+│                                 │ font-size: 3   │
+│                                 │ margin: 2      │
+│                                 │ float: 1       │
+└─────────────────────────────────┴────────────────┘
 ```
-
 
 StyleStats supports remote file analysis!!!
 
@@ -105,11 +100,11 @@ The __Simplicity__ is measured as __Rules__ divided by __Selectors__.
 
 ### Lowest Cohesion
 
-The __Lowest Cohesion__ metric is the number of selector declaration.
+The __Lowest Cohesion__ metrics is the number of selector declaration.
 
 ### Unqualified Attribute Selectors
 
-The __Unqualified Attribute Selectors__ metric is the number of unqualified attribute selectors.
+The __Unqualified Attribute Selectors__ metrics is the number of unqualified attribute selectors.
 
 The following patterns will be counted:
 
@@ -135,6 +130,15 @@ The following patterns are considered as okay and will not be counted:
 See also:
 
 + [Disallow unqualified attribute selectors · stubbornella/csslint Wiki](https://github.com/stubbornella/csslint/wiki/Disallow-unqualified-attribute-selectors)
+
+### JavaScript Specific Selectors
+
+The __JavaScript Specific Selectors__ metrics is the number of JavaScript-specific selectors, such as `js-*`. the selectors only for JavaScript hooks, you should not to hang any presentation off them.
+
+See also:
+
++ [About HTML semantics and front-end architecture – Nicolas Gallagher](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/#javascript-specific-classes)`
+
 
 ### Properties Count
 
@@ -226,42 +230,13 @@ stats.parse(function (result) {
 ### Example
 
 ```css
-body {
-  color: #333;
-  font-size: 14px;
-}
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-}
-section {
-  margin: 10px;
-  padding: 10px;
-  font-size: 10px;
-}
-.foo  .bar > .baz + .qux ~ .quux:before {
-  color: #ccc;
-  font-size: 12px;
-}
-#foo [src] {
-  margin: 10px;
-  font-size: 16px;
-}
-/* Lowest Cohesion Selecotor */
-hr {
-  display: block;
-  margin: 10px 0;
-  padding: 0 !important;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid red;
-}
-@media (max-width: 600px) {
-  .media-queries {
-    display: none;
-  }
-}
+* { float: left; }
+body { color: #333; }
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+a[src] { color: red !important; }
+.foo { color: #ccc; font-size: 12px; }
+.foo .bar .baz { color: #ccc; font-size: 12px; }
+#bar { margin: 10px; font-size: 16px; }
 ```
 
 Above the stylesheet's stats tree:
@@ -269,33 +244,30 @@ Above the stylesheet's stats tree:
 ```json
 {
   "stylesheets": 1,
-  "size": 518,
+  "size": 240,
   "rules": 7,
-  "selectors": 11,
-  "simplicity": 0.6363636363636364,
-  "mostIdentifers": 5,
-  "mostIdentifersSelector": ".foo  .bar > .baz + .qux ~ .quux:before",
-  "lowestCohesion": 6,
-  "lowestCohesionSelecotor": [ "hr" ],
-  "totalUniqueFontSizes": 5,
-  "uniqueFontSize": [ "10px","12px","14px","16px","18px" ],
-  "totalUniqueColors": 2,
-  "uniqueColor": [ "#333", "#CCC" ],
+  "selectors": 12,
+  "simplicity": 0.5833333333333334,
+  "mostIdentifers": 3,
+  "mostIdentifersSelector": ".foo .bar .baz",
+  "lowestCohesion": 2,
+  "lowestCohesionSelector": [ ".foo" ],
+  "totalUniqueFontSizes": 2,
+  "uniqueFontSize": [ "12px", "16px" ],
+  "totalUniqueColors": 3,
+  "uniqueColor": [ "#333", "#CCC", "RED" ],
   "idSelectors": 1,
-  "universalSelectors": 0,
+  "universalSelectors": 1,
   "unqualifiedAttributeSelectors": 1,
+  "javascriptSpecificSelectors": 0,
   "importantKeywords": 1,
-  "floatProperties": 0,
-  "mediaQueries": 1,
+  "floatProperties": 1,
+  "mediaQueries": 0,
   "propertiesCount": [
-    { "property": "font-size", "count": 5},
-    { "property": "margin", "count": 4},
-    { "property": "padding", "count": 3},
-    { "property": "color", "count": 2},
-    { "property": "display", "count": 1},
-    { "property": "height", "count": 1},
-    { "property": "border", "count": 1},
-    { "property": "border-top", "count": 1}
+    { "property": "color", "count": 4 },
+    { "property": "font-size", "count": 3 },
+    { "property": "margin", "count": 2 },
+    { "property": "float", "count": 1 }
   ]
 }
 ```
@@ -307,6 +279,7 @@ _(Coming soon)_
 
 ## Release History
 
++ v2.1.0: Add `javascriptSpecificSelectors` metics, and fix counting properties in mediaQueries.
 + v2.0.0: __API is changed:__ `StyleStats.parse()`. Add metrics.
 + v1.2.0: Support multiple input files.
 + v1.1.0: Add `universalSelectors` metrics.
@@ -315,3 +288,5 @@ _(Coming soon)_
 # License
 
 Code is released under [the MIT license](LICENSE).
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/t32k/stylestats/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
