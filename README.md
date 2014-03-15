@@ -315,3 +315,7 @@ _(Coming soon)_
 # License
 
 Code is released under [the MIT license](LICENSE).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/t32k/stylestats/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
