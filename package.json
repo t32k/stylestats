@@ -54,6 +54,8 @@
     },
     "devDependencies": {
         "mocha": "~1.17.1",
-        "testem": "~0.6.8"
+        "testem": "~0.6.8",
+        "istanbul": "~0.2.6",
+        "coveralls": "~2.10.0"
     }
 }
