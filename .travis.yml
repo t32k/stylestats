@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "0.10"
 script: 'make test-cov'
-after_success: 'make coveralls; make clean'
+after_success: 'make coveralls'

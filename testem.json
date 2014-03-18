@@ -1,13 +1,13 @@
 {
+    "framework": "mocha",
     "launchers": {
         "Node": {
-            "command": "mocha -R spec"
+            "command": "mocha"
         }
     },
     "src_files": [
         "test/**/*",
         "lib/*.js"
-
     ],
     "launch_in_dev": ["Node"]
 }

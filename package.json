@@ -1,62 +1,61 @@
 {
-  "name": "stylestats",
-  "version": "2.1.1",
-  "main": "lib/stylestats.js",
-  "bin": {
-    "stylestats": "./bin/stylestats"
-  },
-  "description": "StyleStats is Node.js library to collect css statistics!",
-  "homepage": "https://github.com/t32k/stylestats",
-  "bugs": "https://github.com/t32k/stylestats/issues",
-  "author": {
-    "name": "Koji Ishimoto",
-    "email": "ijok.ijok@gmail.com",
-    "web": "http://t32k.me/"
-  },
-  "maintainers": {
-    "name": "Shogo Sensui",
-    "email": "shogo.sensui@gmail.com",
-    "web": "http://1000ch.net/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:t32k/stylestats.git"
-  },
-  "license": "MIT",
-  "keywords": [
-    "css",
-    "stylesheet",
-    "performance",
-    "property"
-  ],
-  "scripts": {
-    "test": "mocha"
-  },
-  "engines": {
-    "node": "0.10.x"
-  },
-  "files": [
-    "lib",
-    "bin"
-  ],
-  "dependencies": {
-    "glob": "~3.2.9",
-    "async": "~0.2.10",
-    "numeral": "~1.5.3",
-    "request": "~2.34.0",
-    "json2csv": "~2.2.1",
-    "css-parse": "~1.7.0",
-    "commander": "~2.1.0",
-    "cli-table": "~0.3.0",
-    "gzip-size": "~0.1.0",
-    "underscore": "~1.6.0",
-    "underscore.string": "~2.3.3"
-  },
-  "devDependencies": {
-    "mocha": "~1.17.1",
-    "testem": "~0.6.8",
-    "istanbul": "~0.2.6",
-    "coveralls": "~2.10.0",
-    "mocha-lcov-reporter": "0.0.1"
-  }
+    "name": "stylestats",
+    "version": "2.1.1",
+    "main": "lib/stylestats.js",
+    "bin": {
+        "stylestats": "./bin/stylestats"
+    },
+    "description": "StyleStats is Node.js library to collect css statistics!",
+    "homepage": "https://github.com/t32k/stylestats",
+    "bugs": "https://github.com/t32k/stylestats/issues",
+    "author": {
+        "name": "Koji Ishimoto",
+        "email": "ijok.ijok@gmail.com",
+        "web": "http://t32k.me/"
+    },
+    "maintainers": {
+        "name": "Shogo Sensui",
+        "email": "shogo.sensui@gmail.com",
+        "web": "http://1000ch.net/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:t32k/stylestats.git"
+    },
+    "license": "MIT",
+    "keywords": [
+        "css",
+        "stylesheet",
+        "performance",
+        "property"
+    ],
+    "scripts": {
+        "test": "mocha"
+    },
+    "engines": {
+        "node": "0.10.x"
+    },
+    "files": [
+        "lib",
+        "bin"
+    ],
+    "dependencies": {
+        "glob": "~3.2.9",
+        "async": "~0.2.10",
+        "numeral": "~1.5.3",
+        "request": "~2.34.0",
+        "json2csv": "~2.2.1",
+        "css-parse": "~1.7.0",
+        "commander": "~2.1.0",
+        "cli-table": "~0.3.0",
+        "gzip-size": "~0.1.0",
+        "underscore": "~1.6.0",
+        "underscore.string": "~2.3.3"
+    },
+    "devDependencies": {
+        "mocha": "~1.17.1",
+        "testem": "~0.6.8",
+        "istanbul": "~0.2.6",
+        "coveralls": "~2.10.0"
+    }
 }
