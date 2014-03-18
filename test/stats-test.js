@@ -3,12 +3,16 @@ var StyleStats = require('../lib/stylestats.js');
 
 var stats = new StyleStats('test/fixture/test.css');
 stats.parse(function(result) {
+    //console.log(result);
     describe('StyleStats!', function() {
         it('should returns stylesheets', function() {
             assert.equal(result.stylesheets, 1);
         });
         it('should returns file size', function() {
-            assert.equal(result.size, 643);
+            assert.equal(result.size, 753);
+        });
+        it('should returns data URI size', function() {
+            assert.equal(result.dataUriSize, 89);
         });
         it('should returns css rules', function() {
             assert.equal(result.rules, 10);
@@ -26,7 +30,7 @@ stats.parse(function(result) {
             assert.equal(result.mostIdentifersSelector, '.foo  .bar > .baz + .qux ~ .quux:before');
         });
         it('should returns lowest cohesion', function() {
-            assert.equal(result.lowestCohesion, 7);
+            assert.equal(result.lowestCohesion, 8);
         });
         it('should returns lowest cohesion selector', function() {
             assert.equal(result.lowestCohesionSelector, 'hr');
@@ -65,7 +69,7 @@ var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylest
 customStats.parse(function(customResult) {
     describe('Custom StyleStats!', function() {
         it('should returns gzipped size', function() {
-            assert.equal(customResult.gzippedSize, 185);
+            assert.equal(customResult.gzippedSize, 217);
         });
     });
 });
@@ -77,7 +81,7 @@ var customObjectStats = new StyleStats('test/fixture/test.css', configObj);
 customObjectStats.parse(function(customObjectResult) {
     describe('Custom Object StyleStats!', function() {
         it('should returns gzipped size', function() {
-            assert.equal(customObjectResult.gzippedSize, 185);
+            assert.equal(customObjectResult.gzippedSize, 217);
         });
     });
 });
@@ -97,7 +101,7 @@ var dirStats = new StyleStats('test/fixture/');
 dirStats.parse(function(dirResult) {
     describe('Glob Pattern StyleStats!', function() {
         it('should returns file size', function() {
-            assert.equal(dirResult.size, 20352);
+            assert.equal(dirResult.size, 20462);
         });
     });
 });
@@ -106,7 +110,7 @@ var globStats = new StyleStats('test/**/*.css');
 globStats.parse(function(globResult) {
     describe('Glob Pattern StyleStats!', function() {
         it('should returns file size', function() {
-            assert.equal(globResult.size, 20352);
+            assert.equal(globResult.size, 20462);
         });
     });
 });
