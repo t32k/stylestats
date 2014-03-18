@@ -3,7 +3,6 @@ var StyleStats = require('../lib/stylestats.js');
 
 var stats = new StyleStats('test/fixture/test.css');
 stats.parse(function(result) {
-    //console.log(this.rules);
     describe('StyleStats!', function() {
         it('should returns stylesheets', function() {
             assert.equal(result.stylesheets, 1);
@@ -89,6 +88,16 @@ requestStats.parse(function(requestResult) {
     describe('Remote Pattern StyleStats!', function(done) {
         it('should returns file size', function() {
             assert.equal(requestResult.size, 0);
+            done();
+        });
+    });
+});
+
+var dirStats = new StyleStats('test/fixture/');
+dirStats.parse(function(dirResult) {
+    describe('Glob Pattern StyleStats!', function() {
+        it('should returns file size', function() {
+            assert.equal(dirResult.size, 20352);
         });
     });
 });
