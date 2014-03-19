@@ -90,7 +90,7 @@ customObjectStats.parse(function(customObjectResult) {
 });
 
 // Doesn't work...
-var requestStats = new StyleStats('http://t32k.me/static/blog/skelton.css');
+var requestStats = new StyleStats('http://t32k.me/static/blog/skelton.css?');
 requestStats.parse(function(requestResult) {
     describe('Remote Pattern StyleStats!', function(done) {
         it('should returns file size', function() {
