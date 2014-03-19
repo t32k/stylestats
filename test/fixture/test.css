@@ -29,6 +29,7 @@ hr {
 	height: 1px;
 	border: 0;
 	border-top: 1px solid red;
+	background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAP//////zCH5BAEHAAAALAAAAAABAAEAAAICRAEAOw==');
 }
 .js-foo { display: block; }
 @media (max-width: 600px) {
