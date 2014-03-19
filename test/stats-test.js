@@ -3,7 +3,6 @@ var StyleStats = require('../lib/stylestats.js');
 
 var stats = new StyleStats('test/fixture/test.css');
 stats.parse(function(result) {
-    //console.log(result);
     describe('StyleStats!', function() {
         it('should returns stylesheets', function() {
             assert.equal(result.stylesheets, 1);
@@ -12,8 +11,12 @@ stats.parse(function(result) {
             assert.equal(result.size, 753);
         });
         it('should returns data URI size', function() {
-            assert.equal(result.dataUriSize, 89);
+            assert.equal(result.dataUriSize, 82);
         });
+        it('should returns raito of data URI size', function() {
+            assert.equal(result.raitoOfDataUriSize, 0.10889774236387782);
+        });
+        stats.raitoOfDataUriSize
         it('should returns css rules', function() {
             assert.equal(result.rules, 10);
         });
