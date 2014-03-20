@@ -98,7 +98,7 @@ $ stylestats foo.css -e [json|csv]
 ```
 ## Metrics
 
-![](http://i.imgur.com/MAZVIXC.png)
+![](http://i.imgur.com/zwtP6js.png)
 
 ### Simplicity
 
