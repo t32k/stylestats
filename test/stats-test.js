@@ -1,9 +1,9 @@
 var assert = require('assert');
 var StyleStats = require('../lib/stylestats.js');
 
-var stats = new StyleStats('test/fixture/test.css');
-stats.parse(function(result) {
-    describe('StyleStats!', function() {
+describe('StyleStats!', function() {
+    var stats = new StyleStats('test/fixture/test.css');
+    stats.parse(function(result) {
         it('should returns stylesheets', function() {
             assert.equal(result.stylesheets, 1);
         });
@@ -16,7 +16,6 @@ stats.parse(function(result) {
         it('should returns raito of data URI size', function() {
             assert.equal(result.raitoOfDataUriSize, 0.10889774236387782);
         });
-        stats.raitoOfDataUriSize
         it('should returns css rules', function() {
             assert.equal(result.rules, 10);
         });
@@ -68,60 +67,60 @@ stats.parse(function(result) {
     });
 });
 
-var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
-customStats.parse(function(customResult) {
-    describe('Custom StyleStats!', function() {
-        it('should returns gzipped size', function() {
+describe('Custom StyleStats!', function() {
+    it('should returns gzipped size', function() {
+        var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
+        customStats.parse(function(customResult) {
             assert.equal(customResult.gzippedSize, 217);
         });
     });
 });
 
-var configObj = {
-    gzippedSize: true
-};
-var customObjectStats = new StyleStats('test/fixture/test.css', configObj);
-customObjectStats.parse(function(customObjectResult) {
-    describe('Custom Object StyleStats!', function() {
-        it('should returns gzipped size', function() {
+describe('Custom Object StyleStats!', function() {
+    var configObj = {
+        gzippedSize: true
+    };
+    var customObjectStats = new StyleStats('test/fixture/test.css', configObj);
+    it('should returns gzipped size', function() {
+        customObjectStats.parse(function(customObjectResult) {
             assert.equal(customObjectResult.gzippedSize, 217);
         });
     });
 });
 
-// Doesn't work...
-var requestStats = new StyleStats('http://t32k.me/static/blog/skelton.css?');
-requestStats.parse(function(requestResult) {
-    describe('Remote Pattern StyleStats!', function(done) {
-        it('should returns file size', function() {
-            assert.equal(requestResult.size, 0);
+
+describe('Remote Pattern StyleStats!', function() {
+    it('should returns file size', function(done) {
+        var requestStats = new StyleStats('http://t32k.me/static/blog/skelton.css?query');
+        requestStats.parse(function(requestResult) {
+            assert.equal(requestResult.size, 15419);
             done();
         });
     });
 });
 
-var dirStats = new StyleStats('test/fixture/');
-dirStats.parse(function(dirResult) {
-    describe('Glob Pattern StyleStats!', function() {
-        it('should returns file size', function() {
+describe('Glob Pattern StyleStats!', function() {
+    it('should returns file size', function() {
+        var dirStats = new StyleStats('test/fixture/');
+        dirStats.parse(function(dirResult) {
             assert.equal(dirResult.size, 20462);
         });
     });
 });
 
-var globStats = new StyleStats('test/**/*.css');
-globStats.parse(function(globResult) {
-    describe('Glob Pattern StyleStats!', function() {
-        it('should returns file size', function() {
+describe('Glob Pattern StyleStats!', function() {
+    it('should returns file size', function() {
+        var globStats = new StyleStats('test/**/*.css');
+        globStats.parse(function(globResult) {
             assert.equal(globResult.size, 20462);
         });
     });
 });
 
-var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
-multipleStats.parse(function(multipleResult) {
-    describe('Multiple Files StyleStats!', function() {
-        it('should returns file size', function() {
+describe('Multiple Files StyleStats!', function() {
+    it('should returns file size', function() {
+        var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
+        multipleStats.parse(function(multipleResult) {
             assert.equal(multipleResult.stylesheets, 2);
         });
     });

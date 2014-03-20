@@ -30,7 +30,7 @@
         "property"
     ],
     "scripts": {
-        "test": "mocha"
+        "test": "mocha --timeout 5000"
     },
     "engines": {
         "node": "0.10.x"
