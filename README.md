@@ -1,6 +1,6 @@
 ![StyleStats](http://i.imgur.com/81kKnxH.png)
 
-StyleStats is Node.js library collect css statistics.
+StyleStats is Node.js library to collect css statistics.
 
 [![Build Status](https://secure.travis-ci.org/t32k/stylestats.png?branch=master)](http://travis-ci.org/t32k/stylestats)
 [![Coverage Status](https://coveralls.io/repos/t32k/stylestats/badge.png)](https://coveralls.io/r/t32k/stylestats)
@@ -12,14 +12,13 @@ StyleStats is Node.js library collect css statistics.
 
 ## Installation
 
-Requires Node.js `0.10.x`
+StyleStats works on Node.js `0.10.x`
 
 ```
 $ npm install -g stylestats
 ```
 
 ## Usage
-
 
 ```sh
 $ stylestats path/to/stylesheet.css
@@ -96,6 +95,12 @@ $ stylestats foo.css bar.css baz.css
 ```sh
 $ stylestats foo.css -e [json|csv]
 ```
+
+## Grunt & Gulp modules
+
+- https://github.com/tvooo/grunt-stylestats by [@tvooo](https://github.com/tvooo)
+- https://github.com/1000ch/gulp-stylestats by [@1000ch](https://github.com/1000ch)
+
 ## Metrics
 
 ![](http://i.imgur.com/zwtP6js.png)
@@ -148,7 +153,7 @@ See also:
 
 ### Properties Count
 
-The __Properties Count__ is number of property declaration. Default option is set to display the top `10` properties.
+The __Properties Count__ is the number of property declaration. Default option is set to display the top `10` properties.
 
 
 ## Configuration
@@ -219,8 +224,8 @@ StyleStats!
 
 ### `new StyleStats(stylesheet, config)`
 
-1. `stylesheet` Required `String|Array` Stylesheet file path or path's array.
-2. `config` Optional `String|Object` Configuration's JSON file path or object.
+1. `stylesheet` Required `String|Array` Stylesheet file path or its array.
+2. `config` Optional `String|Object` Configuration JSON file path or object.
 
 ### `StyleStats.parse(fn)`
 
