@@ -238,7 +238,9 @@ stats.parse(function (result) {
 });
 ```
 
-### Example
+## Example
+
+CSS example:
 
 ```css
 * { float: left; }
@@ -250,7 +252,7 @@ a[src] { color: red !important; }
 #bar { margin: 10px; font-size: 16px; }
 ```
 
-Above the stylesheet's stats tree:
+Statistics tree of above css:
 
 ```json
 {
