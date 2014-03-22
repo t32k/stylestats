@@ -68,9 +68,9 @@ describe('StyleStats!', function() {
 });
 
 describe('Custom StyleStats!', function() {
-    it('should returns gzipped size', function() {
-        var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
-        customStats.parse(function(customResult) {
+    var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
+    customStats.parse(function(customResult) {
+        it('should returns gzipped size', function() {
             assert.equal(customResult.gzippedSize, 217);
         });
     });
