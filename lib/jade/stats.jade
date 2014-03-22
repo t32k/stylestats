@@ -1,0 +1,36 @@
+doctype 
+html
+  head
+    title
+      | Stylestats for 
+      = analyzedFile
+    link(rel="stylesheet", type="text/css", href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
+    script(type="text/javascript", src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
+  body
+    .container
+      .jumbotron
+        h1 Stylestats!
+      table.table
+        thead
+          tr
+            th Metric
+            th Result
+        tbody
+          each item, index in result
+            tr
+              td= index
+              if typeof(item) == 'array' || typeof(item) == 'object'
+                td
+                  each subitem, index in item
+                    if typeof(subitem) == 'array' || typeof(subitem) == 'object'
+                      p
+                        each data, index in subitem
+                          - index = index.charAt(0).toUpperCase() + index.slice(1)
+                          b= index
+                          | : 
+                          span= data
+                          |  
+                    else
+                      p= subitem
+              else
+                td= item
