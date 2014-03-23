@@ -1,6 +1,6 @@
 ![StyleStats](http://i.imgur.com/81kKnxH.png)
 
-StyleStats is Node.js library to collect css statistics.
+StyleStats is Node.js library to collect CSS statistics.
 
 [![Build Status](https://secure.travis-ci.org/t32k/stylestats.png?branch=master)](http://travis-ci.org/t32k/stylestats)
 [![Coverage Status](https://coveralls.io/repos/t32k/stylestats/badge.png)](https://coveralls.io/r/t32k/stylestats)
@@ -90,10 +90,10 @@ StyleStats supports multiple input.
 $ stylestats foo.css bar.css baz.css
 ```
 
-`-e` option output JSON or CSV.
+`-e` option output JSON or CSV or HTML.
 
 ```sh
-$ stylestats foo.css -e [json|csv]
+$ stylestats foo.css -e [json|csv|html]
 ```
 
 ## Grunt & Gulp modules
@@ -256,6 +256,8 @@ Statistics tree of above css:
 
 ```json
 {
+  "published": "2014-03-23T15:54:39.825Z",
+  "paths": [ "test/fixture/example.css" ],
   "stylesheets": 1,
   "size": 240,
   "dataUriSize": 0,
@@ -293,6 +295,7 @@ _(Coming soon)_
 
 ## Release History
 
++ v2.3.0: Support HTML output CLI option.
 + v2.2.0: Add `dataUriSize`, `raitoOfDataUriSize` metics.
 + v2.1.0: Add `javascriptSpecificSelectors` metics, and fix counting properties in mediaQueries.
 + v2.0.0: __API is changed:__ `StyleStats.parse()`. Add metrics.
@@ -303,5 +306,3 @@ _(Coming soon)_
 # License
 
 Code is released under [the MIT license](LICENSE).
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/t32k/stylestats/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
