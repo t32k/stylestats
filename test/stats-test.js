@@ -4,8 +4,8 @@ var StyleStats = require('../lib/stylestats.js');
 describe('StyleStats!', function() {
     var stats = new StyleStats('test/fixture/test.css');
     var statsResult;
-    before(function (done) {
-        stats.parse(function (result) {
+    before(function(done) {
+        stats.parse(function(result) {
             statsResult = result;
             done();
         });
@@ -120,7 +120,7 @@ describe('Glob Pattern StyleStats!', function() {
     it('should returns file size', function(done) {
         var globStats = new StyleStats('test/**/*.css');
         globStats.parse(function(globResult) {
-            assert.equal(globResult.size, 20462);
+            assert.equal(globResult.size, 39931);
             done();
         });
     });
