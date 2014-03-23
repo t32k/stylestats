@@ -107,6 +107,13 @@ $ stylestats 'path/**/*.css'
 $ stylestats foo.css -e [json|csv|html]
 ```
 
+If you installed __[gist](https://github.com/defunkt/gist)__ tool, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with one-liner command.
+
+```sh
+$ stylestats http://t32k.me/static/blog/skelton.css -e html > stats.md && gist stats.md
+https://gist.github.com/9725673
+```
+
 ## Grunt & Gulp modules
 
 - https://github.com/tvooo/grunt-stylestats by [@tvooo](https://github.com/tvooo)
