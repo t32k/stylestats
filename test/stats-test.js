@@ -4,10 +4,9 @@ var StyleStats = require('../lib/stylestats.js');
 describe('StyleStats!', function() {
     var stats = new StyleStats('test/fixture/test.css');
     var statsResult;
-    before(function(done) {
+    before(function() {
         stats.parse(function(result) {
             statsResult = result;
-            done();
         });
     });
     it('should returns stylesheets', function() {
@@ -73,65 +72,59 @@ describe('StyleStats!', function() {
 });
 
 describe('Custom StyleStats!', function() {
-    it('should returns gzipped size', function(done) {
+    it('should returns gzipped size', function() {
         var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
         customStats.parse(function(customResult) {
             assert.equal(customResult.gzippedSize, 217);
-            done();
         });
     });
 });
 
 describe('Custom Object StyleStats!', function() {
-    it('should returns gzipped size', function(done) {
+    it('should returns gzipped size', function() {
         var configObj = {
             gzippedSize: true
         };
         var customObjectStats = new StyleStats('test/fixture/test.css', configObj);
         customObjectStats.parse(function(customObjectResult) {
             assert.equal(customObjectResult.gzippedSize, 217);
-            done();
         });
     });
 });
 
 
 describe('Remote Pattern StyleStats!', function() {
-    it('should returns file size', function(done) {
+    it('should returns file size', function() {
         var requestStats = new StyleStats('http://t32k.me/static/blog/skelton.css?query');
         requestStats.parse(function(requestResult) {
             assert.equal(requestResult.size, 15419);
-            done();
         });
     });
 });
 
 describe('Directory Pattern StyleStats!', function() {
-    it('should returns file size', function(done) {
+    it('should returns file size', function() {
         var dirStats = new StyleStats('test/fixture/');
         dirStats.parse(function(dirResult) {
             assert.equal(dirResult.size, 20462);
-            done();
         });
     });
 });
 
 describe('Glob Pattern StyleStats!', function() {
-    it('should returns file size', function(done) {
+    it('should returns file size', function() {
         var globStats = new StyleStats('test/**/*.css');
         globStats.parse(function(globResult) {
             assert.equal(globResult.size, 39931);
-            done();
         });
     });
 });
 
 describe('Multiple Files StyleStats!', function() {
-    it('should returns file size', function(done) {
+    it('should returns file size', function() {
         var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
         multipleStats.parse(function(multipleResult) {
             assert.equal(multipleResult.stylesheets, 2);
-            done();
         });
     });
 });
