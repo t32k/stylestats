@@ -89,6 +89,17 @@ StyleStats supports multiple input.
 ```sh
 $ stylestats foo.css bar.css baz.css
 ```
+supports directory input.
+
+```sh
+$ stylestats path/to/dir
+```
+
+supports glob(required quotations) input.
+
+```sh
+$ stylestats 'path/**/*.css'
+```
 
 `-e` option output JSON or CSV or HTML.
 
