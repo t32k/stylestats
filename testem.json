@@ -2,7 +2,7 @@
     "framework": "mocha",
     "launchers": {
         "Node": {
-            "command": "mocha"
+            "command": "mocha --timeout 5000"
         }
     },
     "src_files": [
