@@ -1,0 +1,18 @@
+p
+  b Published: 
+  span #{ published }
+  br
+  b Paths: 
+  span #{ paths.join(',') }
+  br
+  b Generator: 
+  span
+    a(href="https://github.com/t32k/stylestats") t32k/stylestats // GitHub
+table.c-styleStats
+  tr.c-styleStats-s-header
+    th Metrics
+    th Result
+  - each val, index in stats
+    tr.c-styleStats-s-row
+      td #{ Object.keys(val) }
+      td #{ val[Object.keys(val)] }
