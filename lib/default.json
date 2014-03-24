@@ -1,4 +1,4 @@
-module.exports = {
+{
     "stylesheets": true,
     "size": true,
     "dataUriSize": true,
@@ -18,9 +18,9 @@ module.exports = {
     "idSelectors": true,
     "universalSelectors": true,
     "unqualifiedAttributeSelectors": true,
-    "javascriptSpecificSelectors": /[#\.]js\-/g,
+    "javascriptSpecificSelectors": "[#\\.]js\\-",
     "importantKeywords": true,
     "floatProperties": true,
     "mediaQueries": true,
     "propertiesCount": 10
-};
+}
