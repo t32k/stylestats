@@ -1,4 +1,4 @@
-p
+p.c-meta
   b Published: 
   span #{ published }
   br
@@ -8,11 +8,11 @@ p
   b Generator: 
   span
     a(href="https://github.com/t32k/stylestats") t32k/stylestats // GitHub
-table.c-styleStats
-  tr.c-styleStats-s-header
+table.c-data
+  tr.c-data-s-header
     th Metrics
     th Result
   - each val, index in stats
-    tr.c-styleStats-s-row
+    tr.c-data-s-row
       td #{ Object.keys(val) }
       td #{ val[Object.keys(val)] }
