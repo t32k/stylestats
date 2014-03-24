@@ -173,7 +173,7 @@ var StyleStats = require('stylestats');
 var stats = new StyleStats('path/to/stylesheet.css', 'path/to/.stylestatsrc');
 ```
 
-Default configuration is [here](lib/defaultOptions.js).
+Default configuration is [here](lib/default.json).
 
 Here is an example of enabling display gzipped size:
 
