@@ -2,7 +2,7 @@
     "stylesheets": true,
     "size": true,
     "dataUriSize": true,
-    "raitoOfDataUriSize": true,
+    "ratioOfDataUriSize": true,
     "gzippedSize": false,
     "simplicity": true,
     "rules": true,

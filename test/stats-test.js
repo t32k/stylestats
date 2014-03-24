@@ -22,8 +22,8 @@ describe('CSS Statistics', function() {
     it('should return data URI size', function() {
         assert.equal(statsResult.dataUriSize, 82);
     });
-    it('should return raito of data URI size', function() {
-        assert.equal(statsResult.raitoOfDataUriSize, 0.10889774236387782);
+    it('should return ratio of data URI size', function() {
+        assert.equal(statsResult.ratioOfDataUriSize, 0.10889774236387782);
     });
     it('should return css rules', function() {
         assert.equal(statsResult.rules, 10);
