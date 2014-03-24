@@ -233,10 +233,7 @@ StyleStats!
 var StyleStats = require('stylestats');
 var stats = new StyleStats('path/to/stylesheet.css');
 
-stats.parse(function (error, result) {
-  if (error) {
-    throw error;
-  }
+stats.parse(function (result) {
   console.log(JSON.stringify(result, null, 2));
 });
 ```
