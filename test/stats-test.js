@@ -34,11 +34,11 @@ describe('CSS Statistics', function() {
     it('should return simplicity', function() {
         assert.equal(statsResult.simplicity, 0.6666666666666666);
     });
-    it('should return most identifers', function() {
-        assert.equal(statsResult.mostIdentifers, 5);
+    it('should return most identifier', function() {
+        assert.equal(statsResult.mostIdentifier, 5);
     });
-    it('should return most identifers selector', function() {
-        assert.equal(statsResult.mostIdentifersSelector, '.foo  .bar > .baz + .qux ~ .quux:before');
+    it('should return most identifier selector', function() {
+        assert.equal(statsResult.mostIdentifierSelector, '.foo  .bar > .baz + .qux ~ .quux:before');
     });
     it('should return lowest cohesion', function() {
         assert.equal(statsResult.lowestCohesion, 8);
