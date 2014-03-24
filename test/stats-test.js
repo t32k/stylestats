@@ -73,59 +73,64 @@ describe('CSS Statistics', function() {
 });
 
 describe('Customize with configuration file', function() {
-    it('should return gzipped size', function() {
+    it('should return gzipped size', function(done) {
         var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
         customStats.parse(function(customResult) {
             assert.equal(customResult.gzippedSize, 217);
+            done();
         });
     });
 });
 
 describe('Customize with option', function() {
-    it('should return gzipped size', function() {
-        var configObj = {
+    it('should return gzipped size', function(done) {
+        var customObjectStats = new StyleStats('test/fixture/test.css', {
             gzippedSize: true
-        };
-        var customObjectStats = new StyleStats('test/fixture/test.css', configObj);
+        });
         customObjectStats.parse(function(customObjectResult) {
             assert.equal(customObjectResult.gzippedSize, 217);
+            done();
         });
     });
 });
 
 
 describe('Analyze remote css file', function() {
-    it('should return file size', function() {
+    it('should return file size', function(done) {
         var requestStats = new StyleStats('http://t32k.me/static/blog/skelton.css?query');
         requestStats.parse(function(requestResult) {
             assert.equal(requestResult.size, 15419);
+            done();
         });
     });
 });
 
-describe('Analyze directory css files', function() {
-    it('should return file size', function() {
+describe('Analyze files of specified directory', function() {
+    it('should return file size', function(done) {
         var dirStats = new StyleStats('test/fixture/');
         dirStats.parse(function(dirResult) {
             assert.equal(dirResult.size, 20462);
+            done();
         });
     });
 });
 
 describe('Analyze files which match specified glob', function() {
-    it('should return file size', function() {
+    it('should return file size', function(done) {
         var globStats = new StyleStats('test/**/*.css');
         globStats.parse(function(globResult) {
             assert.equal(globResult.size, 39931);
+            done();
         });
     });
 });
 
 describe('Analyze multiple files', function() {
-    it('should return file size', function() {
+    it('should return file size', function(done) {
         var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
         multipleStats.parse(function(multipleResult) {
             assert.equal(multipleResult.stylesheets, 2);
+            done();
         });
     });
 });
