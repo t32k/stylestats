@@ -30,7 +30,7 @@
         "property"
     ],
     "scripts": {
-        "test": "mocha --timeout 5000 --reporter=nyan"
+        "test": "mocha --timeout 5000 --reporter=spec"
     },
     "engines": {
         "node": "0.10.x"
