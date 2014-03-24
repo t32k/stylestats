@@ -1,12 +1,13 @@
 var assert = require('assert');
 var StyleStats = require('../lib/stylestats.js');
 
-describe('StyleStats!', function() {
+describe('CSS Statistics', function() {
     var stats = new StyleStats('test/fixture/test.css');
     var statsResult;
-    before(function() {
+    before(function(done) {
         stats.parse(function(result) {
             statsResult = result;
+            done();
         });
     });
     it('should return stylesheets', function() {
@@ -71,7 +72,7 @@ describe('StyleStats!', function() {
     });
 });
 
-describe('Custom StyleStats!', function() {
+describe('Customize with configuration file', function() {
     it('should return gzipped size', function() {
         var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
         customStats.parse(function(customResult) {
@@ -80,7 +81,7 @@ describe('Custom StyleStats!', function() {
     });
 });
 
-describe('Custom Object StyleStats!', function() {
+describe('Customize with option', function() {
     it('should return gzipped size', function() {
         var configObj = {
             gzippedSize: true
@@ -93,7 +94,7 @@ describe('Custom Object StyleStats!', function() {
 });
 
 
-describe('Remote Pattern StyleStats!', function() {
+describe('Analyze remote css file', function() {
     it('should return file size', function() {
         var requestStats = new StyleStats('http://t32k.me/static/blog/skelton.css?query');
         requestStats.parse(function(requestResult) {
@@ -102,7 +103,7 @@ describe('Remote Pattern StyleStats!', function() {
     });
 });
 
-describe('Directory Pattern StyleStats!', function() {
+describe('Analyze directory css files', function() {
     it('should return file size', function() {
         var dirStats = new StyleStats('test/fixture/');
         dirStats.parse(function(dirResult) {
@@ -111,7 +112,7 @@ describe('Directory Pattern StyleStats!', function() {
     });
 });
 
-describe('Glob Pattern StyleStats!', function() {
+describe('Analyze files which match specified glob', function() {
     it('should return file size', function() {
         var globStats = new StyleStats('test/**/*.css');
         globStats.parse(function(globResult) {
@@ -120,7 +121,7 @@ describe('Glob Pattern StyleStats!', function() {
     });
 });
 
-describe('Multiple Files StyleStats!', function() {
+describe('Analyze multiple files', function() {
     it('should return file size', function() {
         var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
         multipleStats.parse(function(multipleResult) {
