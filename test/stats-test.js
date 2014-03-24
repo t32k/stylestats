@@ -1,130 +1,157 @@
 var assert = require('assert');
 var StyleStats = require('../lib/stylestats.js');
 
-describe('StyleStats!', function() {
+describe('CSS Statistics', function() {
     var stats = new StyleStats('test/fixture/test.css');
     var statsResult;
-    before(function() {
-        stats.parse(function(result) {
+    before(function(done) {
+        stats.parse(function(error, result) {
+            if (error) {
+                throw error;
+            }
             statsResult = result;
+            done();
         });
     });
-    it('should returns stylesheets', function() {
+    it('should return stylesheets', function() {
         assert.equal(statsResult.stylesheets, 1);
     });
-    it('should returns file size', function() {
+    it('should return file size', function() {
         assert.equal(statsResult.size, 753);
     });
-    it('should returns data URI size', function() {
+    it('should return data URI size', function() {
         assert.equal(statsResult.dataUriSize, 82);
     });
-    it('should returns raito of data URI size', function() {
-        assert.equal(statsResult.raitoOfDataUriSize, 0.10889774236387782);
+    it('should return ratio of data URI size', function() {
+        assert.equal(statsResult.ratioOfDataUriSize, 0.10889774236387782);
     });
-    it('should returns css rules', function() {
+    it('should return css rules', function() {
         assert.equal(statsResult.rules, 10);
     });
-    it('should returns css selectors', function() {
+    it('should return css selectors', function() {
         assert.equal(statsResult.selectors, 15);
     });
-    it('should returns simplicity', function() {
+    it('should return simplicity', function() {
         assert.equal(statsResult.simplicity, 0.6666666666666666);
     });
-    it('should returns most identifers', function() {
-        assert.equal(statsResult.mostIdentifers, 5);
+    it('should return most identifier', function() {
+        assert.equal(statsResult.mostIdentifier, 5);
     });
-    it('should returns most identifers selector', function() {
-        assert.equal(statsResult.mostIdentifersSelector, '.foo  .bar > .baz + .qux ~ .quux:before');
+    it('should return most identifier selector', function() {
+        assert.equal(statsResult.mostIdentifierSelector, '.foo  .bar > .baz + .qux ~ .quux:before');
     });
-    it('should returns lowest cohesion', function() {
+    it('should return lowest cohesion', function() {
         assert.equal(statsResult.lowestCohesion, 8);
     });
-    it('should returns lowest cohesion selector', function() {
+    it('should return lowest cohesion selector', function() {
         assert.equal(statsResult.lowestCohesionSelector, 'hr');
     });
-    it('should returns total unique font sizes', function() {
+    it('should return total unique font sizes', function() {
         assert.equal(statsResult.totalUniqueFontSizes, 5);
     });
-    it('should returns total unique colors', function() {
+    it('should return total unique colors', function() {
         assert.equal(statsResult.totalUniqueColors, 2);
     });
-    it('should returns id selectors', function() {
+    it('should return id selectors', function() {
         assert.equal(statsResult.idSelectors, 1);
     });
-    it('should returns universal selectors', function() {
+    it('should return universal selectors', function() {
         assert.equal(statsResult.universalSelectors, 1);
     });
-    it('should returns unqualified attribute selectors', function() {
+    it('should return unqualified attribute selectors', function() {
         assert.equal(statsResult.unqualifiedAttributeSelectors, 1);
     });
-    it('should returns JavaScript specific selectors', function() {
+    it('should return JavaScript specific selectors', function() {
         assert.equal(statsResult.javascriptSpecificSelectors, 1);
     });
-    it('should returns important keywords', function() {
+    it('should return important keywords', function() {
         assert.equal(statsResult.importantKeywords, 1);
     });
-    it('should returns float properties', function() {
+    it('should return float properties', function() {
         assert.equal(statsResult.floatProperties, 1);
     });
-    it('should returns media queries"', function() {
+    it('should return media queries"', function() {
         assert.equal(statsResult.mediaQueries, 1);
     });
 });
 
-describe('Custom StyleStats!', function() {
-    it('should returns gzipped size', function() {
+describe('Customize with configuration file', function() {
+    it('should return gzipped size', function(done) {
         var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
-        customStats.parse(function(customResult) {
+        customStats.parse(function(error, customResult) {
+            if (error) {
+                throw error;
+            }
             assert.equal(customResult.gzippedSize, 217);
+            done();
         });
     });
 });
 
-describe('Custom Object StyleStats!', function() {
-    it('should returns gzipped size', function() {
-        var configObj = {
+describe('Customize with option', function() {
+    it('should return gzipped size', function(done) {
+        var customObjectStats = new StyleStats('test/fixture/test.css', {
             gzippedSize: true
-        };
-        var customObjectStats = new StyleStats('test/fixture/test.css', configObj);
-        customObjectStats.parse(function(customObjectResult) {
+        });
+        customObjectStats.parse(function(error, customObjectResult) {
+            if (error) {
+                throw error;
+            }
             assert.equal(customObjectResult.gzippedSize, 217);
+            done();
         });
     });
 });
 
 
-describe('Remote Pattern StyleStats!', function() {
-    it('should returns file size', function() {
+describe('Analyze remote css file', function() {
+    it('should return file size', function(done) {
         var requestStats = new StyleStats('http://t32k.me/static/blog/skelton.css?query');
-        requestStats.parse(function(requestResult) {
+        requestStats.parse(function(error, requestResult) {
+            if (error) {
+                throw error;
+            }
             assert.equal(requestResult.size, 15419);
+            done();
         });
     });
 });
 
-describe('Directory Pattern StyleStats!', function() {
-    it('should returns file size', function() {
+describe('Analyze files of specified directory', function() {
+    it('should return file size', function(done) {
         var dirStats = new StyleStats('test/fixture/');
-        dirStats.parse(function(dirResult) {
+        dirStats.parse(function(error, dirResult) {
+            if (error) {
+                throw error;
+            }
             assert.equal(dirResult.size, 20462);
+            done();
         });
     });
 });
 
-describe('Glob Pattern StyleStats!', function() {
-    it('should returns file size', function() {
+describe('Analyze files which match specified glob', function() {
+    it('should return file size', function(done) {
         var globStats = new StyleStats('test/**/*.css');
-        globStats.parse(function(globResult) {
+        globStats.parse(function(error, globResult) {
+            if (error) {
+                throw error;
+            }
             assert.equal(globResult.size, 39931);
+            done();
         });
     });
 });
 
-describe('Multiple Files StyleStats!', function() {
-    it('should returns file size', function() {
+describe('Analyze multiple files', function() {
+    it('should return file size', function(done) {
         var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
-        multipleStats.parse(function(multipleResult) {
+        multipleStats.parse(function(error, multipleResult) {
+            if (error) {
+                throw error;
+            }
             assert.equal(multipleResult.stylesheets, 2);
+            done();
         });
     });
 });
