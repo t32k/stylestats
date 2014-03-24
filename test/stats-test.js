@@ -5,10 +5,7 @@ describe('CSS Statistics', function() {
     var stats = new StyleStats('test/fixture/test.css');
     var statsResult;
     before(function(done) {
-        stats.parse(function(error, result) {
-            if (error) {
-                throw error;
-            }
+        stats.parse(function(result) {
             statsResult = result;
             done();
         });
@@ -78,10 +75,7 @@ describe('CSS Statistics', function() {
 describe('Customize with configuration file', function() {
     it('should return gzipped size', function(done) {
         var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
-        customStats.parse(function(error, customResult) {
-            if (error) {
-                throw error;
-            }
+        customStats.parse(function(customResult) {
             assert.equal(customResult.gzippedSize, 217);
             done();
         });
@@ -93,10 +87,7 @@ describe('Customize with option', function() {
         var customObjectStats = new StyleStats('test/fixture/test.css', {
             gzippedSize: true
         });
-        customObjectStats.parse(function(error, customObjectResult) {
-            if (error) {
-                throw error;
-            }
+        customObjectStats.parse(function(customObjectResult) {
             assert.equal(customObjectResult.gzippedSize, 217);
             done();
         });
@@ -107,10 +98,7 @@ describe('Customize with option', function() {
 describe('Analyze remote css file', function() {
     it('should return file size', function(done) {
         var requestStats = new StyleStats('http://t32k.me/static/blog/skelton.css?query');
-        requestStats.parse(function(error, requestResult) {
-            if (error) {
-                throw error;
-            }
+        requestStats.parse(function(requestResult) {
             assert.equal(requestResult.size, 15419);
             done();
         });
@@ -120,10 +108,7 @@ describe('Analyze remote css file', function() {
 describe('Analyze files of specified directory', function() {
     it('should return file size', function(done) {
         var dirStats = new StyleStats('test/fixture/');
-        dirStats.parse(function(error, dirResult) {
-            if (error) {
-                throw error;
-            }
+        dirStats.parse(function(dirResult) {
             assert.equal(dirResult.size, 20462);
             done();
         });
@@ -133,10 +118,7 @@ describe('Analyze files of specified directory', function() {
 describe('Analyze files which match specified glob', function() {
     it('should return file size', function(done) {
         var globStats = new StyleStats('test/**/*.css');
-        globStats.parse(function(error, globResult) {
-            if (error) {
-                throw error;
-            }
+        globStats.parse(function(globResult) {
             assert.equal(globResult.size, 39931);
             done();
         });
@@ -146,10 +128,7 @@ describe('Analyze files which match specified glob', function() {
 describe('Analyze multiple files', function() {
     it('should return file size', function(done) {
         var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
-        multipleStats.parse(function(error, multipleResult) {
-            if (error) {
-                throw error;
-            }
+        multipleStats.parse(function(multipleResult) {
             assert.equal(multipleResult.stylesheets, 2);
             done();
         });
