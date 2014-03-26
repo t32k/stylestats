@@ -30,7 +30,7 @@ StyleStats!
 ├─────────────────────────────────┼────────────────┤
 │ Data Uri Size                   │ 82B            │
 ├─────────────────────────────────┼────────────────┤
-│ Raito Of Data Uri Size          │ 10.89%         │
+│ Ratio Of Data Uri Size          │ 10.89%         │
 ├─────────────────────────────────┼────────────────┤
 │ Rules                           │ 7              │
 ├─────────────────────────────────┼────────────────┤
@@ -314,7 +314,7 @@ _(Coming soon)_
 ## Release History
 
 + v2.3.0: Support HTML output CLI option.
-+ v2.2.0: Add `dataUriSize`, `raitoOfDataUriSize` metics.
++ v2.2.0: Add `dataUriSize`, `ratioOfDataUriSize` metics.
 + v2.1.0: Add `javascriptSpecificSelectors` metics, and fix counting properties in mediaQueries.
 + v2.0.0: __API is changed:__ `StyleStats.parse()`. Add metrics.
 + v1.2.0: Support multiple input files.
