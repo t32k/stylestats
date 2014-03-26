@@ -126,10 +126,20 @@ describe('Analyze files which match specified glob', function() {
 });
 
 describe('Analyze multiple files', function() {
-    it('should return file size', function(done) {
+    it('should return the number of stylesheets', function(done) {
         var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
         multipleStats.parse(function(multipleResult) {
             assert.equal(multipleResult.stylesheets, 2);
+            done();
+        });
+    });
+});
+
+describe('Analyze raw contents files', function() {
+    it('should return file size', function(done) {
+        var rawStats = new StyleStats('body{color:green}');
+        rawStats.parse(function(rawResult) {
+            assert.equal(rawResult.size, 17);
             done();
         });
     });
