@@ -136,6 +136,13 @@ describe('Analyze multiple files', function() {
 });
 
 describe('Analyze raw contents files', function() {
+    it('should return the number of stylesheets', function(done) {
+        var rawStats = new StyleStats('body{color:green}');
+        rawStats.parse(function(rawResult) {
+            assert.equal(rawResult.stylesheets, 0);
+            done();
+        });
+    });
     it('should return file size', function(done) {
         var rawStats = new StyleStats('body{color:green}');
         rawStats.parse(function(rawResult) {
