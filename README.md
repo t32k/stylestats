@@ -78,7 +78,13 @@ StyleStats!
 └─────────────────────────────────┴────────────────┘
 ```
 
-StyleStats supports remote file analysis!!!
+StyleStats supports parsing stylesheets and `style` elements in HTML page.
+
+```sh
+$ stylestats http://t32k.me/
+```
+
+StyleStats supports remote file analysis.
 
 ```sh
 $ stylestats http://t32k.me/static/blog/skelton.css
@@ -313,6 +319,7 @@ _(Coming soon)_
 
 ## Release History
 
++ v3.0.0: __API is changed:__ `StyleStats.parse()`. Support parse HTML page.
 + v2.3.0: Support HTML output CLI option.
 + v2.2.0: Add `dataUriSize`, `ratioOfDataUriSize` metics.
 + v2.1.0: Add `javascriptSpecificSelectors` metics, and fix counting properties in mediaQueries.
