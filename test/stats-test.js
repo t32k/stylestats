@@ -151,3 +151,13 @@ describe('Analyze raw contents files', function() {
         });
     });
 });
+
+describe('Analyze HTML pages', function() {
+    it('should return the number of stylesheets', function(done) {
+        var htmlStats = new StyleStats('https://dl.dropboxusercontent.com/u/356242/test/stats/async.html');
+        htmlStats.parse(function(htmlResult) {
+            assert.equal(htmlResult.size, 508);
+            done();
+        });
+    });
+});
