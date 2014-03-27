@@ -2,6 +2,7 @@
 
 'use strict';
 
+var fs = require('fs');
 var path = require('path');
 var jade = require('jade');
 var Table = require('cli-table');
@@ -15,6 +16,7 @@ _.mixin(_.str.exports());
 _.str.include('Underscore.string', 'string');
 
 var StyleStats = require('../lib/stylestats');
+var util = require('../lib/util');
 
 /**
  * Prettify StyleStats data.
@@ -55,6 +57,9 @@ program
     .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
     .option('-t, --type [format]', 'Specify the output format. <json|html|csv>')
     .option('-s, --simple', 'Show compact style\'s log.')
+    .option('-g, --gzip', 'Show gzipped file size.')
+    .option('-n, --number', 'Show only numeral metrics')
+    .option('-u, --ua [OS]', 'Specify the user agent. <ios|android>')
     .parse(process.argv);
 
 if (!program.args.length) {
@@ -62,7 +67,53 @@ if (!program.args.length) {
     program.help();
 }
 
-var stats = new StyleStats(program.args, program.config);
+var config = {
+    customHttpHeaders: {
+        headers: {}
+    }
+};
+
+if (program.gzip) {
+    config.gzippedSize = true;
+}
+
+if (program.ua === 'android') {
+    config.customHttpHeaders.headers['User-Agent'] = 'Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/KRT16M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.59 Mobile Safari/537.36';
+} else if (program.ua === 'ios') {
+    config.customHttpHeaders.headers['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53';
+}
+
+if (program.number) {
+    var numberConfig = {
+        "published": false,
+        "paths": false,
+        "mostIdentifierSelector": false,
+        "lowestCohesionSelector": false,
+        "uniqueFontSize": false,
+        "uniqueColor": false,
+        "propertiesCount": false
+    };
+    _.extend(config, numberConfig);
+}
+
+var customOptions = {};
+if (program.config && util.isFile(program.config)) {
+    var configString = fs.readFileSync(program.config, {
+        encoding: 'utf8'
+    });
+    try {
+        customOptions = JSON.parse(configString);
+    } catch (e) {
+        throw e;
+    }
+} else if (_.isObject(program.config)) {
+    customOptions = config;
+}
+_.extend(config, customOptions);
+
+console.log(config);
+
+var stats = new StyleStats(program.args, config);
 stats.parse(function(result) {
     switch (program.type) {
         case 'json':
