@@ -1,4 +1,6 @@
 {
+    "published": true,
+    "paths": true,
     "stylesheets": true,
     "size": true,
     "dataUriSize": true,
