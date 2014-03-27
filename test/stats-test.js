@@ -107,9 +107,9 @@ describe('Analyze remote css file', function() {
 
 describe('Analyze HTML pages', function() {
     it('should return the number of stylesheets', function(done) {
-        var htmlStats = new StyleStats('https://dl.dropboxusercontent.com/u/356242/test/stats/async.html');
+        var htmlStats = new StyleStats('http://t32k.me/');
         htmlStats.parse(function(htmlResult) {
-            assert.equal(htmlResult.size, 508);
+            assert.equal(htmlResult.size, 15419);
             done();
         });
     });

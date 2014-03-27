@@ -317,6 +317,7 @@ _(Coming soon)_
 
 ## Release History
 
++ v3.1.0: Support compiled Less/Stylus files.
 + v3.0.0: __API is changed:__ CLI option. Support parse HTML page.
 + v2.3.0: Support HTML output CLI option.
 + v2.2.0: Add `dataUriSize`, `ratioOfDataUriSize` metics.
