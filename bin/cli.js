@@ -70,6 +70,9 @@ stats.parse(function(result) {
             console.log(json);
             break;
         case 'csv':
+            Object.keys(result).forEach(function(key) {
+                result[key] = Array.isArray(result[key]) ? result[key].join(' ') : result[key];
+            });
             json2csv({
                 data: result,
                 fields: Object.keys(result)
