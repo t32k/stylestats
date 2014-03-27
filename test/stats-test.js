@@ -105,6 +105,16 @@ describe('Analyze remote css file', function() {
     });
 });
 
+describe('Analyze HTML pages', function() {
+    it('should return the number of stylesheets', function(done) {
+        var htmlStats = new StyleStats('https://dl.dropboxusercontent.com/u/356242/test/stats/async.html');
+        htmlStats.parse(function(htmlResult) {
+            assert.equal(htmlResult.size, 508);
+            done();
+        });
+    });
+});
+
 describe('Analyze files of specified directory', function() {
     it('should return file size', function(done) {
         var dirStats = new StyleStats('test/fixture/');
@@ -152,11 +162,22 @@ describe('Analyze raw contents files', function() {
     });
 });
 
-describe('Analyze HTML pages', function() {
-    it('should return the number of stylesheets', function(done) {
-        var htmlStats = new StyleStats('https://dl.dropboxusercontent.com/u/356242/test/stats/async.html');
-        htmlStats.parse(function(htmlResult) {
-            assert.equal(htmlResult.size, 508);
+
+describe('Analyze LESS files', function() {
+    it('should return file size', function(done) {
+        var lessStats = new StyleStats('test/fixture/prepros/foo.less');
+        lessStats.parse(function(lessResult) {
+            assert.equal(lessResult.size, 499);
+            done();
+        });
+    });
+});
+
+describe('Analyze Stylus files', function() {
+    it('should return file size', function(done) {
+        var stylStats = new StyleStats('test/fixture/prepros/foo.styl');
+        stylStats.parse(function(stylResult) {
+            assert.equal(stylResult.size, 259);
             done();
         });
     });
