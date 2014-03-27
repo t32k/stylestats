@@ -55,7 +55,7 @@
         "underscore.string": "~2.3.3"
     },
     "devDependencies": {
-        "mocha": "~1.17.1",
+        "mocha": "~1.18.2",
         "testem": "~0.6.8",
         "istanbul": "~0.2.6",
         "coveralls": "~2.10.0",
