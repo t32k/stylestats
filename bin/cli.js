@@ -67,22 +67,31 @@ if (!program.args.length) {
     program.help();
 }
 
+
+// Config
 var config = {
     customHttpHeaders: {
         headers: {}
     }
 };
-
 if (program.gzip) {
     config.gzippedSize = true;
 }
-
-if (program.ua === 'android') {
-    config.customHttpHeaders.headers['User-Agent'] = 'Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/KRT16M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.59 Mobile Safari/537.36';
-} else if (program.ua === 'ios') {
-    config.customHttpHeaders.headers['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53';
+if (program.ua) {
+    var iOS = 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53';
+    var Android = 'Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/KRT16M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.59 Mobile Safari/537.36';
+    switch (program.ua) {
+        case 'ios':
+            config.customHttpHeaders.headers['User-Agent'] = iOS;
+            break;
+        case 'android':
+            config.customHttpHeaders.headers['User-Agent'] = Android;
+            break;
+        default:
+            console.error(' [WARN] User agent should be `ios` or `android`.');
+            break;
+    }
 }
-
 if (program.number) {
     var numberConfig = {
         "published": false,
@@ -95,24 +104,23 @@ if (program.number) {
     };
     _.extend(config, numberConfig);
 }
-
-var customOptions = {};
+var userConfig = {};
 if (program.config && util.isFile(program.config)) {
     var configString = fs.readFileSync(program.config, {
         encoding: 'utf8'
     });
     try {
-        customOptions = JSON.parse(configString);
+        userConfig = JSON.parse(configString);
     } catch (e) {
         throw e;
     }
 } else if (_.isObject(program.config)) {
-    customOptions = config;
+    userConfig = config;
 }
-_.extend(config, customOptions);
+_.extend(config, userConfig);
 
-console.log(config);
 
+// Parse
 var stats = new StyleStats(program.args, config);
 stats.parse(function(result) {
     switch (program.type) {
