@@ -2,7 +2,6 @@
 
 'use strict';
 
-var fs = require('fs');
 var path = require('path');
 var jade = require('jade');
 var Table = require('cli-table');
