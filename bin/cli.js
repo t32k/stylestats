@@ -2,7 +2,6 @@
 
 'use strict';
 
-var fs = require('fs');
 var path = require('path');
 var jade = require('jade');
 var Table = require('cli-table');
@@ -16,11 +15,11 @@ _.mixin(_.str.exports());
 _.str.include('Underscore.string', 'string');
 
 /**
- * Method of return prettified StyleStats data.
+ * Prettify StyleStats data.
  * @param {object} [result] StyleStats parse data. Required.
  * @return {array} prettified data.
  */
-var prettifyData = function(result) {
+var prettify = function(result) {
     var collections = [];
     Object.keys(result).forEach(function(key) {
         var stats = {};
@@ -48,13 +47,13 @@ var prettifyData = function(result) {
     return collections;
 };
 
-var StyleStats = require('./stylestats');
+var StyleStats = require('../lib/stylestats');
 
 program
     .version(require('../package.json').version)
     .usage('[options] <file ...>')
     .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
-    .option('-t, --type [format]', 'Specify the format to convert. <json|html|csv>')
+    .option('-t, --type [format]', 'Specify the output format. <json|html|csv>')
     .option('-s, --simple', 'Show compact style\'s log.')
     .parse(process.argv);
 
@@ -65,7 +64,7 @@ if (!program.args.length) {
 
 var stats = new StyleStats(program.args, program.config);
 stats.parse(function(result) {
-    switch (program.extension) {
+    switch (program.type) {
         case 'json':
             var json = JSON.stringify(result, null, 2);
             console.log(json);
@@ -79,13 +78,10 @@ stats.parse(function(result) {
             });
             break;
         case 'html':
-            var realPath = path.dirname(__filename) + '/jade/stats.jade';
-            var htmlData = prettifyData(result);
-            var template = jade.compile(fs.readFileSync(realPath, 'utf8'), {
-                pretty: true
-            });
-            var html = template({
-                stats: htmlData,
+            var template = path.join(__dirname, '../assets/stats.jade');
+            var html = jade.renderFile(template, {
+                pretty: true,
+                stats: prettify(result),
                 published: result.published,
                 paths: result.paths
             });
@@ -98,7 +94,7 @@ stats.parse(function(result) {
                     compact: program.simple
                 }
             });
-            prettifyData(result).forEach(function(data) {
+            prettify(result).forEach(function(data) {
                 table.push(data);
             });
             console.log(' StyleStats!\n' + table.toString());
