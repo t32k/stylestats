@@ -3,7 +3,7 @@
     "version": "3.0.0",
     "main": "lib/stylestats.js",
     "bin": {
-        "stylestats": "./bin/stylestats"
+        "stylestats": "./bin/cli.js"
     },
     "description": "StyleStats is Node.js library to collect CSS statistics!",
     "homepage": "https://github.com/t32k/stylestats",
@@ -37,7 +37,8 @@
     },
     "files": [
         "lib",
-        "bin"
+        "bin",
+        "assets"
     ],
     "dependencies": {
         "jade": "~1.3.0",
@@ -55,7 +56,7 @@
         "underscore.string": "~2.3.3"
     },
     "devDependencies": {
-        "mocha": "~1.17.1",
+        "mocha": "~1.18.2",
         "testem": "~0.6.8",
         "istanbul": "~0.2.6",
         "coveralls": "~2.10.0",
