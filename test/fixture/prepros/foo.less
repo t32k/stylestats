@@ -1,3 +1,7 @@
+@import "../test.css";
+//@import "bar.less";
+
+// Variables 
 @nice-blue: #5B83AD;
 @light-blue: @nice-blue + #111;
 
@@ -5,21 +9,21 @@
   color: @light-blue;
 }
 
+// Mixins
 .bordered {
   border-top: dotted 1px black;
   border-bottom: solid 2px black;
 }
-
 #menu a {
   color: #111;
   .bordered;
 }
-
 .post a {
   color: red;
   .bordered;
 }
 
+// Nested rules
 #header {
   color: black;
   .navigation {
@@ -30,6 +34,7 @@
   }
 }
 
+// Functions
 @base: #f04615;
 @width: 0.5;
 

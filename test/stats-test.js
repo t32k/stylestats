@@ -163,22 +163,11 @@ describe('Analyze raw contents files', function() {
 });
 
 
-
-describe('Analyze Sass files', function() {
-    it('should return file size', function(done) {
-        var sassStats = new StyleStats('test/fixture/prepros/foo.scss');
-        sassStats.parse(function(sassResult) {
-            assert.equal(sassResult.size, 467);
-            done();
-        });
-    });
-});
-
 describe('Analyze LESS files', function() {
     it('should return file size', function(done) {
         var lessStats = new StyleStats('test/fixture/prepros/foo.less');
         lessStats.parse(function(lessResult) {
-            assert.equal(lessResult.size, 472);
+            assert.equal(lessResult.size, 495);
             done();
         });
     });
