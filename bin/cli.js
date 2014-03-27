@@ -16,11 +16,11 @@ _.mixin(_.str.exports());
 _.str.include('Underscore.string', 'string');
 
 /**
- * Method of return prettified StyleStats data.
+ * Prettify StyleStats data.
  * @param {object} [result] StyleStats parse data. Required.
  * @return {array} prettified data.
  */
-var prettifyData = function(result) {
+var prettify = function(result) {
     var collections = [];
     Object.keys(result).forEach(function(key) {
         var stats = {};
@@ -48,7 +48,7 @@ var prettifyData = function(result) {
     return collections;
 };
 
-var StyleStats = require('./stylestats');
+var StyleStats = require('../lib/stylestats');
 
 program
     .version(require('../package.json').version)
@@ -65,7 +65,7 @@ if (!program.args.length) {
 
 var stats = new StyleStats(program.args, program.config);
 stats.parse(function(result) {
-    switch (program.extension) {
+    switch (program.type) {
         case 'json':
             var json = JSON.stringify(result, null, 2);
             console.log(json);
@@ -79,8 +79,8 @@ stats.parse(function(result) {
             });
             break;
         case 'html':
-            var realPath = path.dirname(__filename) + '/jade/stats.jade';
-            var htmlData = prettifyData(result);
+            var realPath = path.join(__dirname, '../assets/stats.jade');
+            var htmlData = prettify(result);
             var template = jade.compile(fs.readFileSync(realPath, 'utf8'), {
                 pretty: true
             });
@@ -98,7 +98,7 @@ stats.parse(function(result) {
                     compact: program.simple
                 }
             });
-            prettifyData(result).forEach(function(data) {
+            prettify(result).forEach(function(data) {
                 table.push(data);
             });
             console.log(' StyleStats!\n' + table.toString());
