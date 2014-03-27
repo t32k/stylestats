@@ -167,7 +167,7 @@ describe('Analyze LESS files', function() {
     it('should return file size', function(done) {
         var lessStats = new StyleStats('test/fixture/prepros/foo.less');
         lessStats.parse(function(lessResult) {
-            assert.equal(lessResult.size, 495);
+            assert.equal(lessResult.size, 499);
             done();
         });
     });
