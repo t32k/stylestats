@@ -188,7 +188,7 @@ describe('Analyze Stylus files', function() {
     it('should return file size', function(done) {
         var stylStats = new StyleStats('test/fixture/prepros/foo.styl');
         stylStats.parse(function(stylResult) {
-            assert.equal(stylResult.size, 472);
+            assert.equal(stylResult.size, 230);
             done();
         });
     });
