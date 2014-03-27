@@ -1,6 +1,6 @@
 {
     "name": "stylestats",
-    "version": "2.3.0",
+    "version": "3.0.0",
     "main": "lib/stylestats.js",
     "bin": {
         "stylestats": "./bin/stylestats"
@@ -44,6 +44,7 @@
         "glob": "~3.2.9",
         "numeral": "~1.5.3",
         "promise": "~4.0.0",
+        "cheerio": "~0.13.1",
         "request": "~2.34.0",
         "json2csv": "~2.2.1",
         "css-parse": "~1.7.0",

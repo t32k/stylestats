@@ -126,10 +126,37 @@ describe('Analyze files which match specified glob', function() {
 });
 
 describe('Analyze multiple files', function() {
-    it('should return file size', function(done) {
+    it('should return the number of stylesheets', function(done) {
         var multipleStats = new StyleStats(['test/fixture/test.css', 'test/fixture/app.css']);
         multipleStats.parse(function(multipleResult) {
             assert.equal(multipleResult.stylesheets, 2);
+            done();
+        });
+    });
+});
+
+describe('Analyze raw contents files', function() {
+    it('should return the number of stylesheets', function(done) {
+        var rawStats = new StyleStats('body{color:green}');
+        rawStats.parse(function(rawResult) {
+            assert.equal(rawResult.stylesheets, 0);
+            done();
+        });
+    });
+    it('should return file size', function(done) {
+        var rawStats = new StyleStats('body{color:green}');
+        rawStats.parse(function(rawResult) {
+            assert.equal(rawResult.size, 17);
+            done();
+        });
+    });
+});
+
+describe('Analyze HTML pages', function() {
+    it('should return the number of stylesheets', function(done) {
+        var htmlStats = new StyleStats('https://dl.dropboxusercontent.com/u/356242/test/stats/async.html');
+        htmlStats.parse(function(htmlResult) {
+            assert.equal(htmlResult.size, 508);
             done();
         });
     });
