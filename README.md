@@ -107,10 +107,10 @@ supports glob(required quotations) input.
 $ stylestats 'path/**/*.css'
 ```
 
-`-e` option output JSON or CSV or HTML.
+`-t` option output JSON or CSV or HTML.
 
 ```sh
-$ stylestats foo.css -e [json|csv|html]
+$ stylestats foo.css -t [json|csv|html]
 ```
 
 If you installed __[gist](https://github.com/defunkt/gist)__ tool, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with one-liner command.
@@ -223,7 +223,7 @@ $ stylestats -h
     -h, --help                output usage information
     -V, --version             output the version number
     -c, --config [path]       Path and name of the incoming JSON file.
-    -e, --extension [format]  Specify the format to convert. <json|csv>
+    -t, --type [format]       Specify the format to convert. <json|csv>
     -s, --simple              Show compact style's log.
 ```
 
