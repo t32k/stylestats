@@ -26,11 +26,9 @@ StyleStats!
 ┌─────────────────────────────────┬────────────────┐
 │ Stylesheets                     │ 1              │
 ├─────────────────────────────────┼────────────────┤
-│ Size                            │ 753B           │
+│ Size                            │ 240B           │
 ├─────────────────────────────────┼────────────────┤
-│ Data Uri Size                   │ 82B            │
-├─────────────────────────────────┼────────────────┤
-│ Ratio Of Data Uri Size          │ 10.89%         │
+│ Data Uri Size                   │ 0              │
 ├─────────────────────────────────┼────────────────┤
 │ Rules                           │ 7              │
 ├─────────────────────────────────┼────────────────┤
@@ -38,9 +36,9 @@ StyleStats!
 ├─────────────────────────────────┼────────────────┤
 │ Simplicity                      │ 58.33%         │
 ├─────────────────────────────────┼────────────────┤
-│ Most Identifers                 │ 3              │
+│ Most Identifier                 │ 3              │
 ├─────────────────────────────────┼────────────────┤
-│ Most Identifers Selector        │ .foo .bar .baz │
+│ Most Identifier Selector        │ .foo .bar .baz │
 ├─────────────────────────────────┼────────────────┤
 │ Lowest Cohesion                 │ 2              │
 ├─────────────────────────────────┼────────────────┤
@@ -69,12 +67,12 @@ StyleStats!
 ├─────────────────────────────────┼────────────────┤
 │ Float Properties                │ 1              │
 ├─────────────────────────────────┼────────────────┤
-│ Media Queries                   │ 0              │
-├─────────────────────────────────┼────────────────┤
 │ Properties Count                │ color: 4       │
 │                                 │ font-size: 3   │
 │                                 │ margin: 2      │
 │                                 │ float: 1       │
+├─────────────────────────────────┼────────────────┤
+│ Media Queries                   │ 0              │
 └─────────────────────────────────┴────────────────┘
 ```
 
@@ -84,24 +82,24 @@ StyleStats supports parsing stylesheets and `style` elements in HTML page.
 $ stylestats http://t32k.me/
 ```
 
-StyleStats supports remote file analysis.
+Supports remote file analysis.
 
 ```sh
 $ stylestats http://t32k.me/static/blog/skelton.css
 ```
 
-StyleStats supports multiple input.
+Supports multiple input.
 
 ```sh
 $ stylestats foo.css bar.css baz.css
 ```
-supports directory input.
+Supports directory input.
 
 ```sh
 $ stylestats path/to/dir
 ```
 
-supports glob(required quotations) input.
+Supports glob(required quotations) input.
 
 ```sh
 $ stylestats 'path/**/*.css'
@@ -116,7 +114,7 @@ $ stylestats foo.css -t [json|csv|html]
 If you installed __[gist](https://github.com/defunkt/gist)__ tool, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with one-liner command.
 
 ```sh
-$ stylestats http://t32k.me/static/blog/skelton.css -e html > stats.md && gist stats.md
+$ stylestats http://t32k.me/ -t html > stats.md && gist stats.md
 https://gist.github.com/9725673
 ```
 
@@ -220,11 +218,11 @@ $ stylestats -h
 
   Options:
 
-    -h, --help                output usage information
-    -V, --version             output the version number
-    -c, --config [path]       Path and name of the incoming JSON file.
-    -t, --type [format]       Specify the format to convert. <json|csv>
-    -s, --simple              Show compact style's log.
+    -h, --help           output usage information
+    -V, --version        output the version number
+    -c, --config [path]  Path and name of the incoming JSON file.
+    -t, --type [format]  Specify the output format. <json|html|csv>
+    -s, --simple         Show compact style's log.
 ```
 
 ```shell
@@ -319,7 +317,7 @@ _(Coming soon)_
 
 ## Release History
 
-+ v3.0.0: __API is changed:__ `StyleStats.parse()`. Support parse HTML page.
++ v3.0.0: __API is changed:__ CLI option. Support parse HTML page.
 + v2.3.0: Support HTML output CLI option.
 + v2.2.0: Add `dataUriSize`, `ratioOfDataUriSize` metics.
 + v2.1.0: Add `javascriptSpecificSelectors` metics, and fix counting properties in mediaQueries.

@@ -14,12 +14,14 @@ _.str = require('underscore.string');
 _.mixin(_.str.exports());
 _.str.include('Underscore.string', 'string');
 
+var StyleStats = require('../lib/stylestats');
+
 /**
  * Prettify StyleStats data.
  * @param {object} [result] StyleStats parse data. Required.
  * @return {array} prettified data.
  */
-var prettify = function(result) {
+function prettify(result) {
     var collections = [];
     Object.keys(result).forEach(function(key) {
         var stats = {};
@@ -45,9 +47,7 @@ var prettify = function(result) {
         collections.push(stats);
     });
     return collections;
-};
-
-var StyleStats = require('../lib/stylestats');
+}
 
 program
     .version(require('../package.json').version)
