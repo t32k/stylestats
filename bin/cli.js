@@ -54,7 +54,7 @@ program
     .version(require('../package.json').version)
     .usage('[options] <file ...>')
     .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
-    .option('-t, --type [format]', 'Specify the format to convert. <json|html|csv>')
+    .option('-t, --type [format]', 'Specify the output format. <json|html|csv>')
     .option('-s, --simple', 'Show compact style\'s log.')
     .parse(process.argv);
 
@@ -79,13 +79,10 @@ stats.parse(function(result) {
             });
             break;
         case 'html':
-            var realPath = path.join(__dirname, '../assets/stats.jade');
-            var htmlData = prettify(result);
-            var template = jade.compile(fs.readFileSync(realPath, 'utf8'), {
-                pretty: true
-            });
-            var html = template({
-                stats: htmlData,
+            var template = path.join(__dirname, '../assets/stats.jade');
+            var html = jade.renderFile(template, {
+                pretty: true,
+                stats: prettify(result),
                 published: result.published,
                 paths: result.paths
             });
