@@ -1,4 +1,4 @@
-/* Command line implementation for StlyeStats */
+#!/usr/bin/env node
 
 'use strict';
 

@@ -3,7 +3,7 @@
     "version": "3.0.0",
     "main": "lib/stylestats.js",
     "bin": {
-        "stylestats": "./bin/cli.js"
+        "stylestats": "bin/cli.js"
     },
     "description": "StyleStats is Node.js library to collect CSS statistics!",
     "homepage": "https://github.com/t32k/stylestats",
