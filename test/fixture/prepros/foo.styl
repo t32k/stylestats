@@ -1,14 +1,28 @@
-border-radius()
-  -webkit-border-radius: arguments
-  -moz-border-radius: arguments
-  border-radius: arguments
+@import 'bar'
 
-body a
-  font: 12px/1.4 "Lucida Grande", Arial, sans-serif
-  background: black
-  color: #ccc
+// Variables
+font-size = 14px
 
-form input
-  padding: 5px
-  border: 1px solid
-  border-radius: 5px
+body
+	font font-size Arial, sans-serif
+
+// Mixins
+border-radius(n)
+	-webkit-border-radius n
+	-moz-border-radius n
+	border-radius n
+
+form input[type=button]
+	border-radius(5px)
+
+// Functions
+add(a, b)
+	a + b
+
+body 
+	padding add(10px, 5)
+
+// Iteration
+body
+	for num in 1 2 3
+		foo num
