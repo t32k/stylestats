@@ -58,7 +58,7 @@ program
     .option('-t, --type [format]', 'Specify the output format. <json|html|csv>')
     .option('-s, --simple', 'Show compact style\'s log.')
     .option('-g, --gzip', 'Show gzipped file size.')
-    .option('-n, --number', 'Show only numeral metrics')
+    .option('-n, --number', 'Show only numeral metrics.')
     .option('-u, --ua [OS]', 'Specify the user agent. <ios|android>')
     .parse(process.argv);
 
