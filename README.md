@@ -105,7 +105,7 @@ Supports glob(required quotations) input.
 $ stylestats 'path/**/*.css'
 ```
 
-`-t` option output JSON or CSV or HTML.
+`-t` option output JSON, CSV and HTML.
 
 ```sh
 $ stylestats foo.css -t [json|csv|html]
@@ -195,9 +195,9 @@ var StyleStats = require('stylestats');
 var stats = new StyleStats('path/to/stylesheet.css', 'path/to/.stylestatsrc');
 ```
 
-Default configuration is [here](lib/default.json).
+Default configuration is [here](assets/default.json).
 
-Here is an example of enabling display gzipped size:
+Here is an example JSON to enable display gzipped size:
 
 ```
 {
@@ -223,6 +223,9 @@ $ stylestats -h
     -c, --config [path]  Path and name of the incoming JSON file.
     -t, --type [format]  Specify the output format. <json|html|csv>
     -s, --simple         Show compact style's log.
+    -g, --gzip           Show gzipped file size.
+    -n, --number         Show only numeral metrics.
+    -u, --ua [OS]        Specify the user agent. <ios|android>
 ```
 
 ```shell
@@ -317,6 +320,7 @@ _(Coming soon)_
 
 ## Release History
 
++ v3.2.0: Support request option, and add ClI options.
 + v3.1.0: Support compiled Less/Stylus files.
 + v3.0.0: __API is changed:__ CLI option. Support parse HTML page.
 + v2.3.0: Support HTML output CLI option.

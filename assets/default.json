@@ -1,4 +1,6 @@
 {
+    "published": true,
+    "paths": true,
     "stylesheets": true,
     "size": true,
     "dataUriSize": true,
@@ -22,5 +24,6 @@
     "importantKeywords": true,
     "floatProperties": true,
     "mediaQueries": true,
-    "propertiesCount": 10
+    "propertiesCount": 10,
+    "customHttpHeaders": {}
 }
