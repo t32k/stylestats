@@ -25,5 +25,5 @@
     "floatProperties": true,
     "mediaQueries": true,
     "propertiesCount": 10,
-    "customHttpHeaders": {}
+    "requestOptions": {}
 }

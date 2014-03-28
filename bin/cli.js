@@ -70,7 +70,7 @@ if (!program.args.length) {
 
 // Config
 var config = {
-    customHttpHeaders: {
+    requestOptions: {
         headers: {}
     }
 };
@@ -82,10 +82,10 @@ if (program.ua) {
     var Android = 'Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/KRT16M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.59 Mobile Safari/537.36';
     switch (program.ua) {
         case 'ios':
-            config.customHttpHeaders.headers['User-Agent'] = iOS;
+            config.requestOptions.headers['User-Agent'] = iOS;
             break;
         case 'android':
-            config.customHttpHeaders.headers['User-Agent'] = Android;
+            config.requestOptions.headers['User-Agent'] = Android;
             break;
         default:
             console.error(' [WARN] User agent should be `ios` or `android`.');
