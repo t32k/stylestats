@@ -315,7 +315,9 @@ Statistics tree of above css:
 
 ## Online Tool
 
-_(Coming soon)_
+We launched online tool for StyleStats!!!!
+
++ [StyleStats](http://www.stylestats.org/)
 
 
 ## Release History
