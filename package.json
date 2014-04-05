@@ -1,6 +1,6 @@
 {
     "name": "stylestats",
-    "version": "3.2.1",
+    "version": "3.2.2",
     "main": "lib/stylestats.js",
     "bin": {
         "stylestats": "bin/cli.js"
@@ -30,7 +30,7 @@
         "property"
     ],
     "scripts": {
-        "test": "mocha --timeout 10s --reporter=spec"
+        "test": "mocha --timeout 5s --reporter=spec"
     },
     "engines": {
         "node": "0.10.x"

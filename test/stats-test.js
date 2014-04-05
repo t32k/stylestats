@@ -83,7 +83,7 @@ describe('Customize with configuration file', function() {
 });
 
 describe('Invalid argument', function() {
-    it('should throw erroe', function(done) {
+    it('should throw error', function(done) {
         assert.throws(
             function() {
                 new StyleStats('xxxxxxxxxxxxxxxx');
