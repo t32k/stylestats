@@ -82,6 +82,18 @@ describe('Customize with configuration file', function() {
     });
 });
 
+describe('Invalid argument', function() {
+    it('should throw erroe', function(done) {
+        assert.throws(
+            function() {
+                new StyleStats('xxxxxxxxxxxxxxxx');
+            },
+            Error
+        );
+        done();
+    });
+});
+
 describe('Customize with option', function() {
     it('should return gzipped size', function(done) {
         var customObjectStats = new StyleStats('test/fixture/test.css', {
