@@ -100,6 +100,38 @@ describe('Invalid argument', function() {
     });
 });
 
+describe('Invalid CSS', function() {
+    it('should throw error', function(done) {
+        var invalidCSS = new StyleStats('http://t32k.me/static/assets/css/invalid.css');
+        assert.throws(
+            invalidCSS.parse(function(error, invalidCSSResult) {
+                if (error) {
+                    throw error;
+                }
+                console.log(invalidCSSResult);
+            }),
+            Error
+        );
+        done();
+    });
+});
+
+describe('Invalid JSON', function() {
+    it('should throw error', function(done) {
+        var invalidJSON = new StyleStats('http://t32k.me/static/assets/json/foo.json');
+        assert.throws(
+            invalidJSON.parse(function(error, invalidJSONResult) {
+                if (error) {
+                    throw error;
+                }
+                console.log(invalidJSONResult);
+            }),
+            Error
+        );
+        done();
+    });
+});
+
 describe('Customize with option', function() {
     it('should return gzipped size', function(done) {
         var customObjectStats = new StyleStats('test/fixture/test.css', {
@@ -114,7 +146,6 @@ describe('Customize with option', function() {
         });
     });
 });
-
 
 describe('Analyze remote css file', function() {
     it('should return file size', function(done) {
