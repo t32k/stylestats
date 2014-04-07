@@ -90,10 +90,13 @@ describe('Customize with configuration file', function() {
 
 describe('Invalid argument', function() {
     it('should throw error', function(done) {
+        var invalidArgs = new StyleStats('xxxxxxxxxxxx');
         assert.throws(
-            function() {
-                new StyleStats('xxxxxxxxxxxxxxxx');
-            },
+            invalidArgs.parse(function(error, invalidArgsResult) {
+                if (error) {
+                    throw error;
+                }
+            }),
             Error
         );
         done();
@@ -108,7 +111,6 @@ describe('Invalid CSS', function() {
                 if (error) {
                     throw error;
                 }
-                console.log(invalidCSSResult);
             }),
             Error
         );
@@ -124,7 +126,6 @@ describe('Invalid JSON', function() {
                 if (error) {
                     throw error;
                 }
-                console.log(invalidJSONResult);
             }),
             Error
         );
