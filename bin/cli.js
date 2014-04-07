@@ -124,7 +124,7 @@ _.extend(config, userConfig);
 var stats = new StyleStats(program.args, config);
 stats.parse(function(error, result) {
     if (error) {
-        console.log(error);
+        console.log(error.message);
     }
     switch (program.type) {
         case 'json':
