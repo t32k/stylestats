@@ -175,14 +175,14 @@ describe('Analyze remote css file', function() {
     });
 });
 
-describe('Analyze HTML pages', function(done) {
-    it('should return the number of stylesheets', function() {
-        var htmlStats = new StyleStats('https://www.google.com/');
+describe('Analyze HTML pages', function() {
+    it('should return the number of stylesheets', function(done) {
+        var htmlStats = new StyleStats('http://t32k.me/');
         htmlStats.parse(function(error, htmlResult) {
             if (error) {
                 throw error;
             }
-            assert.equal(htmlResult.styleElements, 2);
+            assert.equal(htmlResult.styleElements, 1);
             done();
         });
 

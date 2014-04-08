@@ -24,17 +24,17 @@ $ npm install -g stylestats
 $ stylestats path/to/stylesheet.css
 StyleStats!
 ┌─────────────────────────────────┬────────────────┐
-│ Stylesheets                     │ 1              │
+│ Style Sheets                    │ 1              │
 ├─────────────────────────────────┼────────────────┤
 │ Size                            │ 240B           │
 ├─────────────────────────────────┼────────────────┤
-│ Data Uri Size                   │ 0              │
+│ Data URI Size                   │ 0              │
 ├─────────────────────────────────┼────────────────┤
 │ Rules                           │ 7              │
 ├─────────────────────────────────┼────────────────┤
 │ Selectors                       │ 12             │
 ├─────────────────────────────────┼────────────────┤
-│ Simplicity                      │ 58.33%         │
+│ Simplicity                      │ 58.3%          │
 ├─────────────────────────────────┼────────────────┤
 │ Most Identifier                 │ 3              │
 ├─────────────────────────────────┼────────────────┤
@@ -55,13 +55,13 @@ StyleStats!
 │                                 │ #CCC           │
 │                                 │ RED            │
 ├─────────────────────────────────┼────────────────┤
-│ Id Selectors                    │ 1              │
+│ ID Selectors                    │ 1              │
 ├─────────────────────────────────┼────────────────┤
 │ Universal Selectors             │ 1              │
 ├─────────────────────────────────┼────────────────┤
 │ Unqualified Attribute Selectors │ 1              │
 ├─────────────────────────────────┼────────────────┤
-│ Javascript Specific Selectors   │ 0              │
+│ JavaScript Specific Selectors   │ 0              │
 ├─────────────────────────────────┼────────────────┤
 │ Important Keywords              │ 1              │
 ├─────────────────────────────────┼────────────────┤
@@ -237,7 +237,7 @@ StyleStats!
 │ Lowest Cohesion           │ 6             │
 │ Total Unique Font Sizes   │ 5             │
 │ Total Unique Colors       │ 2             │
-│ Id Selectors              │ 1             │
+│ ID Selectors              │ 1             │
 │ Important Keywords        │ 1             │
 │ Media Queries             │ 1             │
 └───────────────────────────┴───────────────┘
@@ -258,7 +258,7 @@ StyleStats!
 var StyleStats = require('stylestats');
 var stats = new StyleStats('path/to/stylesheet.css');
 
-stats.parse(function (result) {
+stats.parse(function (error, result) {
   console.log(JSON.stringify(result, null, 2));
 });
 ```
@@ -315,13 +315,14 @@ Statistics tree of above css:
 
 ## Online Tool
 
-We launched online tool for StyleStats!!!!
+We launched online tool for StyleStats!
 
 + [StyleStats](http://www.stylestats.org/)
 
 
 ## Release History
 
++ v4.0.0: __API is changed:__ `StyleStats.parse()`. Improve CLI tool.
 + v3.2.0: Support request option, and add ClI options.
 + v3.1.0: Support compiled Less/Stylus files.
 + v3.0.0: __API is changed:__ CLI option. Support parse HTML page.
