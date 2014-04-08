@@ -5,6 +5,7 @@
 var fs = require('fs');
 var path = require('path');
 var jade = require('jade');
+var chalk = require('chalk');
 var Table = require('cli-table');
 var numeral = require('numeral');
 var program = require('commander');
@@ -63,7 +64,7 @@ program
     .parse(process.argv);
 
 if (!program.args.length) {
-    console.log('\n No input file specified.');
+    console.log( chalk.red('\n No input file specified.') );
     program.help();
 }
 
@@ -122,7 +123,10 @@ _.extend(config, userConfig);
 
 // Parse
 var stats = new StyleStats(program.args, config);
-stats.parse(function(result) {
+stats.parse(function(error, result) {
+    if (error) {
+        console.log( chalk.red('[ERROR] ' + error.message) );
+    }
     switch (program.type) {
         case 'json':
             var json = JSON.stringify(result, null, 2);
