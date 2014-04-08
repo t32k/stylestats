@@ -12,8 +12,8 @@ var program = require('commander');
 var json2csv = require('json2csv');
 
 var StyleStats = require('../lib/stylestats');
-var util = require('../lib/util');
 var aliases = require('../assets/aliases.json');
+var util = require('../lib/util');
 
 /**
  * Prettify StyleStats data.
@@ -85,7 +85,7 @@ if (program.ua) {
             config.requestOptions.headers['User-Agent'] = Android;
             break;
         default:
-            console.error(' [WARN] User agent should be `ios` or `android`.');
+            console.error( chalk.yellow(' [WARN] User agent should be `ios` or `android`.') );
             break;
     }
 }
@@ -121,7 +121,7 @@ _.extend(config, userConfig);
 var stats = new StyleStats(program.args, config);
 stats.parse(function(error, result) {
     if (error) {
-        console.log( chalk.red('[ERROR] ' + error.message) );
+        console.log( chalk.red(' [ERROR] ' + error.message) );
     }
     switch (program.type) {
         case 'json':
