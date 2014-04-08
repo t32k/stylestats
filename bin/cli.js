@@ -2,6 +2,7 @@
 
 'use strict';
 
+var _ = require('underscore');
 var fs = require('fs');
 var path = require('path');
 var chalk = require('chalk');
@@ -10,13 +11,9 @@ var numeral = require('numeral');
 var program = require('commander');
 var json2csv = require('json2csv');
 
-var _ = require('underscore');
-_.str = require('underscore.string');
-_.mixin(_.str.exports());
-_.str.include('Underscore.string', 'string');
-
 var StyleStats = require('../lib/stylestats');
 var util = require('../lib/util');
+var aliases = require('../assets/aliases.json');
 
 /**
  * Prettify StyleStats data.
@@ -27,7 +24,7 @@ function prettify(result) {
     var collections = [];
     Object.keys(result).forEach(function(key) {
         var stats = {};
-        var prop = _(_(key).humanize()).titleize();
+        var prop = aliases[key];
         if (key === 'propertiesCount') {
             var array = [];
             result[key].forEach(function(item) {
@@ -37,7 +34,7 @@ function prettify(result) {
         } else if (key === 'size' || key === 'gzippedSize' || key === 'dataUriSize') {
             stats[prop] = numeral(result[key]).format('0.0b').replace(/\.0B/, 'B').replace(/0\.0/, '0');
         } else if (key === 'simplicity' || key === 'ratioOfDataUriSize') {
-            stats[prop] = numeral(result[key]).format('0.00%');
+            stats[prop] = numeral(result[key]).format('0.0%');
         } else if (key === 'published' || key === 'paths') {
             return true;
         } else {
