@@ -4,7 +4,6 @@
 
 var fs = require('fs');
 var path = require('path');
-var jade = require('jade');
 var chalk = require('chalk');
 var Table = require('cli-table');
 var numeral = require('numeral');
@@ -144,9 +143,11 @@ stats.parse(function(error, result) {
             });
             break;
         case 'html':
-            var template = path.join(__dirname, '../assets/stats.jade');
-            var html = jade.renderFile(template, {
-                pretty: true,
+            var templatePath = path.join(__dirname, '../assets/stats.template');
+            var template = _.template(fs.readFileSync(templatePath, {
+                encoding: 'utf8'
+            }));
+            var html = template({
                 stats: prettify(result),
                 published: result.published,
                 paths: result.paths
