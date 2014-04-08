@@ -2,6 +2,7 @@
     "published": true,
     "paths": true,
     "stylesheets": true,
+    "styleElements": true,
     "size": true,
     "dataUriSize": true,
     "ratioOfDataUriSize": true,
