@@ -2,21 +2,17 @@
 
 'use strict';
 
+var _ = require('underscore');
 var fs = require('fs');
 var path = require('path');
-var jade = require('jade');
 var chalk = require('chalk');
 var Table = require('cli-table');
 var numeral = require('numeral');
 var program = require('commander');
 var json2csv = require('json2csv');
 
-var _ = require('underscore');
-_.str = require('underscore.string');
-_.mixin(_.str.exports());
-_.str.include('Underscore.string', 'string');
-
 var StyleStats = require('../lib/stylestats');
+var aliases = require('../assets/aliases.json');
 var util = require('../lib/util');
 
 /**
@@ -28,7 +24,7 @@ function prettify(result) {
     var collections = [];
     Object.keys(result).forEach(function(key) {
         var stats = {};
-        var prop = _(_(key).humanize()).titleize();
+        var prop = aliases[key];
         if (key === 'propertiesCount') {
             var array = [];
             result[key].forEach(function(item) {
@@ -38,7 +34,7 @@ function prettify(result) {
         } else if (key === 'size' || key === 'gzippedSize' || key === 'dataUriSize') {
             stats[prop] = numeral(result[key]).format('0.0b').replace(/\.0B/, 'B').replace(/0\.0/, '0');
         } else if (key === 'simplicity' || key === 'ratioOfDataUriSize') {
-            stats[prop] = numeral(result[key]).format('0.00%');
+            stats[prop] = numeral(result[key]).format('0.0%');
         } else if (key === 'published' || key === 'paths') {
             return true;
         } else {
@@ -89,7 +85,7 @@ if (program.ua) {
             config.requestOptions.headers['User-Agent'] = Android;
             break;
         default:
-            console.error(' [WARN] User agent should be `ios` or `android`.');
+            console.error( chalk.yellow(' [WARN] User agent should be `ios` or `android`.') );
             break;
     }
 }
@@ -125,7 +121,7 @@ _.extend(config, userConfig);
 var stats = new StyleStats(program.args, config);
 stats.parse(function(error, result) {
     if (error) {
-        console.log( chalk.red('[ERROR] ' + error.message) );
+        console.log( chalk.red(' [ERROR] ' + error.message) );
     }
     switch (program.type) {
         case 'json':
@@ -144,9 +140,11 @@ stats.parse(function(error, result) {
             });
             break;
         case 'html':
-            var template = path.join(__dirname, '../assets/stats.jade');
-            var html = jade.renderFile(template, {
-                pretty: true,
+            var templatePath = path.join(__dirname, '../assets/stats.template');
+            var template = _.template(fs.readFileSync(templatePath, {
+                encoding: 'utf8'
+            }));
+            var html = template({
                 stats: prettify(result),
                 published: result.published,
                 paths: result.paths

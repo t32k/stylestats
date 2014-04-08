@@ -88,6 +88,18 @@ describe('Customize with configuration file', function() {
     });
 });
 
+describe('Invalid configuration file', function() {
+    it('should throw error', function(done) {
+        assert.throws(
+            function() {
+                new StyleStats('test/fixture/test.css', 'test/fixture/.invalidrc');
+            },
+            Error
+        );
+        done();
+    });
+});
+
 describe('Invalid argument', function() {
     it('should throw error', function(done) {
         var invalidArgs = new StyleStats('xxxxxxxxxxxx');
@@ -133,6 +145,8 @@ describe('Invalid JSON', function() {
     });
 });
 
+
+
 describe('Customize with option', function() {
     it('should return gzipped size', function(done) {
         var customObjectStats = new StyleStats('test/fixture/test.css', {
@@ -161,16 +175,17 @@ describe('Analyze remote css file', function() {
     });
 });
 
-describe('Analyze HTML pages', function() {
-    it('should return the number of stylesheets', function(done) {
-        var htmlStats = new StyleStats('http://t32k.me/');
+describe('Analyze HTML pages', function(done) {
+    it('should return the number of stylesheets', function() {
+        var htmlStats = new StyleStats('https://www.google.com/');
         htmlStats.parse(function(error, htmlResult) {
             if (error) {
                 throw error;
             }
-            assert.equal(htmlResult.size, 15419);
+            assert.equal(htmlResult.styleElements, 2);
             done();
         });
+
     });
 });
 
