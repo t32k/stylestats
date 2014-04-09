@@ -5,7 +5,7 @@
   "bin": {
     "stylestats": "bin/cli.js"
   },
-  "description": "StyleStats is Node.js library to collect CSS statistics!",
+  "description": "StyleStats is a Node.js library to collect CSS statistics!",
   "homepage": "https://github.com/t32k/stylestats",
   "bugs": "https://github.com/t32k/stylestats/issues",
   "author": {
