@@ -1,6 +1,6 @@
 ![StyleStats](http://i.imgur.com/81kKnxH.png)
 
-StyleStats is Node.js library to collect CSS statistics.
+StyleStats is a Node.js library to collect CSS statistics.
 
 [![Build Status](https://secure.travis-ci.org/t32k/stylestats.png?branch=master)](http://travis-ci.org/t32k/stylestats)
 [![Coverage Status](https://coveralls.io/repos/t32k/stylestats/badge.png)](https://coveralls.io/r/t32k/stylestats)
@@ -76,33 +76,35 @@ StyleStats!
 └─────────────────────────────────┴────────────────┘
 ```
 
-StyleStats supports parsing stylesheets and `style` elements in HTML page.
+Specified css file will be analyzed.
 
 ```sh
-$ stylestats http://t32k.me/
-```
-
-Supports remote file analysis.
-
-```sh
-$ stylestats http://t32k.me/static/blog/skelton.css
-```
-
-Supports multiple input.
-
-```sh
+# Multiple input is also supported.
 $ stylestats foo.css bar.css baz.css
 ```
-Supports directory input.
+
+CSS files in specified directory will be analyzed.
 
 ```sh
 $ stylestats path/to/dir
 ```
 
-Supports glob(required quotations) input.
+Glob(required quotations) input is supported.
 
 ```sh
 $ stylestats 'path/**/*.css'
+```
+
+You can specify remote CSS file.
+
+```sh
+$ stylestats http://t32k.me/static/blog/skelton.css
+```
+
+If you set HTML page, StyleStats will analyze stylesheets and `style` elements.
+
+```sh
+$ stylestats http://t32k.me/
 ```
 
 `-t` option output JSON, CSV and HTML.
