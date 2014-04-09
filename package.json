@@ -47,7 +47,7 @@
     "stylus": "~0.43.1",
     "numeral": "~1.5.3",
     "promise": "~4.0.0",
-    "cheerio": "~0.14.0",
+    "cheerio": "~0.15.0",
     "request": "~2.34.0",
     "json2csv": "~2.2.1",
     "css-parse": "~1.7.0",
