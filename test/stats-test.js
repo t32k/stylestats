@@ -82,7 +82,7 @@ describe('Customize with configuration file', function() {
             if (error) {
                 throw error;
             }
-            assert.equal(customResult.gzippedSize, 217);
+            assert.equal(customResult.gzippedSize, 429);
             done();
         });
     });
@@ -156,7 +156,7 @@ describe('Customize with option', function() {
             if (error) {
                 throw error;
             }
-            assert.equal(customObjectResult.gzippedSize, 217);
+            assert.equal(customObjectResult.gzippedSize, 429);
             done();
         });
     });
