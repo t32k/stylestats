@@ -7,7 +7,6 @@ StyleStats is a Node.js library to collect CSS statistics.
 [![Code Climate](https://codeclimate.com/github/t32k/stylestats.png)](https://codeclimate.com/github/t32k/stylestats)
 [![NPM version](https://badge.fury.io/js/stylestats.png)](http://badge.fury.io/js/stylestats)
 [![Dependency Status](https://david-dm.org/t32k/stylestats.png)](https://david-dm.org/t32k/stylestats)
-[![devDependency Status](https://david-dm.org/t32k/stylestats/dev-status.png)](https://david-dm.org/t32k/stylestats#info=devDependencies)
 
 
 ## Installation
@@ -298,7 +297,7 @@ Statistics tree of above css:
   "totalUniqueFontSizes": 2,
   "uniqueFontSize": [ "12px", "16px" ],
   "totalUniqueColors": 3,
-  "uniqueColor": [ "#333", "#CCC", "RED" ],
+  "uniqueColor": [ "#333333", "#CCCCCC", "RED" ],
   "idSelectors": 1,
   "universalSelectors": 1,
   "unqualifiedAttributeSelectors": 1,
@@ -324,6 +323,7 @@ We launched online tool for StyleStats!
 
 ## Release History
 
++ v4.1.0: Fix `uniqueColor` metrics. Update `gzip-size` module.
 + v4.0.0: __API is changed:__ `StyleStats.parse()`. Improve CLI tool.
 + v3.2.0: Support request option, and add ClI options.
 + v3.1.0: Support compiled Less/Stylus files.
