@@ -1,6 +1,6 @@
 {
   "name": "stylestats",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "main": "lib/stylestats.js",
   "bin": {
     "stylestats": "bin/cli.js"
@@ -16,7 +16,7 @@
   "maintainers": {
     "name": "Shogo Sensui",
     "email": "shogo.sensui@gmail.com",
-    "web": "http://1000ch.net/"
+    "web": "http://github.com/1000ch"
   },
   "repository": {
     "type": "git",
@@ -41,26 +41,26 @@
     "assets"
   ],
   "dependencies": {
-    "glob": "~3.2.9",
-    "less": "~1.7.0",
-    "chalk": "~0.4.0",
-    "stylus": "~0.45.0",
-    "promise": "~5.0.0",
-    "request": "~2.34.0",
-    "cheerio": "~0.16.0",
-    "numeral": "~1.5.3",
-    "json2csv": "~2.2.1",
-    "css-parse": "~1.7.0",
-    "commander": "~2.2.0",
-    "cli-table": "~0.3.0",
-    "gzip-size": "~0.2.0",
-    "underscore": "~1.6.0"
+    "glob": "^4.0.2",
+    "less": "^1.7.1",
+    "chalk": "^0.4.0",
+    "stylus": "^0.46.3",
+    "numeral": "^1.5.3",
+    "promise": "^5.0.0",
+    "request": "^2.36.0",
+    "cheerio": "^0.17.0",
+    "json2csv": "^2.2.1",
+    "cli-table": "^0.3.0",
+    "commander": "^2.2.0",
+    "css-parse": "^1.7.0",
+    "gzip-size": "^0.2.0",
+    "underscore": "^1.6.0"
   },
   "devDependencies": {
-    "mocha": "~1.18.2",
-    "testem": "~0.6.15",
-    "istanbul": "~0.2.9",
-    "coveralls": "~2.10.0",
-    "mocha-lcov-reporter": "0.0.1"
+    "mocha": "^1.20.1",
+    "testem": "^0.6.16",
+    "istanbul": "^0.2.11",
+    "coveralls": "^2.10.0",
+    "mocha-lcov-reporter": "^0.0.1"
   }
 }
