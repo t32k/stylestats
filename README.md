@@ -3,11 +3,10 @@
 StyleStats is a Node.js library to collect CSS statistics.
 
 [![Build Status](https://secure.travis-ci.org/t32k/stylestats.svg?branch=master)](http://travis-ci.org/t32k/stylestats)
-[![Coverage Status](https://coveralls.io/repos/t32k/stylestats/badge.svg)](https://coveralls.io/r/t32k/stylestats)
-[![Code Climate](https://codeclimate.com/github/t32k/stylestats.svg)](https://codeclimate.com/github/t32k/stylestats)
+[![Coverage Status](http://img.shields.io/coveralls/t32k/stylestats/master.svg)](https://coveralls.io/r/t32k/stylestats)
+[![Code Climate](http://img.shields.io/codeclimate/github/t32k/stylestats.svg)](https://codeclimate.com/github/t32k/stylestats)
 [![NPM version](https://badge.fury.io/js/stylestats.svg)](http://badge.fury.io/js/stylestats)
 [![Dependency Status](https://david-dm.org/t32k/stylestats.svg)](https://david-dm.org/t32k/stylestats)
-
 
 ## Installation
 
