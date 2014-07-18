@@ -78,7 +78,7 @@ StyleStats!
 Specified css file will be analyzed.
 
 ```sh
-# Multiple input is also supported.
+# Providing multiple input is also supported.
 $ stylestats foo.css bar.css baz.css
 ```
 
@@ -88,31 +88,31 @@ CSS files in specified directory will be analyzed.
 $ stylestats path/to/dir
 ```
 
-Glob(required quotations) input is supported.
+Glob input is supported (quotes are required).
 
 ```sh
 $ stylestats 'path/**/*.css'
 ```
 
-You can specify remote CSS file.
+You can specify a remote CSS file.
 
 ```sh
 $ stylestats http://t32k.me/static/blog/skelton.css
 ```
 
-If you set HTML page, StyleStats will analyze stylesheets and `style` elements.
+If you specify an HTML page, StyleStats will analyze stylesheets and `style` elements.
 
 ```sh
 $ stylestats http://t32k.me/
 ```
 
-`-t` option output JSON, CSV and HTML.
+`-t` option outputs JSON, CSV and HTML.
 
 ```sh
 $ stylestats foo.css -t [json|csv|html]
 ```
 
-If you installed __[gist](https://github.com/defunkt/gist)__ tool, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with one-liner command.
+If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with a one-liner command.
 
 ```sh
 $ stylestats http://t32k.me/ -t html > stats.md && gist stats.md
@@ -134,7 +134,7 @@ The __Simplicity__ is measured as __Rules__ divided by __Selectors__.
 
 ### Lowest Cohesion
 
-The __Lowest Cohesion__ metrics is the number of selector declaration.
+The __Lowest Cohesion__ metric is the number of selector declarations.
 
 ### Unqualified Attribute Selectors
 
@@ -152,7 +152,7 @@ The following patterns will be counted:
 }
 ```
 
-The following patterns are considered as okay and will not be counted:
+The following patterns are considered to be okay and will not be counted:
 
 ```
 /* unqualified attribute selector is not key */
@@ -167,7 +167,7 @@ See also:
 
 ### JavaScript Specific Selectors
 
-The __JavaScript Specific Selectors__ metrics is the number of JavaScript-specific selectors, such as `js-*`. the selectors only for JavaScript hooks, you should not to hang any presentation off them.
+The __JavaScript Specific Selectors__ metrics is the number of JavaScript-specific selectors, such as `js-*`. The selectors are only for JavaScript hooks; you should not to hang any presentation off them.
 
 See also:
 
@@ -176,7 +176,7 @@ See also:
 
 ### Properties Count
 
-The __Properties Count__ is the number of property declaration. Default option is set to display the top `10` properties.
+The __Properties Count__ is the number of property declarations. The default is to display the top `10` properties.
 
 
 ## Configuration
@@ -206,7 +206,7 @@ Here is an example JSON to enable display gzipped size:
 }
 ```
 
-`gzippedSize` attribute is `false` by default. Because it is pretty slow.
+`gzippedSize` attribute is `false` by default because it is pretty slow.
 
 
 ## CLI Reference
