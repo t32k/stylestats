@@ -41,24 +41,24 @@
     "assets"
   ],
   "dependencies": {
-    "glob": "^4.0.4",
-    "less": "^1.7.3",
+    "glob": "^4.0.5",
+    "less": "^1.7.4",
     "chalk": "^0.5.1",
-    "stylus": "^0.47.1",
+    "stylus": "^0.48.1",
     "numeral": "^1.5.3",
     "promise": "^5.0.0",
-    "request": "^2.37.0",
+    "request": "^2.40.0",
     "cheerio": "^0.17.0",
     "json2csv": "^2.2.1",
     "cli-table": "^0.3.0",
     "commander": "^2.3.0",
     "css-parse": "^2.0.0",
-    "gzip-size": "^0.2.0",
-    "underscore": "^1.6.0"
+    "gzip-size": "^1.0.0",
+    "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "mocha": "^1.20.1",
-    "testem": "^0.6.17",
+    "mocha": "^1.21.4",
+    "testem": "^0.6.18",
     "istanbul": "^0.3.0",
     "coveralls": "^2.11.1",
     "mocha-lcov-reporter": "^0.0.1"

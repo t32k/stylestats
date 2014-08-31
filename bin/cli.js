@@ -130,6 +130,13 @@ stats.parse(function(error, result) {
             break;
         case 'csv':
             Object.keys(result).forEach(function(key) {
+                if (key === 'propertiesCount') {
+                    var array = [];
+                    result[key].forEach(function(item) {
+                        array.push([item.property + ':' + item.count]);
+                    });
+                    result[key] = array;
+                }
                 result[key] = Array.isArray(result[key]) ? result[key].join(' ') : result[key];
             });
             json2csv({
