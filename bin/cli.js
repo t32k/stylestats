@@ -135,7 +135,7 @@ stats.parse(function(error, result) {
                     result[key].forEach(function(item) {
                         array.push([item.property + ':' + item.count]);
                     });
-                    result['propertiesCount'] = array;
+                    result[key] = array;
                 }
                 result[key] = Array.isArray(result[key]) ? result[key].join(' ') : result[key];
             });
