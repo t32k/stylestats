@@ -12,7 +12,6 @@ var json2csv = require('json2csv');
 
 var StyleStats = require('../lib/stylestats');
 var util = require('../lib/util');
-var prettify = require('../lib/prettify');
 
 program
     .version(require('../package.json').version)
@@ -118,7 +117,7 @@ stats.parse(function(error, result) {
                 encoding: 'utf8'
             }));
             var html = template({
-                stats: prettify(result),
+                stats: StyleStats.prettify(result),
                 published: result.published,
                 paths: result.paths
             });
@@ -131,7 +130,7 @@ stats.parse(function(error, result) {
                     compact: program.simple
                 }
             });
-            prettify(result).forEach(function(data) {
+            StyleStats.prettify(result).forEach(function(data) {
                 table.push(data);
             });
             console.log(' StyleStats!\n' + table.toString());
