@@ -182,7 +182,7 @@ describe('Analyze HTML pages', function() {
             if (error) {
                 throw error;
             }
-            assert.equal(htmlResult.styleElements, 1);
+            assert.equal(htmlResult.stylesheets, 1);
             done();
         });
 
