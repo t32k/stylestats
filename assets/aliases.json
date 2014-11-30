@@ -16,6 +16,8 @@
     "lowestCohesionSelector": "Lowest Cohesion Selector",
     "totalUniqueFontSizes": "Total Unique Font Sizes",
     "uniqueFontSize": "Unique Font Size",
+    "totalUniqueFontFamilies": "Total Unique Font Families",
+    "uniqueFontFamily": "Unique Font Family",
     "totalUniqueColors": "Total Unique Colors",
     "uniqueColor": "Unique Color",
     "idSelectors": "ID Selectors",
