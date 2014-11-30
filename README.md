@@ -1,12 +1,6 @@
-![StyleStats](http://i.imgur.com/81kKnxH.png)
+# [StyleStats](http://www.stylestats.org/) [![Build Status](https://secure.travis-ci.org/t32k/stylestats.svg?branch=master)](http://travis-ci.org/t32k/stylestats) [![Coverage Status](http://img.shields.io/coveralls/t32k/stylestats.svg)](https://coveralls.io/r/t32k/stylestats) [![Code Climate](http://img.shields.io/codeclimate/github/t32k/stylestats.svg)](https://codeclimate.com/github/t32k/stylestats) [![Dependency Status](https://david-dm.org/t32k/stylestats.svg)](https://david-dm.org/t32k/stylestats)
 
-StyleStats is a Node.js library to collect CSS statistics.
-
-[![Build Status](https://secure.travis-ci.org/t32k/stylestats.svg?branch=master)](http://travis-ci.org/t32k/stylestats)
-[![Coverage Status](http://img.shields.io/coveralls/t32k/stylestats.svg)](https://coveralls.io/r/t32k/stylestats)
-[![Code Climate](http://img.shields.io/codeclimate/github/t32k/stylestats.svg)](https://codeclimate.com/github/t32k/stylestats)
-[![NPM version](https://badge.fury.io/js/stylestats.svg)](http://badge.fury.io/js/stylestats)
-[![Dependency Status](https://david-dm.org/t32k/stylestats.svg)](https://david-dm.org/t32k/stylestats)
+> StyleStats is a Node.js library to collect CSS statistics.
 
 ## Installation
 
@@ -47,10 +41,14 @@ StyleStats!
 │ Unique Font Size                │ 12px           │
 │                                 │ 16px           │
 ├─────────────────────────────────┼────────────────┤
+│ Total Unique Font Families      │ 0              │
+├─────────────────────────────────┼────────────────┤
+│ Unique Font Family              │ N/A            │
+├─────────────────────────────────┼────────────────┤
 │ Total Unique Colors             │ 3              │
 ├─────────────────────────────────┼────────────────┤
-│ Unique Color                    │ #333           │
-│                                 │ #CCC           │
+│ Unique Color                    │ #333333        │
+│                                 │ #CCCCCC        │
 │                                 │ RED            │
 ├─────────────────────────────────┼────────────────┤
 │ ID Selectors                    │ 1              │
@@ -222,7 +220,7 @@ $ stylestats -h
     -V, --version        output the version number
     -c, --config [path]  Path and name of the incoming JSON file.
     -t, --type [format]  Specify the output format. <json|html|csv>
-    -s, --simple         Show compact style's log.
+    -s, --simple         Show compact style log.
     -g, --gzip           Show gzipped file size.
     -n, --number         Show only numeral metrics.
     -u, --ua [OS]        Specify the user agent. <ios|android>
@@ -295,6 +293,8 @@ Statistics tree of above css:
   "lowestCohesionSelector": [ ".foo" ],
   "totalUniqueFontSizes": 2,
   "uniqueFontSize": [ "12px", "16px" ],
+  "totalUniqueFontFamilies": 0,
+  "uniqueFontFamily": [],
   "totalUniqueColors": 3,
   "uniqueColor": [ "#333333", "#CCCCCC", "RED" ],
   "idSelectors": 1,
@@ -322,6 +322,7 @@ We launched online tool for StyleStats!
 
 ## Release History
 
++ v4.2.0: Add `totalUniqueFontFamilies`, `uniqueFontFamily` metics.
 + v4.1.0: Fix `uniqueColor` metrics. Update `gzip-size` module.
 + v4.0.0: __API is changed:__ `StyleStats.parse()`. Improve CLI tool.
 + v3.2.0: Support request option, and add ClI options.

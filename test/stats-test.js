@@ -52,6 +52,12 @@ describe('CSS Statistics', function() {
     it('should return total unique colors', function() {
         assert.equal(statsResult.totalUniqueColors, 2);
     });
+    it('should return total unique font families', function() {
+        assert.equal(statsResult.totalUniqueFontFamilies, 0);
+    });
+    it('should return unique font family', function() {
+        assert.equal(statsResult.uniqueFontFamily, 0);
+    });
     it('should return id selectors', function() {
         assert.equal(statsResult.idSelectors, 1);
     });
@@ -182,7 +188,7 @@ describe('Analyze HTML pages', function() {
             if (error) {
                 throw error;
             }
-            assert.equal(htmlResult.styleElements, 1);
+            assert.equal(htmlResult.stylesheets, 1);
             done();
         });
 

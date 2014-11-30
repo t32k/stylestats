@@ -1,6 +1,6 @@
 {
   "name": "stylestats",
-  "version": "4.1.4",
+  "version": "4.2.0",
   "main": "lib/stylestats.js",
   "bin": {
     "stylestats": "bin/cli.js"
@@ -41,26 +41,26 @@
     "assets"
   ],
   "dependencies": {
-    "glob": "^4.0.5",
-    "less": "^1.7.4",
     "chalk": "^0.5.1",
-    "stylus": "^0.48.1",
-    "numeral": "^1.5.3",
-    "promise": "^6.0.0",
-    "request": "^2.40.0",
-    "cheerio": "^0.17.0",
-    "json2csv": "^2.2.1",
+    "cheerio": "^0.18.0",
     "cli-table": "^0.3.0",
     "commander": "^2.3.0",
     "css-parse": "^2.0.0",
+    "glob": "^4.0.5",
     "gzip-size": "^1.0.0",
+    "json2csv": "^2.2.1",
+    "less": "^1.7.5",
+    "numeral": "^1.5.3",
+    "promise": "^6.0.0",
+    "request": "^2.40.0",
+    "stylus": "^0.49.3",
     "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "mocha": "^1.21.4",
-    "testem": "^0.6.18",
-    "istanbul": "^0.3.0",
     "coveralls": "^2.11.1",
-    "mocha-lcov-reporter": "^0.0.1"
+    "istanbul": "^0.3.0",
+    "mocha": "^2.0.1",
+    "mocha-lcov-reporter": "^0.0.1",
+    "testem": "^0.6.18"
   }
 }
