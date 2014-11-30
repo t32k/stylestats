@@ -16,6 +16,8 @@
     "lowestCohesionSelector": true,
     "totalUniqueFontSizes": true,
     "uniqueFontSize": true,
+    "totalUniqueFontFamilies": true,
+    "uniqueFontFamily": true,
     "totalUniqueColors": true,
     "uniqueColor": true,
     "idSelectors": true,
