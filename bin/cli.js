@@ -4,15 +4,12 @@
 
 var _ = require('underscore');
 var fs = require('fs');
-var path = require('path');
 var chalk = require('chalk');
-var Table = require('cli-table');
 var program = require('commander');
-var json2csv = require('json2csv');
 
 var StyleStats = require('../lib/stylestats');
+var Format = require('../lib/format');
 var util = require('../lib/util');
-var prettify = require('../lib/prettify');
 
 program
     .version(require('../package.json').version)
@@ -89,52 +86,28 @@ stats.parse(function(error, result) {
     if (error) {
         console.log( chalk.red(' [ERROR] ' + error.message) );
     }
+    
+    var format = new Format(result);
     switch (program.type) {
         case 'json':
-            var json = JSON.stringify(result, null, 2);
-            console.log(json);
+            format.toJSON(function (json) {
+                console.log(json);
+            });
             break;
         case 'csv':
-            Object.keys(result).forEach(function(key) {
-                if (key === 'propertiesCount') {
-                    var array = [];
-                    result[key].forEach(function(item) {
-                        array.push([item.property + ':' + item.count]);
-                    });
-                    result[key] = array;
-                }
-                result[key] = Array.isArray(result[key]) ? result[key].join(' ') : result[key];
-            });
-            json2csv({
-                data: result,
-                fields: Object.keys(result)
-            }, function(err, csv) {
+            format.toCSV(function (csv) {
                 console.log(csv);
             });
             break;
         case 'html':
-            var templatePath = path.join(__dirname, '../assets/stats.template');
-            var template = _.template(fs.readFileSync(templatePath, {
-                encoding: 'utf8'
-            }));
-            var html = template({
-                stats: prettify(result),
-                published: result.published,
-                paths: result.paths
+            format.toHTML(function (html) {
+                console.log(html);
             });
-            console.log(html);
             break;
         default:
-            var table = new Table({
-                style: {
-                    head: ['cyan'],
-                    compact: program.simple
-                }
+            format.toTable(function (table) {
+                console.log(' StyleStats!\n' + table);
             });
-            prettify(result).forEach(function(data) {
-                table.push(data);
-            });
-            console.log(' StyleStats!\n' + table.toString());
             break;
     }
 });
