@@ -87,7 +87,7 @@ stats.parse(function(error, result) {
         console.log( chalk.red(' [ERROR] ' + error.message) );
     }
     
-    var format = new Format(result);
+    var format = new Format(result, program.simple);
     switch (program.type) {
         case 'json':
             format.toJSON(function (json) {
@@ -105,7 +105,7 @@ stats.parse(function(error, result) {
             });
             break;
         default:
-            format.toTable(program.simple, function (table) {
+            format.toTable(function (table) {
                 console.log(' StyleStats!\n' + table);
             });
             break;
