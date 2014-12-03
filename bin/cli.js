@@ -105,7 +105,7 @@ stats.parse(function(error, result) {
             });
             break;
         default:
-            format.toTable(function (table) {
+            format.toTable(program.simple, function (table) {
                 console.log(' StyleStats!\n' + table);
             });
             break;
