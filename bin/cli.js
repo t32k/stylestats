@@ -87,7 +87,7 @@ stats.parse(function(error, result) {
         console.log( chalk.red(' [ERROR] ' + error.message) );
     }
     
-    var format = new Format(result);
+    var format = new Format(result, program.simple);
     switch (program.type) {
         case 'json':
             format.toJSON(function (json) {
