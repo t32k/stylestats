@@ -265,7 +265,7 @@ describe('Analyze LESS files', function() {
       if (error) {
         throw error;
       }
-      assert.equal(lessResult.size, 499);
+      assert.equal(lessResult.size, 495);
       done();
     });
   });
