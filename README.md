@@ -320,22 +320,6 @@ We launched online tool for StyleStats!
 + [StyleStats](http://www.stylestats.org/)
 
 
-## Release History
-
-+ v4.2.0: Add `totalUniqueFontFamilies`, `uniqueFontFamily` metics.
-+ v4.1.0: Fix `uniqueColor` metrics. Update `gzip-size` module.
-+ v4.0.0: __API is changed:__ `StyleStats.parse()`. Improve CLI tool.
-+ v3.2.0: Support request option, and add ClI options.
-+ v3.1.0: Support compiled Less/Stylus files.
-+ v3.0.0: __API is changed:__ CLI option. Support parse HTML page.
-+ v2.3.0: Support HTML output CLI option.
-+ v2.2.0: Add `dataUriSize`, `ratioOfDataUriSize` metics.
-+ v2.1.0: Add `javascriptSpecificSelectors` metics, and fix counting properties in mediaQueries.
-+ v2.0.0: __API is changed:__ `StyleStats.parse()`. Add metrics.
-+ v1.2.0: Support multiple input files.
-+ v1.1.0: Add `universalSelectors` metrics.
-+ v1.0.0: Major release.
-
 # License
 
 Code is released under [the MIT license](LICENSE).
