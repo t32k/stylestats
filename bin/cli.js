@@ -104,6 +104,11 @@ stats.parse(function (error, result) {
         console.log(html);
       });
       break;
+    case 'md':
+      format.toMD(function (md) {
+        console.log(md);
+      });
+      break;
     default:
       format.toTable(function (table) {
         console.log(' StyleStats!\n' + table);
