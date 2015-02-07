@@ -105,7 +105,7 @@ stats.parse(function (error, result) {
       });
       break;
     case 'md':
-      format.toMD(function (md) {
+      format.toMarkdown(function (md) {
         console.log(md);
       });
       break;
