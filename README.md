@@ -103,10 +103,10 @@ If you specify an HTML page, StyleStats will analyze stylesheets and `style` ele
 $ stylestats http://t32k.me/
 ```
 
-`-t` option outputs JSON, CSV and HTML.
+`-t` option outputs JSON, HTML, Markdown and CSV.
 
 ```sh
-$ stylestats foo.css -t [json|csv|html]
+$ stylestats foo.css -t [json|html|md|csv>]
 ```
 
 If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with a one-liner command.
