@@ -59,12 +59,12 @@ describe('Constructor Test', function () {
   describe('URL', function() {
 
     it('should return file size if CSS URL is given', function(done) {
-      var requestStats = new StyleStats('http://t32k.me/mol/assets/main.css');
+      var requestStats = new StyleStats('http://t32k.me/static/assets/css/main.css');
       requestStats.parse(function(error, requestResult) {
         if (error) {
           throw error;
         }
-        assert.equal(requestResult.size, 58694);
+        assert.equal(requestResult.size, 70);
         done();
       });
     });
@@ -101,7 +101,7 @@ describe('Constructor Test', function () {
         if (error) {
           throw error;
         }
-        assert.equal(htmlResult.stylesheets, 1);
+        assert.equal(htmlResult.stylesheets, 2);
         done();
       });
     });
