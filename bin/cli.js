@@ -15,7 +15,7 @@ program
   .version(require('../package.json').version)
   .usage('[options] <file ...>')
   .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
-  .option('-t, --type [format]', 'Specify the output format. <json|html|csv>')
+  .option('-t, --type [format]', 'Specify the output format. <json|html|md|csv>')
   .option('-s, --simple', 'Show compact style\'s log.')
   .option('-g, --gzip', 'Show gzipped file size.')
   .option('-n, --number', 'Show only numeral metrics.')
