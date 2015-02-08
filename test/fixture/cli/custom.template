@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>CSS Stats by StyleStats</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style type="text/css">
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+</style>
+</head>
+
+<body>
+<div class="c-meta">
+  <b>Published: </b><span><%= published %></span><br>
+  <b>Paths: </b><span><%= paths.join(',') %></span><br>
+  <b>Generator: </b><span><a href="https://github.com/t32k/stylestats">t32k/stylestats | GitHub</a></span><br>
+</div>
+<table class="c-data">
+  <tr class="c-data-s-head">
+    <th>Metrics</th>
+    <th>Result</th>
+  </tr>
+  <% _.each(stats, function(obj) { %>
+  <tr class="c-data-s-row">
+    <td><%= Object.keys(obj) %></td>
+    <td><%= obj[Object.keys(obj)] %></td>
+  </tr>
+  <% }); %>
+</table>
+</body>
+</html>
