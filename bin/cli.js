@@ -4,6 +4,7 @@
 
 var _ = require('underscore');
 var fs = require('fs');
+var path = require('path');
 var chalk = require('chalk');
 var program = require('commander');
 
@@ -86,6 +87,7 @@ if (program.config && util.isFile(program.config)) {
 _.extend(config, userConfig);
 
 
+
 // Parse
 var stats = new StyleStats(program.args, config);
 stats.parse(function (error, result) {
@@ -94,31 +96,43 @@ stats.parse(function (error, result) {
   }
 
   var format = new Format(result, program.simple);
-  switch (program.format) {
-    case 'json':
-      format.toJSON(function (json) {
-        console.log(json);
-      });
-      break;
-    case 'csv':
-      format.toCSV(function (csv) {
-        console.log(csv);
-      });
-      break;
-    case 'html':
-      format.toHTML(function (html) {
-        console.log(html);
-      });
-      break;
-    case 'md':
-      format.toMarkdown(function (md) {
-        console.log(md);
-      });
-      break;
-    default:
-      format.toTable(function (table) {
-        console.log(' StyleStats!\n' + table);
-      });
-      break;
+  if (path.exists(program.template)) {
+
+    format.registerTemplate(fs.readFileSync(program.template, {
+      encoding: 'utf8'
+    }));
+
+    format.toTemplate(function (text) {
+      console.log(text);
+    });
+
+  } else {
+    switch (program.format) {
+      case 'json':
+        format.toJSON(function (json) {
+          console.log(json);
+        });
+        break;
+      case 'csv':
+        format.toCSV(function (csv) {
+          console.log(csv);
+        });
+        break;
+      case 'html':
+        format.toHTML(function (html) {
+          console.log(html);
+        });
+        break;
+      case 'md':
+        format.toMarkdown(function (md) {
+          console.log(md);
+        });
+        break;
+      default:
+        format.toTable(function (table) {
+          console.log(' StyleStats!\n' + table);
+        });
+        break;
+    }
   }
 });
