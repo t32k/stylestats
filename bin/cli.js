@@ -15,7 +15,8 @@ program
   .version(require('../package.json').version)
   .usage('[options] <file ...>')
   .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
-  .option('-t, --type [format]', 'Specify the output format. <json|html|md|csv>')
+  .option('-f, --format [format]', 'Specify the output format. <json|html|md|csv>')
+  .option('-t, --template [path]', 'Specify the template path.')
   .option('-s, --simple', 'Show compact style\'s log.')
   .option('-g, --gzip', 'Show gzipped file size.')
   .option('-n, --number', 'Show only numeral metrics.')
@@ -34,9 +35,11 @@ var config = {
     headers: {}
   }
 };
+
 if (program.gzip) {
   config.gzippedSize = true;
 }
+
 if (program.ua) {
   var iOS = 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53';
   var Android = 'Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/KRT16M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.59 Mobile Safari/537.36';
@@ -52,6 +55,7 @@ if (program.ua) {
       break;
   }
 }
+
 if (program.number) {
   var numberConfig = {
     "published": false,
@@ -64,6 +68,7 @@ if (program.number) {
   };
   _.extend(config, numberConfig);
 }
+
 var userConfig = {};
 if (program.config && util.isFile(program.config)) {
   var configString = fs.readFileSync(program.config, {
@@ -77,6 +82,7 @@ if (program.config && util.isFile(program.config)) {
 } else if (_.isObject(program.config)) {
   userConfig = config;
 }
+
 _.extend(config, userConfig);
 
 
@@ -88,7 +94,7 @@ stats.parse(function (error, result) {
   }
 
   var format = new Format(result, program.simple);
-  switch (program.type) {
+  switch (program.format) {
     case 'json':
       format.toJSON(function (json) {
         console.log(json);
