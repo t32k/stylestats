@@ -1,0 +1,10 @@
+{
+  "defaults": {
+    "suiteName": "StyleStats Test Suite for Wisteria.css",
+    "text": ": {actual} should be {operation} {expected} for {metric}",
+    "operation": "<"
+  },
+  "results": {
+    "size": 20000
+  }
+}

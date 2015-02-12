@@ -9,6 +9,7 @@ var program = require('commander');
 
 var StyleStats = require('../lib/stylestats');
 var Format = require('../lib/format');
+var specs = require('../lib/specs');
 var util = require('../lib/util');
 
 program
@@ -17,6 +18,7 @@ program
   .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
   .option('-f, --format [format]', 'Specify the output format. <json|html|md|csv>')
   .option('-t, --template [path]', 'Specify the template path.')
+  .option('-s, --specs [path]', 'Specify the specs file JSON path.')
   .option('-g, --gzip', 'Show gzipped file size.')
   .option('-n, --number', 'Show only numeral metrics.')
   .option('-u, --ua [OS]', 'Specify the user agent. <ios|android>')
@@ -104,7 +106,7 @@ stats.parse(function (error, result) {
       console.log(text);
     });
 
-  } else {
+  } else if(!program.specs) {
     switch (program.format) {
       case 'json':
         format.toJSON(function (json) {
@@ -132,5 +134,7 @@ stats.parse(function (error, result) {
         });
         break;
     }
+  } else {
+    specs(result, program.specs);
   }
 });
