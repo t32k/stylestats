@@ -16,6 +16,7 @@ program
   .usage('[options] <file ...>')
   .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
   .option('-t, --type [format]', 'Specify the output format. <json|html|md|csv>')
+  .option('-T, --template [path]', 'Path of the custom template file for HTML output.')
   .option('-s, --simple', 'Show compact style\'s log.')
   .option('-g, --gzip', 'Show gzipped file size.')
   .option('-n, --number', 'Show only numeral metrics.')
@@ -100,7 +101,7 @@ stats.parse(function (error, result) {
       });
       break;
     case 'html':
-      format.toHTML(function (html) {
+      format.toHTML(program.template, function (html) {
         console.log(html);
       });
       break;

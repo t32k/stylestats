@@ -40,6 +40,27 @@ describe('Command line test', function() {
     });
   });
 
+  it('should return custom HTML format', function(done) {
+    cmds.push('--type', 'html');
+    cmds.push('--template', 'test/fixture/cli/custom.template');
+    exec(cmds.join(' '), function(error, stdout, stderr) {
+      var fixture = fs.readFileSync('test/fixture/cli/custom.html', 'utf-8');
+      stdout = stdout.replace(/\s/g, '');
+      fixture = fixture.replace(/\s/g, '');
+      assert.equal(stdout, fixture);
+      done();
+    });
+  });
+
+  it('should return error message if given template file is not found', function(done) {
+    cmds.push('--type', 'html');
+    cmds.push('--template', 'foo/bar.template');
+    exec(cmds.join(' '), function(error, stdout, stderr) {
+      assert.equal(stdout, " [ERROR] ENOENT, no such file or directory 'foo/bar.template'\n")
+      done();
+    });
+  });
+
   it('should return Markdown format', function(done) {
     cmds.push('--type', 'md');
     exec(cmds.join(' '), function(error, stdout, stderr) {

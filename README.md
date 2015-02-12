@@ -216,14 +216,15 @@ $ stylestats -h
 
   Options:
 
-    -h, --help           output usage information
-    -V, --version        output the version number
-    -c, --config [path]  Path and name of the incoming JSON file.
-    -t, --type [format]  Specify the output format. <json|html|md|csv>
-    -s, --simple         Show compact style log.
-    -g, --gzip           Show gzipped file size.
-    -n, --number         Show only numeral metrics.
-    -u, --ua [OS]        Specify the user agent. <ios|android>
+    -h, --help             output usage information
+    -V, --version          output the version number
+    -c, --config [path]    Path and name of the incoming JSON file.
+    -t, --type [format]    Specify the output format. <json|html|md|csv>
+    -T, --template [path]  Path of the custom template file for HTML output.
+    -s, --simple           Show compact style's log.
+    -g, --gzip             Show gzipped file size.
+    -n, --number           Show only numeral metrics.
+    -u, --ua [OS]          Specify the user agent. <ios|android>
 ```
 
 ```shell
