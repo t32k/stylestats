@@ -1,10 +1,21 @@
 {
   "defaults": {
-    "suiteName": "StyleStats Test Suite for Wisteria.css",
-    "text": ": {actual} should be {operation} {expected} for {metric}",
-    "operation": "<"
+    "suiteName": "StyleStats Test Suite for sample.css",
+    "text": "{metric}: {actual} should be {operation} {expected}",
+    "operation": "<",
+    "reporter": "spec"
   },
   "results": {
-    "size": 20000
+    "simplicity": {
+      "min": 0.4
+    },
+    "size": 20000,
+    "dataUriSize": 8000,
+    "idSelectors": 20,
+    "importantKeywords": {
+      "min": 2,
+      "max": 8
+    },
+    "javascriptSpecificSelectors": 1
   }
 }
