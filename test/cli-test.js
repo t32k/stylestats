@@ -23,7 +23,7 @@ describe('Command line test', function() {
   });
 
   it('should return JSON format', function(done) {
-    cmds.push('--type', 'json');
+    cmds.push('--format', 'json');
     exec(cmds.join(' '), function(error, stdout, stderr) {
       var fixture = fs.readFileSync('test/fixture/cli/example.json', 'utf-8');
       assert.equal(stdout, fixture);
@@ -32,7 +32,7 @@ describe('Command line test', function() {
   });
 
   it('should return HTML format', function(done) {
-    cmds.push('--type', 'html');
+    cmds.push('--format', 'html');
     exec(cmds.join(' '), function(error, stdout, stderr) {
       var fixture = fs.readFileSync('test/fixture/cli/example.html', 'utf-8');
       assert.equal(stdout, fixture);
@@ -41,7 +41,7 @@ describe('Command line test', function() {
   });
 
   it('should return Markdown format', function(done) {
-    cmds.push('--type', 'md');
+    cmds.push('--format', 'md');
     exec(cmds.join(' '), function(error, stdout, stderr) {
       var fixture = fs.readFileSync('test/fixture/cli/example.md', 'utf-8');
       assert.equal(stdout, fixture);
@@ -50,7 +50,7 @@ describe('Command line test', function() {
   });
 
   it('should return CSV format', function(done) {
-    cmds.push('--type', 'csv');
+    cmds.push('--format', 'csv');
     exec(cmds.join(' '), function(error, stdout, stderr) {
       var fixture = fs.readFileSync('test/fixture/cli/example.csv', 'utf-8');
       assert.equal(stdout, fixture);
