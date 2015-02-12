@@ -58,4 +58,15 @@ describe('Command line test', function() {
     });
   });
 
+  it('should success with users test spec', function(done) {
+    var testCmds = ['node ./bin/cli.js'];
+    testCmds.push('test/fixture/app.css', '--specs test/fixture/specs.json');
+    exec(testCmds.join(' '), function(error, stdout, stderr) {
+      if(error) {
+        assert(error.killed);
+      }
+      done();
+    });
+  });
+
 });
