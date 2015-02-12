@@ -18,7 +18,6 @@ program
   .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
   .option('-f, --format [format]', 'Specify the output format. <json|html|md|csv>')
   .option('-t, --template [path]', 'Specify the template path.')
-  .option('-s, --simple', 'Show compact style\'s log.')
   .option('-g, --gzip', 'Show gzipped file size.')
   .option('-n, --number', 'Show only numeral metrics.')
   .option('-u, --ua [OS]', 'Specify the user agent. <ios|android>')
@@ -95,7 +94,7 @@ stats.parse(function (error, result) {
     console.log(chalk.red(' [ERROR] ' + error.message));
   }
 
-  var format = new Format(result, program.simple);
+  var format = new Format(result);
   if (path.exists(program.template)) {
 
     format.registerTemplate(fs.readFileSync(program.template, {
