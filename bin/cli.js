@@ -4,7 +4,6 @@
 
 var _ = require('underscore');
 var fs = require('fs');
-var path = require('path');
 var chalk = require('chalk');
 var program = require('commander');
 
@@ -95,7 +94,7 @@ stats.parse(function (error, result) {
   }
 
   var format = new Format(result);
-  if (path.exists(program.template)) {
+  if (fs.existsSync(program.template)) {
 
     format.registerTemplate(fs.readFileSync(program.template, {
       encoding: 'utf8'
