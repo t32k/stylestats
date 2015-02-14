@@ -55,12 +55,12 @@
     "promise": "^6.0.0",
     "request": "^2.40.0",
     "stylus": "^0.50.0",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "mocha": "^2.0.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
-    "mocha": "^2.0.1",
     "mocha-lcov-reporter": "^0.0.1",
     "testem": "^0.6.18"
   }
