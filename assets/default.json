@@ -4,6 +4,7 @@
   "stylesheets": true,
   "styleElements": true,
   "size": true,
+  "totalLines": true,
   "dataUriSize": true,
   "ratioOfDataUriSize": true,
   "gzippedSize": false,
