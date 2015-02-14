@@ -106,24 +106,26 @@ $ stylestats http://t32k.me/
 `-t` option outputs JSON, HTML, Markdown and CSV.
 
 ```sh
-$ stylestats foo.css -t [json|html|md|csv>]
+$ stylestats foo.css -f [json|html|md|csv>]
 ```
 
 If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with a one-liner command.
 
 ```sh
-$ stylestats http://t32k.me/ -t html > stats.md && gist stats.md
+$ stylestats http://t32k.me/ -f html > stats.md && gist stats.md
 https://gist.github.com/9725673
 ```
 
-## Grunt & Gulp modules
+## Other tools
 
-- https://github.com/tvooo/grunt-stylestats by [@tvooo](https://github.com/tvooo)
-- https://github.com/1000ch/gulp-stylestats by [@1000ch](https://github.com/1000ch)
++ [Web application](http://www.stylestats.org/)
++ [Gulp module](https://github.com/1000ch/gulp-stylestats) by [@1000ch](https://github.com/1000ch)
++ [Grunt module](https://github.com/tvooo/grunt-stylestats) by [@tvooo](https://github.com/tvooo)
+
 
 ## Metrics
 
-![](http://i.imgur.com/zwtP6js.png)
+![](http://i.imgur.com/jSCs3a3.png)
 
 ### Simplicity
 
@@ -168,7 +170,7 @@ The __JavaScript Specific Selectors__ metrics is the number of JavaScript-specif
 
 See also:
 
-+ [About HTML semantics and front-end architecture – Nicolas Gallagher](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/#javascript-specific-classes)`
++ [About HTML semantics and front-end architecture – Nicolas Gallagher](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/#javascript-specific-classes)
 
 
 ### Properties Count
@@ -216,32 +218,33 @@ $ stylestats -h
 
   Options:
 
-    -h, --help           output usage information
-    -V, --version        output the version number
-    -c, --config [path]  Path and name of the incoming JSON file.
-    -t, --type [format]  Specify the output format. <json|html|md|csv>
-    -s, --simple         Show compact style log.
-    -g, --gzip           Show gzipped file size.
-    -n, --number         Show only numeral metrics.
-    -u, --ua [OS]        Specify the user agent. <ios|android>
+    -h, --help             output usage information
+    -V, --version          output the version number
+    -c, --config [path]    Path and name of the incoming JSON file.
+    -f, --format [format]  Specify the output format. <json|html|md|csv>
+    -t, --template [path]  Specify the template path.
+    -s, --specs [path]     Specify the specs file JSON path.
+    -g, --gzip             Show gzipped file size.
+    -n, --number           Show only numeral metrics.
+    -u, --ua [OS]          Specify the user agent. <ios|android>
 ```
 
 ```shell
-$ stylestats path/to/stylesheet.css -s -c path/to/.stylestatsrc
-StyleStats!
-┌───────────────────────────┬───────────────┐
-│ Rules                     │ 7             │
-│ Selectors                 │ 11            │
-│ Lowest Cohesion           │ 6             │
-│ Total Unique Font Sizes   │ 5             │
-│ Total Unique Colors       │ 2             │
-│ ID Selectors              │ 1             │
-│ Important Keywords        │ 1             │
-│ Media Queries             │ 1             │
-└───────────────────────────┴───────────────┘
+$ stylestats path/to/stylesheet.css -c path/to/.stylestatsrc
+ StyleStats!
+┌────────────────────────────┬────────┐
+│ Style Sheets               │ 1      │
+├────────────────────────────┼────────┤
+│ Size                       │ 19.0KB │
+├────────────────────────────┼────────┤
+│ Gzipped Size               │ 3.7KB  │
+├────────────────────────────┼────────┤
+│ Total Unique Font Families │ 3      │
+└────────────────────────────┴────────┘
 ```
 
 + [Plot StyleStats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
++ [Plot StyleStats data with moniteur](https://github.com/t32k/stylestats/wiki/Plot-with-moniteur)
 
 ## API Reference
 
@@ -312,13 +315,6 @@ Statistics tree of above css:
   ]
 }
 ```
-
-## Online Tool
-
-We launched online tool for StyleStats!
-
-+ [StyleStats](http://www.stylestats.org/)
-
 
 # License
 
