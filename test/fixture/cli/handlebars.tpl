@@ -1,6 +1,6 @@
 <div class="entry">
-  <h1>{{data.paths}}</h1>
+  <h1>{{paths}}</h1>
   <div class="body">
-    {{body}}
+    {{uniqueFontFamily}}
   </div>
 </div>
