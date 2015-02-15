@@ -15,13 +15,13 @@ var util = require('../lib/util');
 program
   .version(require('../package.json').version)
   .usage('[options] <file ...>')
-  .option('-c, --config [path]', 'Path and name of the incoming JSON file.')
-  .option('-f, --format [format]', 'Specify the output format. <json|html|md|csv>')
-  .option('-t, --template [path]', 'Specify the template path.')
-  .option('-s, --specs [path]', 'Specify the specs file JSON path.')
-  .option('-g, --gzip', 'Show gzipped file size.')
-  .option('-n, --number', 'Show only numeral metrics.')
-  .option('-u, --ua [OS]', 'Specify the user agent. <ios|android>')
+  .option('-c, --config [path]', 'set user\'s configuration')
+  .option('-f, --format [format]', 'set the output format. <json|html|md|csv>')
+  .option('-t, --template [path]', 'set the template path for output formant.')
+  .option('-s, --specs [path]', 'run test with your test specs file.')
+  .option('-g, --gzip', 'show gzipped file size.')
+  .option('-n, --number', 'show only numeral metrics.')
+  .option('-u, --ua [OS]', 'set the user agent. <ios|android>')
   .parse(process.argv);
 
 if (!program.args.length) {
