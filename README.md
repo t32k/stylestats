@@ -125,7 +125,7 @@ https://gist.github.com/9725673
 
 ## Metrics
 
-![](http://i.imgur.com/jSCs3a3.png)
+![Metrics](https://dl.dropboxusercontent.com/u/356242/css.svg)
 
 ### Simplicity
 
@@ -226,13 +226,13 @@ $ stylestats --help
 
     -h, --help             output usage information
     -V, --version          output the version number
-    -c, --config [path]    set user's configuration
-    -f, --format [format]  set the output format. <json|html|md|csv>
-    -t, --template [path]  set the template path for output formant.
-    -s, --specs [path]     run test with your test specs file.
-    -g, --gzip             show gzipped file size.
-    -n, --number           show only numeral metrics.
-    -u, --ua [OS]          set the user agent. <ios|android>
+    -c, --config [path]    set configurations
+    -f, --format [format]  set the output format <json|html|md|csv>
+    -t, --template [path]  set the template path for output formant
+    -s, --specs [path]     run test with your test specs file
+    -g, --gzip             show gzipped file size
+    -n, --number           show only numeral metrics
+    -u, --ua [OS]          set the user agent <ios|android>
 ```
 
 Example:
