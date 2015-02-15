@@ -20,6 +20,7 @@
     "universalSelectors": false,
     "unqualifiedAttributeSelectors": false,
     "javascriptSpecificSelectors": false,
+    "userSpecifiedSelectors": "#foo",
     "importantKeywords": false,
     "floatProperties": false,
     "mediaQueries": false,

@@ -24,6 +24,7 @@
   "universalSelectors": "Universal Selectors",
   "unqualifiedAttributeSelectors": "Unqualified Attribute Selectors",
   "javascriptSpecificSelectors": "JavaScript Specific Selectors",
+  "userSpecifiedSelectors": "User Specified Selectors",
   "importantKeywords": "Important Keywords",
   "floatProperties": "Float Properties",
   "mediaQueries": "Media Queries",

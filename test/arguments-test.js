@@ -34,6 +34,18 @@ describe('Constructor Test', function () {
       });
     });
 
+    it('should return User Specified Selectors if configuration file is specified', function(done) {
+      var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
+      customStats.parse(function(error, customResult) {
+        if (error) {
+          throw error;
+        }
+        assert.equal(customResult.userSpecifiedSelectors, 1);
+        done();
+      });
+    });
+
+
     it('should throw error if specified configuration file is invalid', function(done) {
       assert.throws(
         function() {

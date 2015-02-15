@@ -24,6 +24,7 @@
   "universalSelectors": true,
   "unqualifiedAttributeSelectors": true,
   "javascriptSpecificSelectors": "[#\\.]js\\-",
+  "userSpecifiedSelectors": false,
   "importantKeywords": true,
   "floatProperties": true,
   "mediaQueries": true,
