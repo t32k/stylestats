@@ -103,7 +103,7 @@ If you specify an HTML page, StyleStats will analyze stylesheets and `style` ele
 $ stylestats http://t32k.me/
 ```
 
-`-t` option outputs JSON, HTML, Markdown and CSV.
+`--format` option outputs JSON, HTML, Markdown and CSV.
 
 ```sh
 $ stylestats foo.css -f [json|html|md|csv>]
@@ -173,6 +173,11 @@ See also:
 + [About HTML semantics and front-end architecture – Nicolas Gallagher](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/#javascript-specific-classes)
 
 
+### User Specified Selectors
+
+The __User Specified Selectors__ metrics is the number of user-specified selectors. Default is `false`. For instance, you can count the number of components if you specify `"\\.component\\-"` using reqular expression in `.stylestatsrc` .
+
+
 ### Properties Count
 
 The __Properties Count__ is the number of property declarations. The default is to display the top `10` properties.
@@ -210,9 +215,10 @@ Here is an example JSON to enable display gzipped size:
 
 ## CLI Reference
 
+Help:
 
 ```shell
-$ stylestats -h
+$ stylestats --help
 
   Usage: stylestats [options] <file ...>
 
@@ -220,14 +226,16 @@ $ stylestats -h
 
     -h, --help             output usage information
     -V, --version          output the version number
-    -c, --config [path]    Path and name of the incoming JSON file.
-    -f, --format [format]  Specify the output format. <json|html|md|csv>
-    -t, --template [path]  Specify the template path.
-    -s, --specs [path]     Specify the specs file JSON path.
-    -g, --gzip             Show gzipped file size.
-    -n, --number           Show only numeral metrics.
-    -u, --ua [OS]          Specify the user agent. <ios|android>
+    -c, --config [path]    set user's configuration
+    -f, --format [format]  set the output format. <json|html|md|csv>
+    -t, --template [path]  set the template path for output formant.
+    -s, --specs [path]     run test with your test specs file.
+    -g, --gzip             show gzipped file size.
+    -n, --number           show only numeral metrics.
+    -u, --ua [OS]          set the user agent. <ios|android>
 ```
+
+Example:
 
 ```shell
 $ stylestats path/to/stylesheet.css -c path/to/.stylestatsrc
@@ -242,6 +250,8 @@ $ stylestats path/to/stylesheet.css -c path/to/.stylestatsrc
 │ Total Unique Font Families │ 3      │
 └────────────────────────────┴────────┘
 ```
+
+### Integration
 
 + [Plot StyleStats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
 + [Plot StyleStats data with moniteur](https://github.com/t32k/stylestats/wiki/Plot-with-moniteur)
