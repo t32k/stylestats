@@ -22,6 +22,8 @@ StyleStats!
 ├─────────────────────────────────┼────────────────┤
 │ Data URI Size                   │ 0              │
 ├─────────────────────────────────┼────────────────┤
+│ Gzipped Size                    │ 158B           │
+├─────────────────────────────────┼────────────────┤
 │ Rules                           │ 7              │
 ├─────────────────────────────────┼────────────────┤
 │ Selectors                       │ 12             │
@@ -43,7 +45,7 @@ StyleStats!
 ├─────────────────────────────────┼────────────────┤
 │ Total Unique Font Families      │ 0              │
 ├─────────────────────────────────┼────────────────┤
-│ Unique Font Family              │ N/A            │
+│ Unique Font Families            │ N/A            │
 ├─────────────────────────────────┼────────────────┤
 │ Total Unique Colors             │ 3              │
 ├─────────────────────────────────┼────────────────┤
@@ -94,7 +96,7 @@ $ stylestats 'path/**/*.css'
 You can specify a remote CSS file.
 
 ```sh
-$ stylestats http://t32k.me/static/blog/skelton.css
+$ stylestats http://t32k.me/wisteria/css/wisteria.css
 ```
 
 If you specify an HTML page, StyleStats will analyze stylesheets and `style` elements.
@@ -106,19 +108,19 @@ $ stylestats http://t32k.me/
 `--format` option outputs JSON, HTML, Markdown and CSV.
 
 ```sh
-$ stylestats foo.css -f [json|html|md|csv>]
+$ stylestats foo.css -f <json|html|md|csv>
 ```
 
 If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with a one-liner command.
 
 ```sh
-$ stylestats http://t32k.me/ -f html > stats.md && gist stats.md
+$ stylestats http://t32k.me/ -f md > stats.md && gist stats.md
 https://gist.github.com/9725673
 ```
 
 ## Other tools
 
-+ [Web application](http://www.stylestats.org/)
++ [Online tool](http://www.stylestats.org/)
 + [Gulp module](https://github.com/1000ch/gulp-stylestats) by [@1000ch](https://github.com/1000ch)
 + [Grunt module](https://github.com/tvooo/grunt-stylestats) by [@tvooo](https://github.com/tvooo)
 
@@ -206,11 +208,11 @@ Here is an example JSON to enable display gzipped size:
 
 ```
 {
-  "gzippedSize": true
+  "gzippedSize": false
 }
 ```
 
-`gzippedSize` attribute is `false` by default because it is pretty slow.
+`gzippedSize` attribute is `true` by default.
 
 
 ## CLI Reference
@@ -230,9 +232,8 @@ $ stylestats --help
     -f, --format [format]  set the output format <json|html|md|csv>
     -t, --template [path]  set the template path for output formant
     -s, --specs [path]     run test with your test specs file
-    -g, --gzip             show gzipped file size
     -n, --number           show only numeral metrics
-    -u, --ua [OS]          set the user agent <ios|android>
+    -m, --mobile           set the mobile user agent
 ```
 
 Example:
@@ -292,11 +293,12 @@ Statistics tree of above css:
 
 ```json
 {
-  "published": "2014-03-23T15:54:39.825Z",
+  "published": "2014-06-14T10:10:40.825Z",
   "paths": [ "test/fixture/example.css" ],
   "stylesheets": 1,
   "size": 240,
   "dataUriSize": 0,
+  "gzippedSize": 158,
   "rules": 7,
   "selectors": 12,
   "simplicity": 0.5833333333333334,
