@@ -63,6 +63,7 @@ if (program.number) {
     "paths": false,
     "mostIdentifierSelector": false,
     "lowestCohesionSelector": false,
+    "uniqueFontFamilies": false,
     "uniqueFontSizes": false,
     "uniqueColors": false,
     "propertiesCount": false
