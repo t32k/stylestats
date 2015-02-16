@@ -307,7 +307,7 @@ Statistics tree of above css:
   "totalUniqueFontSizes": 2,
   "uniqueFontSize": [ "12px", "16px" ],
   "totalUniqueFontFamilies": 0,
-  "uniqueFontFamily": [],
+  "uniqueFontFamilies": [],
   "totalUniqueColors": 3,
   "uniqueColor": [ "#333333", "#CCCCCC", "RED" ],
   "idSelectors": 1,

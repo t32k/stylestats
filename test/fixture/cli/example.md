@@ -13,7 +13,7 @@
 + Total Unique Font Sizes: 2
 + Unique Font Size: 12px 16px
 + Total Unique Font Families: 0
-+ Unique Font Family: N/A
++ Unique Font Families: N/A
 + Total Unique Colors: 3
 + Unique Color: #333333 #CCCCCC RED
 + ID Selectors: 1

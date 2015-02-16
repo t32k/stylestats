@@ -56,7 +56,7 @@ describe('CSS Statistics', function() {
     assert.equal(statsResult.totalUniqueFontFamilies, 0);
   });
   it('should return unique font family', function() {
-    assert.equal(statsResult.uniqueFontFamily, 0);
+    assert.equal(statsResult.uniqueFontFamilies, 0);
   });
   it('should return id selectors', function() {
     assert.equal(statsResult.idSelectors, 1);
