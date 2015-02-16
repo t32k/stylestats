@@ -47,7 +47,7 @@ StyleStats!
 ├─────────────────────────────────┼────────────────┤
 │ Total Unique Colors             │ 3              │
 ├─────────────────────────────────┼────────────────┤
-│ Unique Color                    │ #333333        │
+│ Unique Colors                   │ #333333        │
 │                                 │ #CCCCCC        │
 │                                 │ RED            │
 ├─────────────────────────────────┼────────────────┤
@@ -309,7 +309,7 @@ Statistics tree of above css:
   "totalUniqueFontFamilies": 0,
   "uniqueFontFamilies": [],
   "totalUniqueColors": 3,
-  "uniqueColor": [ "#333333", "#CCCCCC", "RED" ],
+  "uniqueColors": [ "#333333", "#CCCCCC", "RED" ],
   "idSelectors": 1,
   "universalSelectors": 1,
   "unqualifiedAttributeSelectors": 1,

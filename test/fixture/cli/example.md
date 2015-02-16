@@ -15,7 +15,7 @@
 + Total Unique Font Families: 0
 + Unique Font Families: N/A
 + Total Unique Colors: 3
-+ Unique Color: #333333 #CCCCCC RED
++ Unique Colors: #333333 #CCCCCC RED
 + ID Selectors: 1
 + Universal Selectors: 1
 + Unqualified Attribute Selectors: 1

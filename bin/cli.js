@@ -64,7 +64,7 @@ if (program.number) {
     "mostIdentifierSelector": false,
     "lowestCohesionSelector": false,
     "uniqueFontSize": false,
-    "uniqueColor": false,
+    "uniqueColors": false,
     "propertiesCount": false
   };
   _.extend(config, numberConfig);

@@ -19,7 +19,7 @@
   "totalUniqueFontFamilies": true,
   "uniqueFontFamilies": true,
   "totalUniqueColors": true,
-  "uniqueColor": true,
+  "uniqueColors": true,
   "idSelectors": true,
   "universalSelectors": true,
   "unqualifiedAttributeSelectors": true,

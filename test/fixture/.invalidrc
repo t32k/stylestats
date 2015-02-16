@@ -14,7 +14,7 @@
     "totalUniqueFontSizes": false,
     "uniqueFontSize": false,
     "totalUniqueColors": false,
-    "uniqueColor": false,
+    "uniqueColors": false,
     "idSelectors": false,
     "universalSelectors": false,
     "unqualifiedAttributeSelectors": false,
