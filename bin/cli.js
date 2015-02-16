@@ -21,7 +21,7 @@ program
   .option('-s, --specs [path]', 'run test with your test specs file')
   .option('-g, --gzip', 'show gzipped file size')
   .option('-n, --number', 'show only numeral metrics')
-  .option('-u, --ua [OS]', 'set the user agent <ios|android>')
+  .option('-m, --mobile', 'set the mobile user agent')
   .parse(process.argv);
 
 if (!program.args.length) {
@@ -41,20 +41,9 @@ if (program.gzip) {
   config.gzippedSize = true;
 }
 
-if (program.ua) {
+if (program.mobile) {
   var iOS = 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A365 Safari/600.1.4';
-  var Android = 'Mozilla/5.0 (Linux; Android 5.0; Nexus 5 Build/LPX13D) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.102 Mobile Safari/537.36';
-  switch (program.ua) {
-    case 'ios':
-      config.requestOptions.headers['User-Agent'] = iOS;
-      break;
-    case 'android':
-      config.requestOptions.headers['User-Agent'] = Android;
-      break;
-    default:
-      console.error(chalk.yellow(' [WARN] User agent should be `ios` or `android`.'));
-      break;
-  }
+  config.requestOptions.headers['User-Agent'] = iOS;
 }
 
 if (program.number) {
