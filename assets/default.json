@@ -6,7 +6,7 @@
   "size": true,
   "dataUriSize": true,
   "ratioOfDataUriSize": true,
-  "gzippedSize": false,
+  "gzippedSize": true,
   "simplicity": true,
   "rules": true,
   "selectors": true,

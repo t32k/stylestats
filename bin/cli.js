@@ -19,7 +19,6 @@ program
   .option('-f, --format [format]', 'set the output format <json|html|md|csv>')
   .option('-t, --template [path]', 'set the template path for output formant')
   .option('-s, --specs [path]', 'run test with your test specs file')
-  .option('-g, --gzip', 'show gzipped file size')
   .option('-n, --number', 'show only numeral metrics')
   .option('-m, --mobile', 'set the mobile user agent')
   .parse(process.argv);

@@ -3,6 +3,7 @@
 + Style Sheets: 1
 + Size: 240B
 + Data URI Size: 0
++ Gzipped Size: 158B
 + Rules: 7
 + Selectors: 12
 + Simplicity: 58.3%
