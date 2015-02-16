@@ -98,7 +98,7 @@ stats.parse(function (error, result) {
   var format = new Format(result);
   if (fs.existsSync(program.template)) {
 
-    format.registerTemplate(fs.readFileSync(program.template, {
+    format.setTemplate(fs.readFileSync(program.template, {
       encoding: 'utf8'
     }));
 
