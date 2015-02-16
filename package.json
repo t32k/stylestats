@@ -48,7 +48,7 @@
     "css-parse": "^2.0.0",
     "glob": "^4.0.5",
     "gzip-size": "^1.0.0",
-    "handlebars": "^2.0.0",
+    "handlebars": "^3.0.0",
     "json2csv": "^2.2.1",
     "less": "^2.2.0",
     "numeral": "^1.5.3",
