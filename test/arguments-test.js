@@ -1,3 +1,5 @@
+var fs = require('fs');
+var path = require('path');
 var assert = require('assert');
 var StyleStats = require('../lib/stylestats.js');
 
@@ -31,6 +33,18 @@ describe('Constructor Test', function () {
         done();
       });
     });
+
+    it('should return User Specified Selectors if configuration file is specified', function(done) {
+      var customStats = new StyleStats('test/fixture/test.css', 'test/fixture/.stylestatsrc');
+      customStats.parse(function(error, customResult) {
+        if (error) {
+          throw error;
+        }
+        assert.equal(customResult.userSpecifiedSelectors, 1);
+        done();
+      });
+    });
+
 
     it('should throw error if specified configuration file is invalid', function(done) {
       assert.throws(
@@ -110,11 +124,19 @@ describe('Constructor Test', function () {
   describe('File path', function() {
     it('should return file size', function(done) {
       var dirStats = new StyleStats('test/fixture/');
+      var size = fs.readdirSync('test/fixture/').filter(function (file) {
+        return path.extname(file) === '.css'
+      }).map(function (file) {
+        return fs.readFileSync('test/fixture/' + file).length;
+      }).reduce(function (previous, current, index, array) {
+        return previous + current;
+      });
+
       dirStats.parse(function(error, dirResult) {
         if (error) {
           throw error;
         }
-        assert.equal(dirResult.size, 20462);
+        assert.equal(dirResult.size, size);
         done();
       });
     });

@@ -23,7 +23,7 @@ describe('Command line test', function() {
   });
 
   it('should return JSON format', function(done) {
-    cmds.push('--type', 'json');
+    cmds.push('--format', 'json');
     exec(cmds.join(' '), function(error, stdout, stderr) {
       var fixture = fs.readFileSync('test/fixture/cli/example.json', 'utf-8');
       assert.equal(stdout, fixture);
@@ -32,7 +32,7 @@ describe('Command line test', function() {
   });
 
   it('should return HTML format', function(done) {
-    cmds.push('--type', 'html');
+    cmds.push('--format', 'html');
     exec(cmds.join(' '), function(error, stdout, stderr) {
       var fixture = fs.readFileSync('test/fixture/cli/example.html', 'utf-8');
       assert.equal(stdout, fixture);
@@ -41,7 +41,7 @@ describe('Command line test', function() {
   });
 
   it('should return Markdown format', function(done) {
-    cmds.push('--type', 'md');
+    cmds.push('--format', 'md');
     exec(cmds.join(' '), function(error, stdout, stderr) {
       var fixture = fs.readFileSync('test/fixture/cli/example.md', 'utf-8');
       assert.equal(stdout, fixture);
@@ -50,10 +50,31 @@ describe('Command line test', function() {
   });
 
   it('should return CSV format', function(done) {
-    cmds.push('--type', 'csv');
+    cmds.push('--format', 'csv');
     exec(cmds.join(' '), function(error, stdout, stderr) {
       var fixture = fs.readFileSync('test/fixture/cli/example.csv', 'utf-8');
       assert.equal(stdout, fixture);
+      done();
+    });
+  });
+
+  it('should return custom template format', function(done) {
+    var testCmds = ['node ./bin/cli.js'];
+    testCmds.push('test/fixture/app.css', '--template test/fixture/cli/template.hbs');
+    exec(testCmds.join(' '), function(error, stdout, stderr) {
+      var fixture = fs.readFileSync('test/fixture/cli/custom-template.html', 'utf-8');
+      assert.equal(stdout, fixture);
+      done();
+    });
+  });
+
+  it('should success with users test spec', function(done) {
+    var testCmds = ['node ./bin/cli.js'];
+    testCmds.push('test/fixture/app.css', '--specs test/fixture/specs.json');
+    exec(testCmds.join(' '), function(error, stdout, stderr) {
+      if(error) {
+        assert(error.killed);
+      }
       done();
     });
   });

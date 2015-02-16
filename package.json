@@ -1,6 +1,6 @@
 {
   "name": "stylestats",
-  "version": "4.3.0",
+  "version": "5.0.0",
   "main": "lib/stylestats.js",
   "bin": {
     "stylestats": "bin/cli.js"
@@ -48,18 +48,19 @@
     "css-parse": "^2.0.0",
     "glob": "^4.0.5",
     "gzip-size": "^1.0.0",
+    "handlebars": "^3.0.0",
     "json2csv": "^2.2.1",
     "less": "^2.2.0",
     "numeral": "^1.5.3",
     "promise": "^6.0.0",
     "request": "^2.40.0",
     "stylus": "^0.50.0",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "mocha": "^2.0.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
-    "mocha": "^2.0.1",
     "mocha-lcov-reporter": "^0.0.1",
     "testem": "^0.6.18"
   }

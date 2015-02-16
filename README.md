@@ -22,6 +22,8 @@ StyleStats!
 ├─────────────────────────────────┼────────────────┤
 │ Data URI Size                   │ 0              │
 ├─────────────────────────────────┼────────────────┤
+│ Gzipped Size                    │ 158B           │
+├─────────────────────────────────┼────────────────┤
 │ Rules                           │ 7              │
 ├─────────────────────────────────┼────────────────┤
 │ Selectors                       │ 12             │
@@ -38,16 +40,16 @@ StyleStats!
 ├─────────────────────────────────┼────────────────┤
 │ Total Unique Font Sizes         │ 2              │
 ├─────────────────────────────────┼────────────────┤
-│ Unique Font Size                │ 12px           │
+│ Unique Font Sizes               │ 12px           │
 │                                 │ 16px           │
 ├─────────────────────────────────┼────────────────┤
 │ Total Unique Font Families      │ 0              │
 ├─────────────────────────────────┼────────────────┤
-│ Unique Font Family              │ N/A            │
+│ Unique Font Families            │ N/A            │
 ├─────────────────────────────────┼────────────────┤
 │ Total Unique Colors             │ 3              │
 ├─────────────────────────────────┼────────────────┤
-│ Unique Color                    │ #333333        │
+│ Unique Colors                   │ #333333        │
 │                                 │ #CCCCCC        │
 │                                 │ RED            │
 ├─────────────────────────────────┼────────────────┤
@@ -94,7 +96,7 @@ $ stylestats 'path/**/*.css'
 You can specify a remote CSS file.
 
 ```sh
-$ stylestats http://t32k.me/static/blog/skelton.css
+$ stylestats http://t32k.me/wisteria/css/wisteria.css
 ```
 
 If you specify an HTML page, StyleStats will analyze stylesheets and `style` elements.
@@ -103,27 +105,29 @@ If you specify an HTML page, StyleStats will analyze stylesheets and `style` ele
 $ stylestats http://t32k.me/
 ```
 
-`-t` option outputs JSON, HTML, Markdown and CSV.
+`--format` option outputs JSON, HTML, Markdown and CSV.
 
 ```sh
-$ stylestats foo.css -t [json|html|md|csv>]
+$ stylestats foo.css -f <json|html|md|csv>
 ```
 
 If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with a one-liner command.
 
 ```sh
-$ stylestats http://t32k.me/ -t html > stats.md && gist stats.md
+$ stylestats http://t32k.me/ -f md > stats.md && gist stats.md
 https://gist.github.com/9725673
 ```
 
-## Grunt & Gulp modules
+## Other tools
 
-- https://github.com/tvooo/grunt-stylestats by [@tvooo](https://github.com/tvooo)
-- https://github.com/1000ch/gulp-stylestats by [@1000ch](https://github.com/1000ch)
++ [Online tool](http://www.stylestats.org/)
++ [Gulp module](https://github.com/1000ch/gulp-stylestats) by [@1000ch](https://github.com/1000ch)
++ [Grunt module](https://github.com/tvooo/grunt-stylestats) by [@tvooo](https://github.com/tvooo)
+
 
 ## Metrics
 
-![](http://i.imgur.com/zwtP6js.png)
+![Metrics](https://dl.dropboxusercontent.com/u/356242/css.png)
 
 ### Simplicity
 
@@ -168,7 +172,12 @@ The __JavaScript Specific Selectors__ metrics is the number of JavaScript-specif
 
 See also:
 
-+ [About HTML semantics and front-end architecture – Nicolas Gallagher](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/#javascript-specific-classes)`
++ [About HTML semantics and front-end architecture – Nicolas Gallagher](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/#javascript-specific-classes)
+
+
+### User Specified Selectors
+
+The __User Specified Selectors__ metrics is the number of user-specified selectors. Default is `false`. For instance, you can count the number of components if you specify `"\\.component\\-"` using reqular expression in `.stylestatsrc` .
 
 
 ### Properties Count
@@ -199,49 +208,54 @@ Here is an example JSON to enable display gzipped size:
 
 ```
 {
-  "gzippedSize": true
+  "gzippedSize": false
 }
 ```
 
-`gzippedSize` attribute is `false` by default because it is pretty slow.
+`gzippedSize` attribute is `true` by default.
 
 
 ## CLI Reference
 
+Help:
 
 ```shell
-$ stylestats -h
+$ stylestats --help
 
   Usage: stylestats [options] <file ...>
 
   Options:
 
-    -h, --help           output usage information
-    -V, --version        output the version number
-    -c, --config [path]  Path and name of the incoming JSON file.
-    -t, --type [format]  Specify the output format. <json|html|md|csv>
-    -s, --simple         Show compact style log.
-    -g, --gzip           Show gzipped file size.
-    -n, --number         Show only numeral metrics.
-    -u, --ua [OS]        Specify the user agent. <ios|android>
+    -h, --help             output usage information
+    -V, --version          output the version number
+    -c, --config [path]    set configurations
+    -f, --format [format]  set the output format <json|html|md|csv>
+    -t, --template [path]  set the template path for output formant
+    -s, --specs [path]     run test with your test specs file
+    -n, --number           show only numeral metrics
+    -m, --mobile           set the mobile user agent
 ```
+
+Example:
 
 ```shell
-$ stylestats path/to/stylesheet.css -s -c path/to/.stylestatsrc
-StyleStats!
-┌───────────────────────────┬───────────────┐
-│ Rules                     │ 7             │
-│ Selectors                 │ 11            │
-│ Lowest Cohesion           │ 6             │
-│ Total Unique Font Sizes   │ 5             │
-│ Total Unique Colors       │ 2             │
-│ ID Selectors              │ 1             │
-│ Important Keywords        │ 1             │
-│ Media Queries             │ 1             │
-└───────────────────────────┴───────────────┘
+$ stylestats path/to/stylesheet.css -c path/to/.stylestatsrc
+ StyleStats!
+┌────────────────────────────┬────────┐
+│ Style Sheets               │ 1      │
+├────────────────────────────┼────────┤
+│ Size                       │ 19.0KB │
+├────────────────────────────┼────────┤
+│ Gzipped Size               │ 3.7KB  │
+├────────────────────────────┼────────┤
+│ Total Unique Font Families │ 3      │
+└────────────────────────────┴────────┘
 ```
 
+### Integration
+
 + [Plot StyleStats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
++ [Plot StyleStats data with moniteur](https://github.com/t32k/stylestats/wiki/Plot-with-moniteur)
 
 ## API Reference
 
@@ -279,11 +293,12 @@ Statistics tree of above css:
 
 ```json
 {
-  "published": "2014-03-23T15:54:39.825Z",
+  "published": "2014-06-14T10:10:40.825Z",
   "paths": [ "test/fixture/example.css" ],
   "stylesheets": 1,
   "size": 240,
   "dataUriSize": 0,
+  "gzippedSize": 158,
   "rules": 7,
   "selectors": 12,
   "simplicity": 0.5833333333333334,
@@ -292,11 +307,11 @@ Statistics tree of above css:
   "lowestCohesion": 2,
   "lowestCohesionSelector": [ ".foo" ],
   "totalUniqueFontSizes": 2,
-  "uniqueFontSize": [ "12px", "16px" ],
+  "uniqueFontSizes": [ "12px", "16px" ],
   "totalUniqueFontFamilies": 0,
-  "uniqueFontFamily": [],
+  "uniqueFontFamilies": [],
   "totalUniqueColors": 3,
-  "uniqueColor": [ "#333333", "#CCCCCC", "RED" ],
+  "uniqueColors": [ "#333333", "#CCCCCC", "RED" ],
   "idSelectors": 1,
   "universalSelectors": 1,
   "unqualifiedAttributeSelectors": 1,
@@ -312,13 +327,6 @@ Statistics tree of above css:
   ]
 }
 ```
-
-## Online Tool
-
-We launched online tool for StyleStats!
-
-+ [StyleStats](http://www.stylestats.org/)
-
 
 # License
 
