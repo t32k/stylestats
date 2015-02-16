@@ -58,6 +58,16 @@ describe('Command line test', function() {
     });
   });
 
+  it('should return custom template format', function(done) {
+    var testCmds = ['node ./bin/cli.js'];
+    testCmds.push('test/fixture/app.css', '--template test/fixture/cli/template.hbs');
+    exec(testCmds.join(' '), function(error, stdout, stderr) {
+      var fixture = fs.readFileSync('test/fixture/cli/custom-template.html', 'utf-8');
+      assert.equal(stdout, fixture);
+      done();
+    });
+  });
+
   it('should success with users test spec', function(done) {
     var testCmds = ['node ./bin/cli.js'];
     testCmds.push('test/fixture/app.css', '--specs test/fixture/specs.json');
