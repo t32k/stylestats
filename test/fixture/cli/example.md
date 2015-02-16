@@ -11,7 +11,7 @@
 + Lowest Cohesion: 2
 + Lowest Cohesion Selector: .foo
 + Total Unique Font Sizes: 2
-+ Unique Font Size: 12px 16px
++ Unique Font Sizes: 12px 16px
 + Total Unique Font Families: 0
 + Unique Font Families: N/A
 + Total Unique Colors: 3

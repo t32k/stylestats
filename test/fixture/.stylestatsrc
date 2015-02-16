@@ -12,7 +12,7 @@
     "lowestCohesion": false,
     "lowestCohesionSelector": false,
     "totalUniqueFontSizes": false,
-    "uniqueFontSize": false,
+    "uniqueFontSizes": false,
     "totalUniqueColors": false,
     "uniqueFontFamilies": false,
     "uniqueColors": false,

@@ -15,7 +15,7 @@
     ".foo"
   ],
   "totalUniqueFontSizes": 2,
-  "uniqueFontSize": [
+  "uniqueFontSizes": [
     "12px",
     "16px"
   ],

@@ -38,7 +38,7 @@ StyleStats!
 ├─────────────────────────────────┼────────────────┤
 │ Total Unique Font Sizes         │ 2              │
 ├─────────────────────────────────┼────────────────┤
-│ Unique Font Size                │ 12px           │
+│ Unique Font Sizes               │ 12px           │
 │                                 │ 16px           │
 ├─────────────────────────────────┼────────────────┤
 │ Total Unique Font Families      │ 0              │
@@ -305,7 +305,7 @@ Statistics tree of above css:
   "lowestCohesion": 2,
   "lowestCohesionSelector": [ ".foo" ],
   "totalUniqueFontSizes": 2,
-  "uniqueFontSize": [ "12px", "16px" ],
+  "uniqueFontSizes": [ "12px", "16px" ],
   "totalUniqueFontFamilies": 0,
   "uniqueFontFamilies": [],
   "totalUniqueColors": 3,
