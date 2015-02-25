@@ -41,7 +41,7 @@
     "assets"
   ],
   "dependencies": {
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "cheerio": "^0.18.0",
     "cli-table": "^0.3.0",
     "commander": "^2.3.0",
