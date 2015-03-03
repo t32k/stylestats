@@ -4,6 +4,7 @@
   "stylesheets": "Style Sheets",
   "styleElements": "Style Elements",
   "size": "Size",
+  "totalLines": "Total Lines",
   "dataUriSize": "Data URI Size",
   "ratioOfDataUriSize": "Ratio of Data URI Size",
   "gzippedSize": "Gzipped Size",
