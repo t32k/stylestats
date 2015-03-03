@@ -1,13 +1,13 @@
 {
-    "framework": "mocha",
-    "launchers": {
-        "Node": {
-            "command": "mocha --timeout 5000"
-        }
-    },
-    "src_files": [
-        "test/**/*",
-        "lib/*.js"
-    ],
-    "launch_in_dev": ["Node"]
+  "framework": "mocha",
+  "launchers": {
+    "Node": {
+      "command": "./node_modules/.bin/mocha --timeout 5000"
+    }
+  },
+  "src_files": [
+    "test/**/*",
+    "lib/*.js"
+  ],
+  "launch_in_dev": ["Node"]
 }
