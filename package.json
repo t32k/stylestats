@@ -42,26 +42,26 @@
   ],
   "dependencies": {
     "chalk": "^1.0.0",
-    "cheerio": "^0.18.0",
+    "cheerio": "^0.19.0",
     "cli-table": "^0.3.1",
     "commander": "^2.6.0",
     "css-parse": "^2.0.0",
-    "glob": "^4.4.1",
+    "glob": "^5.0.3",
     "gzip-size": "^1.0.0",
     "handlebars": "^3.0.0",
     "json2csv": "^2.2.1",
     "less": "^2.4.0",
+    "mocha": "^2.1.0",
     "numeral": "^1.5.3",
     "promise": "^6.1.0",
     "request": "^2.53.0",
     "stylus": "^0.50.0",
-    "underscore": "^1.8.2",
-    "mocha": "^2.1.0"
+    "underscore": "^1.8.2"
   },
   "devDependencies": {
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
-    "mocha-lcov-reporter": "^0.0.1",
-    "testem": "^0.6.18"
+    "mocha-lcov-reporter": "0.0.2",
+    "testem": "^0.7.7"
   }
 }
