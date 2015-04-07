@@ -35,7 +35,7 @@ describe('CSS Statistics', function() {
     assert.equal(statsResult.simplicity, 0.6666666666666666);
   });
   it('should return most identifier', function() {
-    assert.equal(statsResult.mostIdentifier, 5);
+    assert.equal(statsResult.mostIdentifier, 6);
   });
   it('should return most identifier selector', function() {
     assert.equal(statsResult.mostIdentifierSelector, '.foo  .bar > .baz + .qux ~ .quux:before');
