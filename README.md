@@ -15,63 +15,67 @@ $ npm install -g stylestats
 ```sh
 $ stylestats path/to/stylesheet.css
 StyleStats!
-┌─────────────────────────────────┬────────────────┐
-│ Style Sheets                    │ 1              │
-├─────────────────────────────────┼────────────────┤
-│ Size                            │ 240B           │
-├─────────────────────────────────┼────────────────┤
-│ Data URI Size                   │ 0              │
-├─────────────────────────────────┼────────────────┤
-│ Gzipped Size                    │ 158B           │
-├─────────────────────────────────┼────────────────┤
-│ Rules                           │ 7              │
-├─────────────────────────────────┼────────────────┤
-│ Selectors                       │ 12             │
-├─────────────────────────────────┼────────────────┤
-│ Simplicity                      │ 58.3%          │
-├─────────────────────────────────┼────────────────┤
-│ Most Identifier                 │ 3              │
-├─────────────────────────────────┼────────────────┤
-│ Most Identifier Selector        │ .foo .bar .baz │
-├─────────────────────────────────┼────────────────┤
-│ Lowest Cohesion                 │ 2              │
-├─────────────────────────────────┼────────────────┤
-│ Lowest Cohesion Selector        │ .foo           │
-├─────────────────────────────────┼────────────────┤
-│ Total Unique Font Sizes         │ 2              │
-├─────────────────────────────────┼────────────────┤
-│ Unique Font Sizes               │ 12px           │
-│                                 │ 16px           │
-├─────────────────────────────────┼────────────────┤
-│ Total Unique Font Families      │ 0              │
-├─────────────────────────────────┼────────────────┤
-│ Unique Font Families            │ N/A            │
-├─────────────────────────────────┼────────────────┤
-│ Total Unique Colors             │ 3              │
-├─────────────────────────────────┼────────────────┤
-│ Unique Colors                   │ #333333        │
-│                                 │ #CCCCCC        │
-│                                 │ RED            │
-├─────────────────────────────────┼────────────────┤
-│ ID Selectors                    │ 1              │
-├─────────────────────────────────┼────────────────┤
-│ Universal Selectors             │ 1              │
-├─────────────────────────────────┼────────────────┤
-│ Unqualified Attribute Selectors │ 1              │
-├─────────────────────────────────┼────────────────┤
-│ JavaScript Specific Selectors   │ 0              │
-├─────────────────────────────────┼────────────────┤
-│ Important Keywords              │ 1              │
-├─────────────────────────────────┼────────────────┤
-│ Float Properties                │ 1              │
-├─────────────────────────────────┼────────────────┤
-│ Properties Count                │ color: 4       │
-│                                 │ font-size: 3   │
-│                                 │ margin: 2      │
-│                                 │ float: 1       │
-├─────────────────────────────────┼────────────────┤
-│ Media Queries                   │ 0              │
-└─────────────────────────────────┴────────────────┘
+┌─────────────────────────────────┬────────────────────┐
+│ Style Sheets                    │ 1                  │
+├─────────────────────────────────┼────────────────────┤
+│ Size                            │ 241B               │
+├─────────────────────────────────┼────────────────────┤
+│ Data URI Size                   │ 0                  │
+├─────────────────────────────────┼────────────────────┤
+│ Gzipped Size                    │ 158B               │
+├─────────────────────────────────┼────────────────────┤
+│ Rules                           │ 7                  │
+├─────────────────────────────────┼────────────────────┤
+│ Selectors                       │ 12                 │
+├─────────────────────────────────┼────────────────────┤
+│ Simplicity                      │ 58.3%              │
+├─────────────────────────────────┼────────────────────┤
+│ Average of Identifier           │ 1.25               │
+├─────────────────────────────────┼────────────────────┤
+│ Most Identifier                 │ 3                  │
+├─────────────────────────────────┼────────────────────┤
+│ Most Identifier Selector        │ .foo .bar .baz     │
+├─────────────────────────────────┼────────────────────┤
+│ Average of Cohesion             │ 1.4285714285714286 │
+├─────────────────────────────────┼────────────────────┤
+│ Lowest Cohesion                 │ 2                  │
+├─────────────────────────────────┼────────────────────┤
+│ Lowest Cohesion Selector        │ .foo               │
+├─────────────────────────────────┼────────────────────┤
+│ Total Unique Font Sizes         │ 2                  │
+├─────────────────────────────────┼────────────────────┤
+│ Unique Font Sizes               │ 12px               │
+│                                 │ 16px               │
+├─────────────────────────────────┼────────────────────┤
+│ Total Unique Font Families      │ 0                  │
+├─────────────────────────────────┼────────────────────┤
+│ Unique Font Families            │ N/A                │
+├─────────────────────────────────┼────────────────────┤
+│ Total Unique Colors             │ 3                  │
+├─────────────────────────────────┼────────────────────┤
+│ Unique Colors                   │ #333333            │
+│                                 │ #CCCCCC            │
+│                                 │ RED                │
+├─────────────────────────────────┼────────────────────┤
+│ ID Selectors                    │ 1                  │
+├─────────────────────────────────┼────────────────────┤
+│ Universal Selectors             │ 1                  │
+├─────────────────────────────────┼────────────────────┤
+│ Unqualified Attribute Selectors │ 1                  │
+├─────────────────────────────────┼────────────────────┤
+│ JavaScript Specific Selectors   │ 0                  │
+├─────────────────────────────────┼────────────────────┤
+│ Important Keywords              │ 1                  │
+├─────────────────────────────────┼────────────────────┤
+│ Float Properties                │ 1                  │
+├─────────────────────────────────┼────────────────────┤
+│ Properties Count                │ color: 4           │
+│                                 │ font-size: 3       │
+│                                 │ margin: 2          │
+│                                 │ float: 1           │
+├─────────────────────────────────┼────────────────────┤
+│ Media Queries                   │ 0                  │
+└─────────────────────────────────┴────────────────────┘
 ```
 
 Specified css file will be analyzed.
@@ -133,9 +137,21 @@ https://gist.github.com/9725673
 
 The __Simplicity__ is measured as __Rules__ divided by __Selectors__.
 
+### Average of Identifier
+
+The __Average of Identifier__ is measured as __Total Identifiers__ divided by __Selectors__.
+
+### Average of Cohesion
+
+The __Average of Cohesion__ is measured as __Total declarations__ divided by __Rules__.
+
 ### Lowest Cohesion
 
 The __Lowest Cohesion__ metric is the number of selector declarations.
+
+See also:
+
++ [SOLID CSS | Blog | Miller Medeiros](http://blog.millermedeiros.com/solid-css/)
 
 ### Unqualified Attribute Selectors
 
@@ -254,8 +270,9 @@ $ stylestats path/to/stylesheet.css -c path/to/.stylestatsrc
 
 ### Integration
 
-+ [Plot StyleStats data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
-+ [Plot StyleStats data with moniteur](https://github.com/t32k/stylestats/wiki/Plot-with-moniteur)
++ [Plot your data with Jenkins](https://github.com/t32k/stylestats/wiki/Plot-with-Jenkins)
++ [Plot your data with moniteur](https://github.com/t32k/stylestats/wiki/Plot-with-moniteur)
++ [Plot your data with Google Analytics](https://github.com/t32k/stylestats/wiki/Plot-with-Google-Analytics)
 
 ## API Reference
 
@@ -302,8 +319,10 @@ Statistics tree of above css:
   "rules": 7,
   "selectors": 12,
   "simplicity": 0.5833333333333334,
-  "mostIdentifers": 3,
-  "mostIdentifersSelector": ".foo .bar .baz",
+  "averageOfIdentifier": 1.25,
+  "mostIdentifier": 3,
+  "mostIdentifierSelector": ".foo .bar .baz",
+  "averageOfCohesion": 1.4285714285714286,
   "lowestCohesion": 2,
   "lowestCohesionSelector": [ ".foo" ],
   "totalUniqueFontSizes": 2,
