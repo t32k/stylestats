@@ -10,6 +10,7 @@
   "simplicity": "Simplicity",
   "rules": "Rules",
   "selectors": "Selectors",
+  "averageOfIdentifier": "Average of Identifier",
   "mostIdentifier": "Most Identifier",
   "mostIdentifierSelector": "Most Identifier Selector",
   "lowestCohesion": "Lowest Cohesion",

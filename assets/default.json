@@ -10,6 +10,7 @@
   "simplicity": true,
   "rules": true,
   "selectors": true,
+  "averageOfIdentifier": true,
   "mostIdentifier": true,
   "mostIdentifierSelector": true,
   "lowestCohesion": true,
