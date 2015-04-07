@@ -9,8 +9,10 @@
   "rules": 7,
   "selectors": 12,
   "simplicity": 0.5833333333333334,
+  "averageOfIdentifier": 1.25,
   "mostIdentifier": 3,
   "mostIdentifierSelector": ".foo .bar .baz",
+  "averageOfCohesion": 1.4285714285714286,
   "lowestCohesion": 2,
   "lowestCohesionSelector": [
     ".foo"
