@@ -7,8 +7,10 @@
 + Rules: 7
 + Selectors: 12
 + Simplicity: 58.3%
++ Average of Identifier: 1.25
 + Most Identifier: 3
 + Most Identifier Selector: .foo .bar .baz
++ Average of Cohesion: 1.4285714285714286
 + Lowest Cohesion: 2
 + Lowest Cohesion Selector: .foo
 + Total Unique Font Sizes: 2
