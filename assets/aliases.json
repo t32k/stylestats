@@ -13,6 +13,7 @@
   "averageOfIdentifier": "Average of Identifier",
   "mostIdentifier": "Most Identifier",
   "mostIdentifierSelector": "Most Identifier Selector",
+  "averageOfCohesion": "Average of Cohesion",
   "lowestCohesion": "Lowest Cohesion",
   "lowestCohesionSelector": "Lowest Cohesion Selector",
   "totalUniqueFontSizes": "Total Unique Font Sizes",

@@ -13,6 +13,7 @@
   "averageOfIdentifier": true,
   "mostIdentifier": true,
   "mostIdentifierSelector": true,
+  "averageOfCohesion": true,
   "lowestCohesion": true,
   "lowestCohesionSelector": true,
   "totalUniqueFontSizes": true,
