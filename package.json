@@ -53,7 +53,7 @@
     "less": "^2.4.0",
     "mocha": "^2.1.0",
     "numeral": "^1.5.3",
-    "promise": "^6.1.0",
+    "promise": "^7.0.0",
     "request": "^2.53.0",
     "stylus": "^0.50.0",
     "underscore": "^1.8.2"
@@ -62,6 +62,6 @@
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
     "mocha-lcov-reporter": "0.0.2",
-    "testem": "^0.7.7"
+    "testem": "^0.8.0"
   }
 }
