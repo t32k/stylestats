@@ -1,37 +1,31 @@
 {
   "name": "stylestats",
   "version": "5.1.0",
-  "main": "lib/stylestats.js",
+  "description": "StyleStats is a Node.js library to collect CSS statistics!",
+  "author": "Koji Ishimoto <ijok.ijok@gmail.com>",
+  "contributors": [{
+    "name": "Shogo Sensui",
+    "email": "shogo.sensui@gmail.com"
+  }],
   "bin": {
     "stylestats": "bin/cli.js"
   },
-  "description": "StyleStats is a Node.js library to collect CSS statistics!",
-  "homepage": "https://github.com/t32k/stylestats",
-  "bugs": "https://github.com/t32k/stylestats/issues",
-  "author": {
-    "name": "Koji Ishimoto",
-    "email": "ijok.ijok@gmail.com",
-    "web": "http://t32k.me/"
+  "scripts": {
+    "test": "mocha --timeout 5s --reporter=spec"
   },
-  "maintainers": {
-    "name": "Shogo Sensui",
-    "email": "shogo.sensui@gmail.com",
-    "web": "http://github.com/1000ch"
-  },
+  "main": "lib/stylestats.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:t32k/stylestats.git"
   },
-  "license": "MIT",
+  "bugs": "https://github.com/t32k/stylestats/issues",
+  "homepage": "http://www.stylestats.org/",
   "keywords": [
     "css",
     "stylesheet",
     "performance",
     "property"
   ],
-  "scripts": {
-    "test": "mocha --timeout 5s --reporter=spec"
-  },
   "engines": {
     "node": "0.10.x"
   },
@@ -63,5 +57,7 @@
     "istanbul": "^0.3.0",
     "mocha-lcov-reporter": "0.0.2",
     "testem": "^0.8.0"
-  }
+  },
+  "preferGlobal": true,
+  "license": "MIT"
 }
