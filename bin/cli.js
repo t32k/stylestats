@@ -102,14 +102,14 @@ stats.parse(function (error, result) {
         });
         break;
       case 'html':
-        format.toHTML(function (html) {
+        format.toDefaultTemplate(function (html) {
           console.log(html);
-        });
+        }, '../assets/html.hbs');
         break;
       case 'md':
-        format.toMarkdown(function (md) {
+        format.toDefaultTemplate(function (md) {
           console.log(md);
-        });
+        }, '../assets/markdown.hbs');
         break;
       default:
         format.toTable(function (table) {
