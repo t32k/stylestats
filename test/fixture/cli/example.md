@@ -1,5 +1,6 @@
 # [StyleStats](https://github.com/t32k/stylestats)
 
++ Paths: test/fixture/example.css
 + Style Sheets: 1
 + Size: 240B
 + Data URI Size: 0
@@ -7,10 +8,10 @@
 + Rules: 7
 + Selectors: 12
 + Simplicity: 58.3%
-+ Average of Identifier: 1.25
++ Average of Identifier: 1.250
 + Most Identifier: 3
 + Most Identifier Selector: .foo .bar .baz
-+ Average of Cohesion: 1.4285714285714286
++ Average of Cohesion: 1.429
 + Lowest Cohesion: 2
 + Lowest Cohesion Selector: .foo
 + Total Unique Font Sizes: 2
