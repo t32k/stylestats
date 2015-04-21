@@ -52,20 +52,20 @@ describe('Unit tests', function () {
   });
   var data = prettify(JSON.parse(json));
   describe('prettify()', function () {
-    it('should return "Style Sheets" key and value', function () {
-      assert.deepEqual(data[0], {'Style Sheets': 2});
+    it('should return "Style Sheets" value', function () {
+      assert.equal(data['Style Sheets'], 2);
     });
-    it('should return "Gzipped Size" key and value', function () {
-      assert.deepEqual(data[3], {'Gzipped Size': '2.0KB'});
+    it('should return "Gzipped Size" value', function () {
+      assert.equal(data['Gzipped Size'], '2.0KB');
     });
-    it('should return "Simplicity" key and value', function () {
-      assert.deepEqual(data[6], {Simplicity: '49.2%'});
+    it('should return "Simplicity" value', function () {
+      assert.equal(data['Simplicity'], '49.2%');
     });
-    it('should return "Unique Colors" key and value', function () {
-      assert.deepEqual(data[18], {'Unique Colors': '#0FA0CE\n#1EAEDB\n#222222\n#333333\n#555555\n#FFFFFF'});
+    it('should return "Unique Colors" value', function () {
+      assert.equal(data['Unique Colors'], '#0FA0CE\n#1EAEDB\n#222222\n#333333\n#555555\n#FFFFFF');
     });
-    it('should return "Properties Count" key and value', function () {
-      assert.deepEqual(data[25], {'Properties Count': 'width: 20\nmargin-left: 18\nfont-size: 17\nline-height: 9\npadding: 9\nmargin-bottom: 8\nletter-spacing: 7\ncolor: 7\nbox-sizing: 6\ndisplay: 6'});
+    it('should return "Properties Count" value', function () {
+      assert.equal(data['Properties Count'], 'width: 20\nmargin-left: 18\nfont-size: 17\nline-height: 9\npadding: 9\nmargin-bottom: 8\nletter-spacing: 7\ncolor: 7\nbox-sizing: 6\ndisplay: 6');
     });
   });
 });
