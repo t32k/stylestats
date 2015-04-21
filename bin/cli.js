@@ -2,8 +2,8 @@
 
 'use strict';
 
-var _ = require('underscore');
 var fs = require('fs');
+var _ = require('underscore');
 var chalk = require('chalk');
 var program = require('commander');
 
@@ -23,43 +23,35 @@ program
   .option('-m, --mobile', 'set the mobile user agent')
   .parse(process.argv);
 
+
 if (!program.args.length) {
   console.log(chalk.red('\n No input file specified.'));
   program.help();
 }
 
-
 // Config
 var config = {
-  requestOptions: {
-    headers: {}
-  }
+  requestOptions: {headers: {}}
 };
-
-if (program.gzip) {
-  config.gzippedSize = true;
-}
+var MOBILE_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 Version/8.0 Safari/600.1.4';
+var numberConfig = {
+  "published": false,
+  "paths": false,
+  "mostIdentifierSelector": false,
+  "lowestCohesionSelector": false,
+  "uniqueFontFamilies": false,
+  "uniqueFontSizes": false,
+  "uniqueColors": false,
+  "propertiesCount": false
+};
+var userConfig = {};
 
 if (program.mobile) {
-  var iOS = 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A365 Safari/600.1.4';
-  config.requestOptions.headers['User-Agent'] = iOS;
+  config.requestOptions.headers['User-Agent'] = MOBILE_UA;
 }
-
 if (program.number) {
-  var numberConfig = {
-    "published": false,
-    "paths": false,
-    "mostIdentifierSelector": false,
-    "lowestCohesionSelector": false,
-    "uniqueFontFamilies": false,
-    "uniqueFontSizes": false,
-    "uniqueColors": false,
-    "propertiesCount": false
-  };
   _.extend(config, numberConfig);
 }
-
-var userConfig = {};
 if (program.config && util.isFile(program.config)) {
   var configString = fs.readFileSync(program.config, {
     encoding: 'utf8'
@@ -72,9 +64,7 @@ if (program.config && util.isFile(program.config)) {
 } else if (_.isObject(program.config)) {
   userConfig = config;
 }
-
 _.extend(config, userConfig);
-
 
 
 // Parse
@@ -83,7 +73,6 @@ stats.parse(function (error, result) {
   if (error) {
     console.log(chalk.red(' [ERROR] ' + error.message));
   }
-
   var format = new Format(result);
   if (fs.existsSync(program.template)) {
 
@@ -95,7 +84,7 @@ stats.parse(function (error, result) {
       console.log(text);
     });
 
-  } else if(!program.specs) {
+  } else if (!program.specs) {
     switch (program.format) {
       case 'json':
         format.toJSON(function (json) {
@@ -108,12 +97,12 @@ stats.parse(function (error, result) {
         });
         break;
       case 'html':
-        format.toHTML(function (html) {
+        format.toDefaultTemplate('../assets/html.hbs', function (html) {
           console.log(html);
         });
         break;
       case 'md':
-        format.toMarkdown(function (md) {
+        format.toDefaultTemplate('../assets/markdown.hbs', function (md) {
           console.log(md);
         });
         break;

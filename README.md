@@ -131,7 +131,7 @@ https://gist.github.com/9725673
 
 ## Metrics
 
-![Metrics](https://dl.dropboxusercontent.com/u/356242/css.png)
+![Metrics](http://i.imgur.com/oEABjEl.png)
 
 ### Simplicity
 
