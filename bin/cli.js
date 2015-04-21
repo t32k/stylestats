@@ -97,14 +97,14 @@ stats.parse(function (error, result) {
         });
         break;
       case 'html':
-        format.toDefaultTemplate(function (html) {
+        format.toDefaultTemplate('../assets/html.hbs', function (html) {
           console.log(html);
-        }, '../assets/html.hbs');
+        });
         break;
       case 'md':
-        format.toDefaultTemplate(function (md) {
+        format.toDefaultTemplate('../assets/markdown.hbs', function (md) {
           console.log(md);
-        }, '../assets/markdown.hbs');
+        });
         break;
       default:
         format.toTable(function (table) {
