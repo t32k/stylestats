@@ -1,12 +1,14 @@
 {
   "name": "stylestats",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "StyleStats is a Node.js library to collect CSS statistics!",
   "author": "Koji Ishimoto <ijok.ijok@gmail.com>",
-  "contributors": [{
-    "name": "Shogo Sensui",
-    "email": "shogo.sensui@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "Shogo Sensui",
+      "email": "shogo.sensui@gmail.com"
+    }
+  ],
   "bin": {
     "stylestats": "bin/cli.js"
   },
