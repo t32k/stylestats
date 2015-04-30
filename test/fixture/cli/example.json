@@ -3,8 +3,10 @@
     "test/fixture/example.css"
   ],
   "stylesheets": 1,
+  "styleElements": 0,
   "size": 240,
   "dataUriSize": 0,
+  "ratioOfDataUriSize": 0,
   "gzippedSize": 158,
   "rules": 7,
   "selectors": 12,
