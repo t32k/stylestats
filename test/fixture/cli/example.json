@@ -10,6 +10,7 @@
   "gzippedSize": 158,
   "rules": 7,
   "selectors": 12,
+  "declarations": 10,
   "simplicity": 0.5833333333333334,
   "averageOfIdentifier": 1.25,
   "mostIdentifier": 3,
