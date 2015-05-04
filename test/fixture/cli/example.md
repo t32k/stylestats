@@ -9,6 +9,7 @@
 + Gzipped Size: 158B
 + Rules: 7
 + Selectors: 12
++ Declarations: 10
 + Simplicity: 58.3%
 + Average of Identifier: 1.250
 + Most Identifier: 3
