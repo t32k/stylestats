@@ -80,7 +80,7 @@ stats.parse(function (error, result) {
       encoding: 'utf8'
     }));
 
-    format.toTemplate(function (text) {
+    format.parseTemplate(function (text) {
       console.log(text);
     });
 
@@ -97,12 +97,12 @@ stats.parse(function (error, result) {
         });
         break;
       case 'html':
-        format.toDefaultTemplate('../assets/html.hbs', function (html) {
+        format.toHTML(function (html) {
           console.log(html);
         });
         break;
       case 'md':
-        format.toDefaultTemplate('../assets/markdown.hbs', function (md) {
+        format.toMarkdown(function (md) {
           console.log(md);
         });
         break;
