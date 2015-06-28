@@ -101,6 +101,11 @@ stats.parse(function (error, result) {
           console.log(html);
         });
         break;
+      case 'html-pretty':
+        format.toHTMLPretty(function (html) {
+          console.log(html);
+        });
+        break;
       case 'md':
         format.toMarkdown(function (md) {
           console.log(md);
