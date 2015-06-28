@@ -118,7 +118,7 @@ $ stylestats http://t32k.me/
 `--format` option outputs JSON, HTML, Markdown and CSV.
 
 ```sh
-$ stylestats foo.css -f <json|html|md|csv>
+$ stylestats foo.css -f <json|html|html-pretty|md|csv>
 ```
 
 If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with a one-liner command.
@@ -249,7 +249,7 @@ $ stylestats --help
     -h, --help             output usage information
     -V, --version          output the version number
     -c, --config <path>    set configurations
-    -f, --format <format>  set the output format <json|html|md|csv>
+    -f, --format <format>  set the output format <json|html|html-pretty|md|csv>
     -t, --template <path>  set the template path for output formant
     -s, --specs <path>     run test with your test specs file
     -n, --number           show only numeral metrics
