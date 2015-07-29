@@ -5,6 +5,8 @@ var StyleStats = require('../lib/stylestats.js');
 
 describe('Constructor Test', function () {
 
+  this.timeout(5000);
+
   describe('Invalid argument', function() {
 
     it('should throw error', function(done) {

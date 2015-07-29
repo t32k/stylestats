@@ -5,6 +5,8 @@ var StyleStats = require('../lib/stylestats.js');
 
 describe('Command line test', function() {
 
+  this.timeout(5000);
+
   var cmds;
   var test = 'test/fixture/example.css';
   var config = '-c test/fixture/cli/config.json';
