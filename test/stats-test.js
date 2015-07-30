@@ -2,6 +2,9 @@ var assert = require('assert');
 var StyleStats = require('../lib/stylestats.js');
 
 describe('CSS Statistics', function() {
+
+  this.timeout(5000);
+
   var stats = new StyleStats('test/fixture/test.css');
   var statsResult;
   before(function(done) {

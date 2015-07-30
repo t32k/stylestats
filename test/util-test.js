@@ -5,6 +5,8 @@ var prettify = require('../lib/prettify.js');
 
 describe('Utility functions', function () {
 
+  this.timeout(5000);
+
   describe('isFile()', function () {
 
     it('should return true if specified path is a file', function () {
@@ -47,6 +49,9 @@ describe('Utility functions', function () {
 
 
 describe('Unit tests', function () {
+
+  this.timeout(5000);
+
   var json = fs.readFileSync('test/fixture/result.json', {
     encoding: 'utf8'
   });
