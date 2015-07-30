@@ -53,7 +53,8 @@
     "promise": "^7.0.3",
     "request": "^2.60.0",
     "stylus": "^0.52.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "coveralls": "^2.11.3",
