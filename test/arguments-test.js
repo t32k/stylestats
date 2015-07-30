@@ -144,7 +144,7 @@ describe('Constructor Test', function () {
     });
 
     it('should return specified files size if glob is specified', function(done) {
-      var globStats = new StyleStats('test/**/*.css');
+      var globStats = new StyleStats('test/fixture/**/*.css');
       globStats.parse(function(error, globResult) {
         if (error) {
           throw error;
@@ -152,6 +152,19 @@ describe('Constructor Test', function () {
         assert.equal(globResult.size, 39931);
         done();
       });
+    });
+
+    it('should return error parse css file ', function(done) {
+      var globStatsParse = new StyleStats('test/**/*.css');
+      assert.throws(
+        globStatsParse.parse(function(error, globParseResult) {
+          if (error) {
+            throw error;
+          }
+        }),
+        Error
+      );
+      done();
     });
 
     it('should return the number of stylesheets if multiple files are specified', function(done) {
