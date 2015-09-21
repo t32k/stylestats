@@ -11,15 +11,14 @@ describe('Constructor Test', function () {
 
     it('should throw error', function(done) {
       var invalidArgs = new StyleStats('xxxxxxxxxxxx');
-      assert.throws(
-        invalidArgs.parse(function(error, invalidArgsResult) {
+      invalidArgs.parse(function(error, invalidArgsResult) {
+        assert.throws(function() {
           if (error) {
             throw error;
           }
-        }),
-        Error
-      );
-      done();
+        }, Error);
+        done();
+      });
     });
   });
 
@@ -87,28 +86,26 @@ describe('Constructor Test', function () {
 
     it('should throw error if CSS of specified URL is invalid', function(done) {
       var invalidCSS = new StyleStats('http://t32k.me/static/assets/css/invalid.css');
-      assert.throws(
-        invalidCSS.parse(function(error, invalidCSSResult) {
+      invalidCSS.parse(function(error, invalidCSSResult) {
+        assert.throws(function() {
           if (error) {
             throw error;
           }
-        }),
-        Error
-      );
-      done();
+        }, Error);
+        done();
+      });
     });
 
     it('should throw error if invalid JSON URL is given', function(done) {
       var invalidJSON = new StyleStats('http://t32k.me/static/assets/json/foo.json');
-      assert.throws(
-        invalidJSON.parse(function(error, invalidJSONResult) {
+      invalidJSON.parse(function(error, invalidJSONResult) {
+        assert.throws(function() {
           if (error) {
             throw error;
           }
-        }),
-        Error
-      );
-      done();
+        }, Error);
+        done();
+      });
     });
 
     it('should return the number of stylesheets if site URL is given', function(done) {
