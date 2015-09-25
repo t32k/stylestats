@@ -3,8 +3,8 @@
 'use strict';
 
 var fs = require('fs');
-var _ = require('underscore');
 var chalk = require('chalk');
+var assign = require('object-assign');
 var program = require('commander');
 
 var StyleStats = require('../lib/stylestats');
@@ -50,7 +50,7 @@ if (program.mobile) {
   config.requestOptions.headers['User-Agent'] = MOBILE_UA;
 }
 if (program.number) {
-  _.extend(config, numberConfig);
+  assign(config, numberConfig);
 }
 if (program.config && util.isFile(program.config)) {
   var configString = fs.readFileSync(program.config, {
@@ -61,10 +61,10 @@ if (program.config && util.isFile(program.config)) {
   } catch (e) {
     throw e;
   }
-} else if (_.isObject(program.config)) {
+} else if (util.isObject(program.config)) {
   userConfig = config;
 }
-_.extend(config, userConfig);
+assign(config, userConfig);
 
 
 // Parse
