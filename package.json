@@ -29,7 +29,7 @@
     "property"
   ],
   "engines": {
-    "node": "4.x"
+    "node": ">=4.x"
   },
   "files": [
     "lib",
