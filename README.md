@@ -250,7 +250,7 @@ $ stylestats --help
     -V, --version          output the version number
     -c, --config <path>    set configurations
     -f, --format <format>  set the output format <json|html|md|csv>
-    -t, --template <path>  set the template path for output formant
+    -t, --template <path>  set the template path for output format
     -s, --specs <path>     run test with your test specs file
     -n, --number           show only numeral metrics
     -m, --mobile           set the mobile user agent
