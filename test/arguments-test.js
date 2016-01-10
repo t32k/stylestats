@@ -188,28 +188,4 @@ describe('Constructor Test', function () {
     });
   });
 
-  describe('Preprocessor files', function() {
-
-    it('should return file size if LESS files are specified', function(done) {
-      var lessStats = new StyleStats('test/fixture/prepros/foo.less');
-      lessStats.parse(function(error, lessResult) {
-        if (error) {
-          throw error;
-        }
-        assert.equal(lessResult.size, 495);
-        done();
-      });
-    });
-
-    it('should return file size if Stylus files are specified', function(done) {
-      var stylStats = new StyleStats('test/fixture/prepros/foo.styl');
-      stylStats.parse(function(error, stylResult) {
-        if (error) {
-          throw error;
-        }
-        assert.equal(stylResult.size, 259);
-        done();
-      });
-    });
-  });
 });
