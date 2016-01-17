@@ -24,6 +24,8 @@
   "uniqueFontFamilies": "Unique Font Families",
   "totalUniqueColors": "Total Unique Colors",
   "uniqueColors": "Unique Colors",
+  "totalUniqueBackgroundImages": "Total Unique Background Images",
+  "uniqueBackgroundImages": "Unique Background Images",
   "idSelectors": "ID Selectors",
   "universalSelectors": "Universal Selectors",
   "unqualifiedAttributeSelectors": "Unqualified Attribute Selectors",
