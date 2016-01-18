@@ -23,6 +23,8 @@
   "uniqueFontFamilies": true,
   "totalUniqueColors": true,
   "uniqueColors": true,
+  "totalUniqueBackgroundImages": true,
+  "uniqueBackgroundImages": true,
   "idSelectors": true,
   "universalSelectors": true,
   "unqualifiedAttributeSelectors": true,
