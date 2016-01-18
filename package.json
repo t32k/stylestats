@@ -1,6 +1,6 @@
 {
   "name": "stylestats",
-  "version": "6.1.1",
+  "version": "6.2.0",
   "description": "StyleStats is a Node.js library to collect CSS statistics!",
   "author": "Koji Ishimoto <ijok.ijok@gmail.com>",
   "contributors": [

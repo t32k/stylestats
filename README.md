@@ -14,7 +14,7 @@ $ npm install -g stylestats
 $ stylestats path/to/stylesheet.css
 StyleStats!
 ┌─────────────────────────────────┬──────────────────────────┐
-│ Published                       │ April 30, 2015 10:35 AM  │
+│ Published                       │ June 14, 2016 10:35 AM   │
 ├─────────────────────────────────┼──────────────────────────┤
 │ Paths                           │ path/to/stylesheet.css   │
 ├─────────────────────────────────┼──────────────────────────┤
@@ -62,6 +62,10 @@ StyleStats!
 │ Unique Colors                   │ #333333                  │
 │                                 │ #CCCCCC                  │
 │                                 │ RED                      │
+├─────────────────────────────────┼──────────────────────────┤
+│ Total Unique Background Images  │ 0                        │
+├─────────────────────────────────┼──────────────────────────┤
+│ Unique Background Images        │ N/A                      │
 ├─────────────────────────────────┼──────────────────────────┤
 │ ID Selectors                    │ 1                        │
 ├─────────────────────────────────┼──────────────────────────┤
@@ -314,7 +318,7 @@ Statistics tree of above css:
 
 ```json
 {
-  "published": "2014-06-14T17:39:43.124Z",
+  "published": "2016-06-14T10:24:30.124Z",
   "paths": [ "test/fixture/example.css" ],
   "stylesheets": 1,
   "styleElements": 0,
@@ -337,6 +341,8 @@ Statistics tree of above css:
   "uniqueFontFamilies": [],
   "totalUniqueColors": 3,
   "uniqueColors": [ "#333333", "#CCCCCC", "RED" ],
+  "totalUniqueBackgroundImages": 0,
+  "uniqueBackgroundImages": [],
   "idSelectors": 1,
   "universalSelectors": 1,
   "unqualifiedAttributeSelectors": 1,
