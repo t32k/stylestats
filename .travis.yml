@@ -1,13 +1,15 @@
 sudo: false
 language: node_js
 node_js:
-  - '4.2.0'
+  - '5'
+  - '4'
 notifications:
   slack:
     secure: qW1mL7rMeWxkZq1lriz5KhVxz+/R2HGg69dpcHp3RpxOW1CpJ6qry4m+Zk5GidkJWNi0kxGBKYsCClE7Gmi4R9RgW4wXrP+RjfO1Zea/oqvlN7GHel5zXq+yhEMEdD3oXsygPa+dZ/letM3oOiZCi4VBoE7MUt3T1jlsF9h/+nc=
 env:
   global:
-  - COVERALLS_SERVICE_NAME=travis-ci
-  - secure: PakDWK46H2Df93ENpIYjixCGRNvQRWS1gj2LjeTt8tZniulOZxNf8cNQORIt0tvILWxqQWw299xEd+XeehT86P/p++A/clK3KTLSEnOJz54xRXp9BbMurMq4f2kpsxr4mXal/N7J5Hwh/7oYwi2E3Uks03IQlKa3uC4DFYc4hG8=
+    - NPM_CONFIG_PROGRESS=false
+    - COVERALLS_SERVICE_NAME=travis-ci
+    - secure: PakDWK46H2Df93ENpIYjixCGRNvQRWS1gj2LjeTt8tZniulOZxNf8cNQORIt0tvILWxqQWw299xEd+XeehT86P/p++A/clK3KTLSEnOJz54xRXp9BbMurMq4f2kpsxr4mXal/N7J5Hwh/7oYwi2E3Uks03IQlKa3uC4DFYc4hG8=
 script: make test-cov
 after_success: make coveralls
