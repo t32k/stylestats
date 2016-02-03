@@ -1,6 +1,6 @@
 {
   "name": "stylestats",
-  "version": "6.2.1",
+  "version": "6.2.2",
   "description": "StyleStats is a small library to collect CSS statistics!",
   "author": "Koji Ishimoto <ijok.ijok@gmail.com>",
   "contributors": [
@@ -38,26 +38,26 @@
   ],
   "dependencies": {
     "chalk": "^1.1.1",
-    "cheerio": "^0.19.0",
+    "cheerio": "^0.20.0",
     "cli-table": "^0.3.1",
-    "commander": "^2.8.1",
+    "commander": "^2.9.0",
     "css-parse": "^2.0.0",
-    "glob": "^6.0.3",
+    "glob": "^6.0.4",
     "gzip-size": "^3.0.0",
-    "handlebars": "^4.0.2",
-    "json2csv": "^3.0.2",
-    "mocha": "^2.3.3",
-    "moment": "^2.10.3",
+    "handlebars": "^4.0.5",
+    "json2csv": "^3.1.0",
+    "mocha": "^2.4.5",
+    "moment": "^2.11.1",
     "numeral": "^1.5.3",
     "object-assign": "^4.0.1",
-    "request": "^2.63.0",
+    "request": "^2.69.0",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "coveralls": "^2.11.4",
-    "istanbul": "^0.4.1",
+    "coveralls": "^2.11.6",
+    "istanbul": "^0.4.2",
     "mocha-lcov-reporter": "1.0.0",
-    "testem": "^0.9.5"
+    "testem": "^1.2.1"
   },
   "license": "MIT"
 }
