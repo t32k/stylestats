@@ -4,9 +4,15 @@
 
 StyleStats works on Node.js `4.x`.
 
-```
-$ npm install -g stylestats
-```
+This is the Equiem fork, that supports detection of missing KSS comments.
+
+As per https://coderwall.com/p/q_gh-w/fork-and-patch-npm-moduels-hosted-on-github
+
+Modify the package info added to `package.json` to the following:
+
+`"stylestats": "https://github.com/Equiem/stylestats/tarball/master",`
+
+Then run `npm install`.
 
 ## Usage
 
