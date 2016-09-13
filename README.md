@@ -2,7 +2,7 @@
 
 **Equiem fork of the t32k [stylestats](https://github.com/t32k/stylestats) npm package.**
 
-## Installation
+## Installation instructions
 
 StyleStats works on Node.js `4.x`.
 
