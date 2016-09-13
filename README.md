@@ -1,12 +1,20 @@
-# [StyleStats](http://www.stylestats.org/) [![Build Status](https://secure.travis-ci.org/t32k/stylestats.svg?branch=master)](http://travis-ci.org/t32k/stylestats) [![Coverage Status](http://img.shields.io/coveralls/t32k/stylestats.svg)](https://coveralls.io/r/t32k/stylestats) [![Code Climate](http://img.shields.io/codeclimate/github/t32k/stylestats.svg)](https://codeclimate.com/github/t32k/stylestats) [![Dependency Status](https://david-dm.org/t32k/stylestats.svg)](https://david-dm.org/t32k/stylestats)
+# [Equiem stylestats](https://github.com/Equiem/stylestats) 
 
-## Installation
+**Equiem fork of the t32k [stylestats](https://github.com/t32k/stylestats) npm package.**
+
+## Installation instructions
 
 StyleStats works on Node.js `4.x`.
 
-```
-$ npm install -g stylestats
-```
+This is the Equiem fork, that supports detection of missing KSS comments.
+
+As per https://coderwall.com/p/q_gh-w/fork-and-patch-npm-moduels-hosted-on-github
+
+Modify the package info added to `package.json` to the following:
+
+`"stylestats": "https://github.com/Equiem/stylestats/tarball/master",`
+
+Then run `npm install`.
 
 ## Usage
 
