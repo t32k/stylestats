@@ -2,8 +2,7 @@
 
 ## Installation
 
-StyleStats works on Node.js `>=4.x`.
-
+StyleStats works on Node.js `>=6.x`.
 ```
 $ npm install -g stylestats
 ```
