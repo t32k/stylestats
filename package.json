@@ -54,6 +54,10 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
+    "eslint": "^3.8.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-standard": "^2.0.1",
     "istanbul": "^0.4.5",
     "mocha-lcov-reporter": "^1.2.0",
     "testem": "^1.13.0"
