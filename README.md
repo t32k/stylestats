@@ -289,6 +289,10 @@ $ stylestats path/to/stylesheet.css -c .stylestatsrc
 1. `stylesheet` Required `String|Array` Stylesheet file path or its array.
 2. `config` Optional `String|Object` Configuration JSON file path or object.
 
+#### `config`
+
+Config list is show to [default.json](https://github.com/t32k/stylestats/blob/master/assets/default.json)
+
 ### `StyleStats.parse(fn)`
 
 ```javascript
