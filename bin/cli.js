@@ -4,7 +4,6 @@
 
 var fs = require('fs');
 var chalk = require('chalk');
-var assign = require('object-assign');
 var program = require('commander');
 
 var StyleStats = require('../lib/stylestats');
@@ -50,7 +49,7 @@ if (program.mobile) {
   config.requestOptions.headers['User-Agent'] = MOBILE_UA;
 }
 if (program.number) {
-  assign(config, numberConfig);
+  Object.assign(config, numberConfig);
 }
 if (program.config && util.isFile(program.config)) {
   var configString = fs.readFileSync(program.config, {
@@ -64,7 +63,7 @@ if (program.config && util.isFile(program.config)) {
 } else if (util.isObject(program.config)) {
   userConfig = config;
 }
-assign(config, userConfig);
+Object.assign(config, userConfig);
 
 
 // Parse
