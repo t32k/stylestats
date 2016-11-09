@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/* eslint no-console: "off" */
+
 const fs = require('fs');
 const chalk = require('chalk');
 const program = require('commander');
@@ -26,11 +28,13 @@ if (!program.args.length) {
 }
 
 // Config
-let config = {
-  requestOptions: {headers: {}}
+const config = {
+  requestOptions: {
+    headers: {}
+  }
 };
-let MOBILE_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13F69 Safari/601.1';
-let numberConfig = {
+const MOBILE_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13F69 Safari/601.1';
+const numberConfig = {
   "published": false,
   "paths": false,
   "mostIdentifierSelector": false,
@@ -65,9 +69,9 @@ Object.assign(config, userConfig);
 
 // Parse
 const stats = new StyleStats(program.args, config);
-stats.parse(function (error, result) {
+stats.parse((error, result) => {
   if (error) {
-    console.log(chalk.red(' [ERROR] ' + error.message));
+    console.log(chalk.red(` [ERROR] ${error.message}`));
   }
   const format = new Format(result);
   if (fs.existsSync(program.template)) {
@@ -76,35 +80,36 @@ stats.parse(function (error, result) {
       encoding: 'utf8'
     }));
 
-    format.parseTemplate(function (text) {
+    format.parseTemplate((text) => {
       console.log(text);
     });
 
   } else if (!program.specs) {
     switch (program.format) {
       case 'json':
-        format.toJSON(function (json) {
+        format.toJSON((json) => {
           console.log(json);
         });
         break;
       case 'csv':
-        format.toCSV(function (csv) {
+        format.toCSV((csv) => {
           console.log(csv);
         });
         break;
       case 'html':
-        format.toHTML(function (html) {
+        format.toHTML((html) => {
           console.log(html);
         });
         break;
       case 'md':
-        format.toMarkdown(function (md) {
+        format.toMarkdown((md) => {
           console.log(md);
         });
         break;
       default:
-        format.toTable(function (table) {
-          console.log(' StyleStats!\n' + table);
+        format.toTable((table) => {
+          console.log(` StyleStats!
+${table}`);
         });
         break;
     }

@@ -1,6 +1,6 @@
 {
   "name": "stylestats",
-  "version": "6.3.0",
+  "version": "7.0.0",
   "description": "StyleStats is a small library to collect CSS statistics!",
   "author": "Koji Ishimoto <ijok.ijok@gmail.com>",
   "contributors": [
@@ -13,7 +13,9 @@
     "stylestats": "bin/cli.js"
   },
   "scripts": {
-    "test": "mocha --timeout 5s --reporter=spec"
+    "test": "mocha --timeout 5s --reporter=spec",
+    "lint": "eslint bin/ lib/; exit 0;",
+    "watch": "watch 'npm run lint' bin/ lib/"
   },
   "main": "lib/stylestats.js",
   "repository": {
@@ -54,13 +56,9 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
-    "eslint": "^3.8.1",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.3.0",
-    "eslint-plugin-standard": "^2.0.1",
-    "istanbul": "^0.4.5",
+    "eslint": "^3.9.1",
     "mocha-lcov-reporter": "^1.2.0",
-    "testem": "^1.13.0"
+    "watch": "^1.0.1"
   },
   "license": "MIT"
 }
