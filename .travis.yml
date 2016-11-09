@@ -3,9 +3,9 @@ language: node_js
 node_js:
   - '7'
   - '6'
-notifications:
-  slack:
-    secure: qW1mL7rMeWxkZq1lriz5KhVxz+/R2HGg69dpcHp3RpxOW1CpJ6qry4m+Zk5GidkJWNi0kxGBKYsCClE7Gmi4R9RgW4wXrP+RjfO1Zea/oqvlN7GHel5zXq+yhEMEdD3oXsygPa+dZ/letM3oOiZCi4VBoE7MUt3T1jlsF9h/+nc=
+cache:
+  directories:
+    - node_modules
 env:
   global:
     - NPM_CONFIG_PROGRESS=false
