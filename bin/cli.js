@@ -1,15 +1,12 @@
 #!/usr/bin/env node
 
-'use strict';
-
-var fs = require('fs');
-var chalk = require('chalk');
-var program = require('commander');
-
-var StyleStats = require('../lib/stylestats');
-var Format = require('../lib/format');
-var specs = require('../lib/specs');
-var util = require('../lib/util');
+const fs = require('fs');
+const chalk = require('chalk');
+const program = require('commander');
+const StyleStats = require('../lib/stylestats');
+const Format = require('../lib/format');
+const specs = require('../lib/specs');
+const util = require('../lib/util');
 
 program
   .version(require('../package.json').version)
@@ -29,11 +26,11 @@ if (!program.args.length) {
 }
 
 // Config
-var config = {
+let config = {
   requestOptions: {headers: {}}
 };
-var MOBILE_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 Version/8.0 Safari/600.1.4';
-var numberConfig = {
+let MOBILE_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13F69 Safari/601.1';
+let numberConfig = {
   "published": false,
   "paths": false,
   "mostIdentifierSelector": false,
@@ -43,7 +40,7 @@ var numberConfig = {
   "uniqueColors": false,
   "propertiesCount": false
 };
-var userConfig = {};
+let userConfig = {};
 
 if (program.mobile) {
   config.requestOptions.headers['User-Agent'] = MOBILE_UA;
@@ -52,7 +49,7 @@ if (program.number) {
   Object.assign(config, numberConfig);
 }
 if (program.config && util.isFile(program.config)) {
-  var configString = fs.readFileSync(program.config, {
+  const configString = fs.readFileSync(program.config, {
     encoding: 'utf8'
   });
   try {
@@ -67,12 +64,12 @@ Object.assign(config, userConfig);
 
 
 // Parse
-var stats = new StyleStats(program.args, config);
+const stats = new StyleStats(program.args, config);
 stats.parse(function (error, result) {
   if (error) {
     console.log(chalk.red(' [ERROR] ' + error.message));
   }
-  var format = new Format(result);
+  const format = new Format(result);
   if (fs.existsSync(program.template)) {
 
     format.setTemplate(fs.readFileSync(program.template, {
