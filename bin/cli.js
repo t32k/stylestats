@@ -76,42 +76,26 @@ stats.parse((error, result) => {
   const format = new Format(result);
   // Custom format
   if (fs.existsSync(program.template)) {
-
-    format.setTemplate(fs.readFileSync(program.template, {
-      encoding: 'utf8'
-    }));
-
-    format.parseTemplate((text) => {
-      console.log(text);
-    });
+    format.setTemplate(fs.readFileSync(program.template, { encoding: 'utf8' }));
+    console.log(format.getFormattedText());
   // Other formants
   } else if (!program.specs) {
     switch (program.format) {
-      case 'json':
-        format.toJSON((json) => {
-          console.log(json);
-        });
-        break;
-      case 'csv':
-        format.toCSV((csv) => {
-          console.log(csv);
-        });
+      case 'md':
+        console.log(format.toMarkdown());
         break;
       case 'html':
-        format.toHTML((html) => {
-          console.log(html);
-        });
+        console.log(format.toHTML());
         break;
-      case 'md':
-        format.toMarkdown((md) => {
-          console.log(md);
-        });
+      case 'json':
+        console.log(format.toJSON());
+        break;
+      case 'csv':
+        format.toCSV().then((csv) => console.log(csv));
         break;
       default:
-        format.toTable((table) => {
-          console.log(` StyleStats!
-${table}`);
-        });
+        console.log(` StyleStats!
+${format.toTable()}`);
         break;
     }
   } else {
