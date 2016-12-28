@@ -3,10 +3,10 @@
 + Paths: test/fixture/example.css
 + Style Sheets: 1
 + Style Elements: 0
-+ Size: 240B
++ Size: 240.0B
 + Data URI Size: 0
-+ Ratio of Data URI Size: 0.0%
-+ Gzipped Size: 158B
++ Ratio of Data URI Size: 0
++ Gzipped Size: 158.0B
 + Rules: 7
 + Selectors: 12
 + Declarations: 10
