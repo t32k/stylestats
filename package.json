@@ -50,7 +50,7 @@
     "json2csv": "^3.7.1",
     "mocha": "^3.1.2",
     "moment": "^2.15.2",
-    "numeral": "^1.5.3",
+    "numeral": "^2.0.4",
     "request": "^2.76.0",
     "valid-url": "^1.0.9"
   },
