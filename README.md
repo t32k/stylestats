@@ -132,13 +132,6 @@ $ stylestats https://t32k.me/ -f md > stats.md && gist stats.md
 https://gist.github.com/9725673
 ```
 
-## Other tools
-
-+ [Online tool](http://www.stylestats.org/)
-+ [Gulp module](https://github.com/1000ch/gulp-stylestats) by [@1000ch](https://github.com/1000ch)
-+ [Grunt module](https://github.com/tvooo/grunt-stylestats) by [@tvooo](https://github.com/tvooo)
-
-
 ## Metrics
 
 ![Metrics](http://i.imgur.com/oEABjEl.png)
