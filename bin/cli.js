@@ -74,6 +74,7 @@ stats.parse((error, result) => {
     console.log(chalk.red(` [ERROR] ${error.message}`));
   }
   const format = new Format(result);
+  // Custom format
   if (fs.existsSync(program.template)) {
 
     format.setTemplate(fs.readFileSync(program.template, {
@@ -83,7 +84,7 @@ stats.parse((error, result) => {
     format.parseTemplate((text) => {
       console.log(text);
     });
-
+  // Other formants
   } else if (!program.specs) {
     switch (program.format) {
       case 'json':
