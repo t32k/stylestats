@@ -110,13 +110,13 @@ $ stylestats 'path/**/*.css'
 You can specify a remote CSS file.
 
 ```sh
-$ stylestats http://t32k.me/wisteria/css/wisteria.css
+$ stylestats https://t32k.me/wisteria/css/wisteria.css
 ```
 
 If you specify an HTML page, StyleStats will analyze stylesheets and `style` elements.
 
 ```sh
-$ stylestats http://t32k.me/
+$ stylestats https://t32k.me/
 ```
 
 `--format` option outputs JSON, HTML, Markdown and CSV.
@@ -128,7 +128,7 @@ $ stylestats foo.css -f <json|html|md|csv>
 If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with a one-liner command.
 
 ```sh
-$ stylestats http://t32k.me/ -f md > stats.md && gist stats.md
+$ stylestats https://t32k.me/ -f md > stats.md && gist stats.md
 https://gist.github.com/9725673
 ```
 
@@ -300,10 +300,10 @@ var StyleStats = require('stylestats');
 var stats = new StyleStats('path/to/stylesheet.css');
 
 stats.parse()
-  .then(function (result) {
+  .then(function(result) {
     console.log(JSON.stringify(result, null, 2));
   })
-  .catch(function (error) {
+  .catch(function(error) {
     console.log(error);
   });
 ```
