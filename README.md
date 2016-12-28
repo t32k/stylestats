@@ -22,13 +22,13 @@ StyleStats!
 ├─────────────────────────────────┼──────────────────────────┤
 │ Style Elements                  │ 0                        │
 ├─────────────────────────────────┼──────────────────────────┤
-│ Size                            │ 240B                     │
+│ Size                            │ 240.0B                   │
 ├─────────────────────────────────┼──────────────────────────┤
 │ Data URI Size                   │ 0                        │
 ├─────────────────────────────────┼──────────────────────────┤
-│ Ratio of Data URI Size          │ 0.0%                     │
+│ Ratio of Data URI Size          │ 0                        │
 ├─────────────────────────────────┼──────────────────────────┤
-│ Gzipped Size                    │ 158B                     │
+│ Gzipped Size                    │ 158.0B                   │
 ├─────────────────────────────────┼──────────────────────────┤
 │ Rules                           │ 7                        │
 ├─────────────────────────────────┼──────────────────────────┤
@@ -293,15 +293,19 @@ $ stylestats path/to/stylesheet.css -c .stylestatsrc
 
 Config list is show to [default.json](https://github.com/t32k/stylestats/blob/master/assets/default.json)
 
-### `StyleStats.parse(fn)`
+### `StyleStats#parse()`
 
 ```javascript
 var StyleStats = require('stylestats');
 var stats = new StyleStats('path/to/stylesheet.css');
 
-stats.parse(function (error, result) {
-  console.log(JSON.stringify(result, null, 2));
-});
+stats.parse()
+  .then(function (result) {
+    console.log(JSON.stringify(result, null, 2));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 ```
 
 ## Example

@@ -1,7 +1,6 @@
 var assert = require('assert');
 var fs = require('fs');
 var exec = require('child_process').exec;
-var StyleStats = require('../lib/stylestats.js');
 
 describe('Command line test', function() {
 

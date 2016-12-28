@@ -69,36 +69,35 @@ Object.assign(config, userConfig);
 
 // Parse
 const stats = new StyleStats(program.args, config);
-stats.parse((error, result) => {
-  if (error) {
-    console.log(chalk.red(` [ERROR] ${error.message}`));
-  }
-  const format = new Format(result);
-  // Custom format
-  if (fs.existsSync(program.template)) {
-    format.setTemplate(fs.readFileSync(program.template, { encoding: 'utf8' }));
-    console.log(format.getFormattedText());
-  // Other formants
-  } else if (!program.specs) {
-    switch (program.format) {
-      case 'md':
-        console.log(format.toMarkdown());
-        break;
-      case 'html':
-        console.log(format.toHTML());
-        break;
-      case 'json':
-        console.log(format.toJSON());
-        break;
-      case 'csv':
-        format.toCSV().then((csv) => console.log(csv));
-        break;
-      default:
-        console.log(` StyleStats!
+stats.parse()
+  .then((result) => {
+    const format = new Format(result);
+    // Custom format
+    if (fs.existsSync(program.template)) {
+      format.setTemplate(fs.readFileSync(program.template, { encoding: 'utf8' }));
+      console.log(format.getFormattedText());
+    // Other formants
+    } else if (!program.specs) {
+      switch (program.format) {
+        case 'md':
+          console.log(format.toMarkdown());
+          break;
+        case 'html':
+          console.log(format.toHTML());
+          break;
+        case 'json':
+          console.log(format.toJSON());
+          break;
+        case 'csv':
+          format.toCSV().then((csv) => console.log(csv));
+          break;
+        default:
+          console.log(` StyleStats!
 ${format.toTable()}`);
-        break;
+          break;
+      }
+    } else {
+      specs(result, program.specs);
     }
-  } else {
-    specs(result, program.specs);
-  }
-});
+  })
+  .catch((error) => console.log(chalk.red(` [ERROR] ${error.message}`)));

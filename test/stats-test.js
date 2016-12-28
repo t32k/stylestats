@@ -7,15 +7,16 @@ describe('CSS Statistics', function() {
 
   var stats = new StyleStats('test/fixture/test.css');
   var statsResult;
+
   before(function(done) {
-    stats.parse(function(error, result) {
-      if (error) {
-        throw error;
-      }
+    stats.parse().then(function(result) {
       statsResult = result;
       done();
+    }).catch(function(error){
+      throw error;
     });
   });
+
   it('should return stylesheets count', function() {
     assert.equal(statsResult.stylesheets, 1);
   });
