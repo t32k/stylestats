@@ -1,82 +1,88 @@
 {
-  "name": "stylestats",
-  "version": "7.0.0",
-  "description": "StyleStats is a small library to collect CSS statistics!",
-  "author": "Koji Ishimoto <ijok.ijok@gmail.com>",
-  "contributors": [
+  "name":"stylestats",
+  "version":"7.0.0",
+  "description":"StyleStats is a small library to collect CSS statistics!",
+  "author":"Koji Ishimoto <ijok.ijok@gmail.com>",
+  "contributors":[
     {
-      "name": "1000ch",
-      "email": "shogo.sensui@gmail.com"
+      "name":"1000ch",
+      "email":"shogo.sensui@gmail.com"
     }
   ],
-  "bin": {
-    "stylestats": "bin/cli.js"
+  "bin":{
+    "stylestats":"bin/cli.js"
   },
-  "main": "lib/stylestats.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:t32k/stylestats.git"
+  "main":"lib/stylestats.js",
+  "repository":{
+    "type":"git",
+    "url":"git@github.com:t32k/stylestats.git"
   },
-  "bugs": "https://github.com/t32k/stylestats/issues",
-  "homepage": "http://www.stylestats.org",
-  "keywords": [
+  "bugs":"https://github.com/t32k/stylestats/issues",
+  "homepage":"http://www.stylestats.org",
+  "keywords":[
     "css",
     "stylesheet",
     "performance",
     "property"
   ],
-  "engines": {
-    "node": ">=6.x"
+  "engines":{
+    "node":">=6.x"
   },
-  "files": [
+  "files":[
     "lib",
     "bin",
     "assets"
   ],
-  "scripts": {
-    "test": "nyc ava",
-    "lint": "xo",
-    "watch": "watch 'npm run lint'",
-    "build": "BABEL_ENV=production babel --out-dir=dist index.js"
+  "scripts":{
+    "test":"xo && ava",
+    "lint":"xo",
+    "watch":"watch 'npm run lint'",
+    "build":"BABEL_ENV=production babel --out-dir=dist index.js"
   },
-  "ava": {
-    "require": ["babel-register"]
+  "ava":{
+    "require":[
+      "babel-core/register"
+    ]
   },
-  "xo": {
-    "space": true,
-    "esnext": true
+  "xo":{
+    "space":true,
+    "esnext":true
   },
-  "babel": {
-    "presets": ["es2015"],
-    "plugins": ["transform-runtime"],
-    "ignore": "test/*.js",
-    "env": {
-      "development": {
-          "sourceMaps": "inline"
+  "babel":{
+    "presets":[
+      "es2015"
+    ],
+    "plugins":[
+      "transform-runtime"
+    ],
+    "ignore":"test/*.js",
+    "env":{
+      "development":{
+        "sourceMaps":"inline"
       }
     }
   },
-  "dependencies": {
-    "chalk": "^1.1.3",
-    "cheerio": "^0.22.0",
-    "cli-table": "^0.3.1",
-    "commander": "^2.9.0",
-    "css": "^2.2.1",
-    "glob": "^7.1.1",
-    "gzip-size": "^3.0.0",
-    "handlebars": "^4.0.5",
-    "json2csv": "^3.7.1",
-    "moment": "^2.15.2",
-    "numeral": "^2.0.4",
-    "request": "^2.76.0",
-    "valid-url": "^1.0.9"
+  "dependencies":{
+    "chalk":"^1.1.3",
+    "cheerio":"^0.22.0",
+    "cli-table":"^0.3.1",
+    "commander":"^2.9.0",
+    "css":"^2.2.1",
+    "glob":"^7.1.1",
+    "gzip-size":"^3.0.0",
+    "handlebars":"^4.0.5",
+    "json2csv":"^3.7.1",
+    "moment":"^2.15.2",
+    "numeral":"^2.0.4",
+    "request":"^2.76.0",
+    "valid-url":"^1.0.9"
   },
-  "devDependencies": {
-    "ava": "^0.17.0",
-    "coveralls": "^2.11.15",
-    "nyc": "^10.0.0",
-    "watch": "^1.0.1",
-    "xo": "^0.17.1"
+  "devDependencies":{
+    "ava":"^0.17.0",
+    "coveralls":"^2.11.15",
+    "nyc":"^10.0.0",
+    "watch":"^1.0.1",
+    "xo":"^0.17.1"
   },
-  "license": "MIT"
+  "license":"MIT"
 }

@@ -5,9 +5,9 @@ node_js:
   - '6'
 cache:
   directories:
-    - node_modules
+    - node_modules/
 env:
   global:
     - NPM_CONFIG_PROGRESS=false
-after_success:
-    - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
+#after_success:
+#  - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
