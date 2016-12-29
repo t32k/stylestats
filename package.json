@@ -34,8 +34,8 @@
     "assets"
   ],
   "scripts": {
-    "test": "mocha --timeout 5s --reporter=spec",
-    "lint": "xo; echo 'status 0'",
+    "test": "xo --quiet && mocha --timeout 5s --reporter=spec",
+    "lint": "xo --quiet",
     "watch": "watch 'npm run lint'"
   },
   "xo": {
