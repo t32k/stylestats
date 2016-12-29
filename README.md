@@ -217,8 +217,8 @@ $ stylestats -c path/to/.stylestatsrc
 API:
 
 ```js
-var StyleStats = require('stylestats');
-var stats = new StyleStats('path/to/stylesheet.css', 'path/to/.stylestatsrc');
+const StyleStats = require('stylestats');
+const stats = new StyleStats('path/to/stylesheet.css', 'path/to/.stylestatsrc');
 ```
 
 Default configuration is [here](assets/default.json).
@@ -289,16 +289,12 @@ Config list is show to [default.json](https://github.com/t32k/stylestats/blob/ma
 ### `StyleStats#parse()`
 
 ```javascript
-var StyleStats = require('stylestats');
-var stats = new StyleStats('path/to/stylesheet.css');
+const StyleStats = require('stylestats');
+const stats = new StyleStats('path/to/stylesheet.css');
 
 stats.parse()
-  .then(function(result) {
-    console.log(JSON.stringify(result, null, 2));
-  })
-  .catch(function(error) {
-    console.log(error);
-  });
+  .then((result) => console.log(JSON.stringify(result, null, 2)))
+  .catch((err) => console.log(error));
 ```
 
 ## Example
