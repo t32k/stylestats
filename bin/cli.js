@@ -11,8 +11,7 @@ program
   .version(require('../package.json').version)
   .usage('[options] <file ...>')
   .option('-c, --config <path>', 'set configurations')
-  .option('-f, --format <format>', 'set the output format <json|html|md|csv>')
-  .option('-t, --template <path>', 'set the template path for output formant')
+  .option('-f, --format <format>', 'set the output format <json|csv>')
   .option('-n, --number', 'show only numeral metrics')
   .option('-m, --mobile', 'set the mobile user agent')
   .parse(process.argv);
@@ -66,20 +65,8 @@ const stats = new StyleStats(program.args, config);
 stats.parse()
   .then(result => {
     const format = new Format(result);
-    // Custom format
-    if (fs.existsSync(program.template)) {
-      format.setTemplate(fs.readFileSync(program.template, {encoding: 'utf8'}));
-      console.log(format.getFormattedText());
-      return;
-    }
     // Other formants
     switch (program.format) {
-      case 'md':
-        console.log(format.toMarkdown());
-        break;
-      case 'html':
-        console.log(format.toHTML());
-        break;
       case 'json':
         console.log(format.toJSON());
         break;

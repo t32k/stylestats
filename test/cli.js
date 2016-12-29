@@ -32,32 +32,6 @@ test.cb('It should return JSON format', t => {
   });
 });
 
-test.cb('It should return HTML format', t => {
-  t.plan(1);
-  cmds.push('--format', 'html');
-  exec(cmds.join(' '), (err, stdout) => {
-    if (err) {
-      t.fail();
-    }
-    const fixture = fs.readFileSync('test/fixture/cli/example.html', 'utf-8');
-    t.is(stdout, fixture);
-    t.end();
-  });
-});
-
-test.cb('It should return Markdown format', t => {
-  t.plan(1);
-  cmds.push('--format', 'md');
-  exec(cmds.join(' '), (err, stdout) => {
-    if (err) {
-      t.fail();
-    }
-    const fixture = fs.readFileSync('test/fixture/cli/example.md', 'utf-8');
-    t.is(stdout, fixture);
-    t.end();
-  });
-});
-
 test.cb('It should return CSV format', t => {
   t.plan(1);
   cmds.push('--format', 'csv');
@@ -66,19 +40,6 @@ test.cb('It should return CSV format', t => {
       t.fail();
     }
     const fixture = fs.readFileSync('test/fixture/cli/example.csv', 'utf-8');
-    t.is(stdout, fixture);
-    t.end();
-  });
-});
-
-test.cb('It should return custom template format', t => {
-  t.plan(1);
-  cmds.push('--template test/fixture/cli/template.hbs');
-  exec(cmds.join(' '), (err, stdout) => {
-    if (err) {
-      t.fail();
-    }
-    const fixture = fs.readFileSync('test/fixture/cli/custom-template.html', 'utf-8');
     t.is(stdout, fixture);
     t.end();
   });
