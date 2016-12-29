@@ -1,7 +1,7 @@
 import test from 'ava';
 import StyleStats from '../lib/stylestats';
 
-var result;
+let result;
 test.before(async () => {
   const stats = new StyleStats('test/fixture/test.css');
   result = await stats.parse();

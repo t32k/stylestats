@@ -5,7 +5,6 @@ const chalk = require('chalk');
 const program = require('commander');
 const StyleStats = require('../lib/stylestats');
 const Format = require('../lib/format');
-const specs = require('../lib/specs');
 const util = require('../lib/util');
 
 program
@@ -14,7 +13,6 @@ program
   .option('-c, --config <path>', 'set configurations')
   .option('-f, --format <format>', 'set the output format <json|html|md|csv>')
   .option('-t, --template <path>', 'set the template path for output formant')
-  .option('-s, --specs <path>', 'run test with your test specs file')
   .option('-n, --number', 'show only numeral metrics')
   .option('-m, --mobile', 'set the mobile user agent')
   .parse(process.argv);
@@ -68,11 +66,6 @@ const stats = new StyleStats(program.args, config);
 stats.parse()
   .then(result => {
     const format = new Format(result);
-    // Test specs
-    if (program.specs) {
-      specs(result, program.specs);
-      return;
-    }
     // Custom format
     if (fs.existsSync(program.template)) {
       format.setTemplate(fs.readFileSync(program.template, {encoding: 'utf8'}));

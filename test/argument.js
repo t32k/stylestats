@@ -21,7 +21,7 @@ test('It should return User Specified Selectors if configuration file is specifi
 
 test('It should throw error if specified configuration file is invalid', t => {
   const err = t.throws(() => {
-    var stats = new StyleStats('test/fixture/test.css', 'test/fixture/.invalidrc');
+    const stats = new StyleStats('test/fixture/test.css', 'test/fixture/.invalidrc');
     stats.parse();
   }, SyntaxError);
   t.is(err.message, 'Unexpected token } in JSON at position 718');
