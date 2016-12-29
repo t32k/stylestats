@@ -12,11 +12,6 @@
   "bin": {
     "stylestats": "bin/cli.js"
   },
-  "scripts": {
-    "test": "mocha --timeout 5s --reporter=spec",
-    "lint": "eslint bin/ lib/; exit 0;",
-    "watch": "watch 'npm run lint' bin/ lib/"
-  },
   "main": "lib/stylestats.js",
   "repository": {
     "type": "git",
@@ -38,6 +33,15 @@
     "bin",
     "assets"
   ],
+  "scripts": {
+    "test": "mocha --timeout 5s --reporter=spec",
+    "lint": "xo; echo 'status 0'",
+    "watch": "watch 'npm run lint'"
+  },
+  "xo": {
+    "space": true,
+    "globals": ["before", "beforeEach", "it", "describe"]
+  },
   "dependencies": {
     "chalk": "^1.1.3",
     "cheerio": "^0.22.0",
@@ -59,7 +63,8 @@
     "eslint": "^3.9.1",
     "istanbul": "^0.4.5",
     "mocha-lcov-reporter": "^1.2.0",
-    "watch": "^1.0.1"
+    "watch": "^1.0.1",
+    "xo": "^0.17.1"
   },
   "license": "MIT"
 }

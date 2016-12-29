@@ -4,11 +4,9 @@ var util = require('../lib/util.js');
 var prettify = require('../lib/prettify.js');
 
 describe('Utility functions', function () {
-
   this.timeout(5000);
 
   describe('isFile()', function () {
-
     it('should return true if specified path is a file', function () {
       var result = util.isFile('test/fixture/app.css');
       assert.equal(result, true);
@@ -21,7 +19,6 @@ describe('Utility functions', function () {
   });
 
   describe('isDirectory()', function () {
-
     it('should return true if specified path is a directory', function () {
       var result = util.isDirectory('test/fixture/');
       assert.equal(result, true);
@@ -34,7 +31,6 @@ describe('Utility functions', function () {
   });
 
   describe('isCSS()', function () {
-
     it('should return true if specified path is CSS string', function () {
       var result = util.isCSS('.foo{}');
       assert.equal(result, true);
@@ -47,9 +43,7 @@ describe('Utility functions', function () {
   });
 });
 
-
 describe('Unit tests', function () {
-
   this.timeout(5000);
 
   var json = fs.readFileSync('test/fixture/result.json', {
@@ -64,7 +58,7 @@ describe('Unit tests', function () {
       assert.equal(data['Gzipped Size'], '2.0KB');
     });
     it('should return "Simplicity" value', function () {
-      assert.equal(data['Simplicity'], '49.2%');
+      assert.equal(data.Simplicity, '49.2%');
     });
     it('should return "Unique Colors" value', function () {
       assert.equal(data['Unique Colors'], '#0FA0CE\n#1EAEDB\n#222222\n#333333\n#555555\n#FFFFFF');

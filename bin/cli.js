@@ -21,8 +21,7 @@ program
   .option('-m, --mobile', 'set the mobile user agent')
   .parse(process.argv);
 
-
-if (!program.args.length) {
+if (program.args.length === 0) {
   console.log(chalk.red('\n No input file specified.'));
   program.help();
 }
@@ -35,14 +34,14 @@ const config = {
 };
 const MOBILE_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0 like Mac OS X) AppleWebKit/602.1.38 (KHTML, like Gecko) Version/10.0 Mobile/14A5297c Safari/602.1';
 const numberConfig = {
-  "published": false,
-  "paths": false,
-  "mostIdentifierSelector": false,
-  "lowestCohesionSelector": false,
-  "uniqueFontFamilies": false,
-  "uniqueFontSizes": false,
-  "uniqueColors": false,
-  "propertiesCount": false
+  published: false,
+  paths: false,
+  mostIdentifierSelector: false,
+  lowestCohesionSelector: false,
+  uniqueFontFamilies: false,
+  uniqueFontSizes: false,
+  uniqueColors: false,
+  propertiesCount: false
 };
 let userConfig = {};
 
@@ -58,23 +57,22 @@ if (program.config && util.isFile(program.config)) {
   });
   try {
     userConfig = JSON.parse(configString);
-  } catch (e) {
-    throw e;
+  } catch (err) {
+    throw err;
   }
 } else if (util.isObject(program.config)) {
   userConfig = config;
 }
 Object.assign(config, userConfig);
 
-
 // Parse
 const stats = new StyleStats(program.args, config);
 stats.parse()
-  .then((result) => {
+  .then(result => {
     const format = new Format(result);
     // Custom format
     if (fs.existsSync(program.template)) {
-      format.setTemplate(fs.readFileSync(program.template, { encoding: 'utf8' }));
+      format.setTemplate(fs.readFileSync(program.template, {encoding: 'utf8'}));
       console.log(format.getFormattedText());
     // Other formants
     } else if (!program.specs) {
@@ -89,7 +87,7 @@ stats.parse()
           console.log(format.toJSON());
           break;
         case 'csv':
-          format.toCSV().then((csv) => console.log(csv));
+          format.toCSV().then(csv => console.log(csv));
           break;
         default:
           console.log(` StyleStats!
@@ -100,4 +98,4 @@ ${format.toTable()}`);
       specs(result, program.specs);
     }
   })
-  .catch((error) => console.log(chalk.red(` [ERROR] ${error.message}`)));
+  .catch(err => console.log(chalk.red(` [ERROR] ${err.message}`)));
