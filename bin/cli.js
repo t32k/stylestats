@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-/* eslint no-console: "off" */
-
 const fs = require('fs');
 const chalk = require('chalk');
 const program = require('commander');
@@ -70,32 +68,35 @@ const stats = new StyleStats(program.args, config);
 stats.parse()
   .then(result => {
     const format = new Format(result);
+    // Test specs
+    if (program.specs) {
+      specs(result, program.specs);
+      return;
+    }
     // Custom format
     if (fs.existsSync(program.template)) {
       format.setTemplate(fs.readFileSync(program.template, {encoding: 'utf8'}));
       console.log(format.getFormattedText());
+      return;
+    }
     // Other formants
-    } else if (!program.specs) {
-      switch (program.format) {
-        case 'md':
-          console.log(format.toMarkdown());
-          break;
-        case 'html':
-          console.log(format.toHTML());
-          break;
-        case 'json':
-          console.log(format.toJSON());
-          break;
-        case 'csv':
-          format.toCSV().then(csv => console.log(csv));
-          break;
-        default:
-          console.log(` StyleStats!
+    switch (program.format) {
+      case 'md':
+        console.log(format.toMarkdown());
+        break;
+      case 'html':
+        console.log(format.toHTML());
+        break;
+      case 'json':
+        console.log(format.toJSON());
+        break;
+      case 'csv':
+        format.toCSV().then(csv => console.log(csv));
+        break;
+      default:
+        console.log(` StyleStats!
 ${format.toTable()}`);
-          break;
-      }
-    } else {
-      specs(result, program.specs);
+        break;
     }
   })
   .catch(err => console.log(chalk.red(` [ERROR] ${err.message}`)));

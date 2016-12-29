@@ -75,7 +75,7 @@ describe('Constructor Test', function () {
 
   describe('URL', function () {
     it('should return file size if CSS URL is given', function (done) {
-      var requestStats = new StyleStats('http://t32k.me/static/assets/css/main.css');
+      var requestStats = new StyleStats('https://t32k.me/static/assets/css/main.css');
       requestStats.parse()
         .then(function (requestResult) {
           assert.equal(requestResult.size, 70);
@@ -87,7 +87,7 @@ describe('Constructor Test', function () {
     });
 
     it('should throw err if CSS of specified URL is invalid', function (done) {
-      var invalidCSS = new StyleStats('http://t32k.me/static/assets/css/invalid.css');
+      var invalidCSS = new StyleStats('https://t32k.me/static/assets/css/invalid.css');
       invalidCSS.parse()
         .then(function () {
           done();
@@ -101,7 +101,7 @@ describe('Constructor Test', function () {
     });
 
     it('should throw err if invalid JSON URL is given', function (done) {
-      var invalidJSON = new StyleStats('http://t32k.me/static/assets/json/foo.json');
+      var invalidJSON = new StyleStats('https://t32k.me/static/assets/json/foo.json');
       invalidJSON.parse()
         .then(function () {
           done();
