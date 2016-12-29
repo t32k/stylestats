@@ -6,12 +6,14 @@ const program = require('commander');
 const StyleStats = require('../lib/stylestats');
 const Format = require('../lib/format');
 const util = require('../lib/util');
+const prettify = require('../lib/prettify');
 
 program
   .version(require('../package.json').version)
   .usage('[options] <file ...>')
   .option('-c, --config <path>', 'set configurations')
   .option('-f, --format <format>', 'set the output format <json|csv>')
+  .option('-p, --prettify', 'prettify raw data')
   .option('-n, --number', 'show only numeral metrics')
   .option('-m, --mobile', 'set the mobile user agent')
   .parse(process.argv);
@@ -64,6 +66,9 @@ Object.assign(config, userConfig);
 const stats = new StyleStats(program.args, config);
 stats.parse()
   .then(result => {
+    if (program.prettify || !program.format) {
+      result = prettify(result);
+    }
     const format = new Format(result);
     // Other formants
     switch (program.format) {

@@ -119,17 +119,17 @@ If you specify an HTML page, StyleStats will analyze stylesheets and `style` ele
 $ stylestats https://t32k.me/
 ```
 
-`--format` option outputs JSON, HTML, Markdown and CSV.
+`--format` option outputs JSON and CSV.
 
 ```sh
-$ stylestats foo.css -f <json|html|md|csv>
+$ stylestats foo.css -f <json|csv>
 ```
 
-If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with a one-liner command.
+If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/) with a one-liner command.
 
 ```sh
-$ stylestats https://t32k.me/ -f md > stats.md && gist stats.md
-https://gist.github.com/9725673
+$ stylestats https://t32k.me/ > stats.txt && gist stats.txt
+>> https://gist.github.com/anonymous/d6259fce3d80d2c71ebc7edc71c06088
 ```
 
 ## Metrics
@@ -246,8 +246,8 @@ $ stylestats --help
     -h, --help             output usage information
     -V, --version          output the version number
     -c, --config <path>    set configurations
-    -f, --format <format>  set the output format <json|html|md|csv>
-    -t, --template <path>  set the template path for output format
+    -f, --format <format>  set the output format <json|csv>
+    -p, --prettify         prettify raw data
     -n, --number           show only numeral metrics
     -m, --mobile           set the mobile user agent
 ```
@@ -276,7 +276,7 @@ $ stylestats path/to/stylesheet.css -c .stylestatsrc
 
 ## API Reference
 
-### `new StyleStats(stylesheet, config)`
+### `new StyleStats(stylesheet, [config])`
 
 1. `stylesheet` Required `String|Array` Stylesheet file path or its array.
 2. `config` Optional `String|Object` Configuration JSON file path or object.
@@ -285,7 +285,9 @@ $ stylestats path/to/stylesheet.css -c .stylestatsrc
 
 Config list is show to [default.json](https://github.com/t32k/stylestats/blob/master/assets/default.json)
 
-### `StyleStats#parse()`
+### `StyleStats#parse([flag])`
+
+`. `flag` Optional `Boolean` Return prettified data.
 
 ```javascript
 const StyleStats = require('stylestats');
