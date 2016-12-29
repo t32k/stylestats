@@ -9,7 +9,3 @@ cache:
 env:
   global:
     - NPM_CONFIG_PROGRESS=false
-    - COVERALLS_SERVICE_NAME=travis-ci
-    - secure: PakDWK46H2Df93ENpIYjixCGRNvQRWS1gj2LjeTt8tZniulOZxNf8cNQORIt0tvILWxqQWw299xEd+XeehT86P/p++A/clK3KTLSEnOJz54xRXp9BbMurMq4f2kpsxr4mXal/N7J5Hwh/7oYwi2E3Uks03IQlKa3uC4DFYc4hG8=
-script: make test-cov
-after_success: make coveralls
