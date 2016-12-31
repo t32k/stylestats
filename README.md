@@ -14,7 +14,7 @@ $ npm install -g stylestats
 $ stylestats path/to/stylesheet.css
 StyleStats!
 ┌─────────────────────────────────┬──────────────────────────┐
-│ Published                       │ June 14, 2016 10:35 AM   │
+│ Published                       │ June 14, 2017 10:35 AM   │
 ├─────────────────────────────────┼──────────────────────────┤
 │ Paths                           │ path/to/stylesheet.css   │
 ├─────────────────────────────────┼──────────────────────────┤
@@ -324,7 +324,7 @@ Statistics tree of above css:
 
 ```json
 {
-  "published": "2016-06-14T10:24:30.124Z",
+  "published": "2017-06-14T10:24:30.124Z",
   "paths": [ "test/fixture/example.css" ],
   "stylesheets": 1,
   "styleElements": 0,
