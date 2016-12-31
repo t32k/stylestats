@@ -1,8 +1,8 @@
-# [StyleStats](http://www.stylestats.org/) [![Build Status](https://secure.travis-ci.org/t32k/stylestats.svg?branch=master)](http://travis-ci.org/t32k/stylestats) [![Coverage Status](http://img.shields.io/coveralls/t32k/stylestats.svg)](https://coveralls.io/r/t32k/stylestats) [![Code Climate](http://img.shields.io/codeclimate/github/t32k/stylestats.svg)](https://codeclimate.com/github/t32k/stylestats) [![Dependency Status](https://david-dm.org/t32k/stylestats.svg)](https://david-dm.org/t32k/stylestats)
+# [StyleStats](http://www.stylestats.org/) [![Build Status](https://secure.travis-ci.org/t32k/stylestats.svg?branch=master)](http://travis-ci.org/t32k/stylestats) [![Coverage Status](http://img.shields.io/coveralls/t32k/stylestats.svg)](https://coveralls.io/r/t32k/stylestats) [![Code Climate](http://img.shields.io/codeclimate/github/t32k/stylestats.svg)](https://codeclimate.com/github/t32k/stylestats) [![Dependency Status](https://david-dm.org/t32k/stylestats.svg)](https://david-dm.org/t32k/stylestats) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) 
 
 ## Installation
 
-StyleStats works on Node.js `>=4.x`.
+StyleStats works on Node.js `>=6.x`.
 
 ```
 $ npm install -g stylestats
@@ -14,7 +14,7 @@ $ npm install -g stylestats
 $ stylestats path/to/stylesheet.css
 StyleStats!
 ┌─────────────────────────────────┬──────────────────────────┐
-│ Published                       │ June 14, 2016 10:35 AM   │
+│ Published                       │ June 14, 2017 10:35 AM   │
 ├─────────────────────────────────┼──────────────────────────┤
 │ Paths                           │ path/to/stylesheet.css   │
 ├─────────────────────────────────┼──────────────────────────┤
@@ -22,13 +22,13 @@ StyleStats!
 ├─────────────────────────────────┼──────────────────────────┤
 │ Style Elements                  │ 0                        │
 ├─────────────────────────────────┼──────────────────────────┤
-│ Size                            │ 240B                     │
+│ Size                            │ 240.0B                   │
 ├─────────────────────────────────┼──────────────────────────┤
 │ Data URI Size                   │ 0                        │
 ├─────────────────────────────────┼──────────────────────────┤
-│ Ratio of Data URI Size          │ 0.0%                     │
+│ Ratio of Data URI Size          │ 0                        │
 ├─────────────────────────────────┼──────────────────────────┤
-│ Gzipped Size                    │ 158B                     │
+│ Gzipped Size                    │ 158.0B                   │
 ├─────────────────────────────────┼──────────────────────────┤
 │ Rules                           │ 7                        │
 ├─────────────────────────────────┼──────────────────────────┤
@@ -110,34 +110,27 @@ $ stylestats 'path/**/*.css'
 You can specify a remote CSS file.
 
 ```sh
-$ stylestats http://t32k.me/wisteria/css/wisteria.css
+$ stylestats https://t32k.me/wisteria/css/wisteria.css
 ```
 
 If you specify an HTML page, StyleStats will analyze stylesheets and `style` elements.
 
 ```sh
-$ stylestats http://t32k.me/
+$ stylestats https://t32k.me/
 ```
 
-`--format` option outputs JSON, HTML, Markdown and CSV.
+`--format` option outputs JSON and CSV.
 
 ```sh
-$ stylestats foo.css -f <json|html|md|csv>
+$ stylestats foo.css -f <json|csv>
 ```
 
-If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/9725673) with a one-liner command.
+If you have __[gist](https://github.com/defunkt/gist)__ installed, you can upload StyleStats data to [GitHub Gist](https://gist.github.com/) with a one-liner command.
 
 ```sh
-$ stylestats http://t32k.me/ -f md > stats.md && gist stats.md
-https://gist.github.com/9725673
+$ stylestats https://t32k.me/ > stats.txt && gist stats.txt
+>> https://gist.github.com/anonymous/d6259fce3d80d2c71ebc7edc71c06088
 ```
-
-## Other tools
-
-+ [Online tool](http://www.stylestats.org/)
-+ [Gulp module](https://github.com/1000ch/gulp-stylestats) by [@1000ch](https://github.com/1000ch)
-+ [Grunt module](https://github.com/tvooo/grunt-stylestats) by [@tvooo](https://github.com/tvooo)
-
 
 ## Metrics
 
@@ -224,8 +217,8 @@ $ stylestats -c path/to/.stylestatsrc
 API:
 
 ```js
-var StyleStats = require('stylestats');
-var stats = new StyleStats('path/to/stylesheet.css', 'path/to/.stylestatsrc');
+const StyleStats = require('stylestats');
+const stats = new StyleStats('path/to/stylesheet.css', 'path/to/.stylestatsrc');
 ```
 
 Default configuration is [here](assets/default.json).
@@ -253,9 +246,8 @@ $ stylestats --help
     -h, --help             output usage information
     -V, --version          output the version number
     -c, --config <path>    set configurations
-    -f, --format <format>  set the output format <json|html|md|csv>
-    -t, --template <path>  set the template path for output format
-    -s, --specs <path>     run test with your test specs file
+    -f, --format <format>  set the output format <json|csv>
+    -p, --prettify         prettify raw data
     -n, --number           show only numeral metrics
     -m, --mobile           set the mobile user agent
 ```
@@ -284,24 +276,34 @@ $ stylestats path/to/stylesheet.css -c .stylestatsrc
 
 ## API Reference
 
-### `new StyleStats(stylesheet, config)`
+### `new StyleStats(stylesheet, [config])`
 
-1. `stylesheet` Required `String|Array` Stylesheet file path or its array.
+1. `stylesheet` Required `String|Array` Stylesheet's file path or its array.
 2. `config` Optional `String|Object` Configuration JSON file path or object.
 
 #### `config`
 
 Config list is show to [default.json](https://github.com/t32k/stylestats/blob/master/assets/default.json)
 
-### `StyleStats.parse(fn)`
+### `StyleStats#parse()`
 
 ```javascript
-var StyleStats = require('stylestats');
-var stats = new StyleStats('path/to/stylesheet.css');
+const StyleStats = require('stylestats');
+const stats = new StyleStats('path/to/stylesheet.css');
 
-stats.parse(function (error, result) {
-  console.log(JSON.stringify(result, null, 2));
-});
+stats.parse()
+  .then((result) => console.log(JSON.stringify(result, null, 2)))
+  .catch((err) => console.log(error));
+```
+
+### `StyleStats#prettify(result)`
+
+1. `result` Required `Object` Result StyleStats parsed.
+
+```javascript
+
+=stats.parse()
+  .then((result) => stats.prettify(result));
 ```
 
 ## Example
@@ -322,7 +324,7 @@ Statistics tree of above css:
 
 ```json
 {
-  "published": "2016-06-14T10:24:30.124Z",
+  "published": "2017-06-14T10:24:30.124Z",
   "paths": [ "test/fixture/example.css" ],
   "stylesheets": 1,
   "styleElements": 0,
