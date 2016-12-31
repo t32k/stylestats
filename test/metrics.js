@@ -11,6 +11,10 @@ test('It should return stylesheets count', t => {
   t.is(result.stylesheets, 1);
 });
 
+test('It should return style elements count', t => {
+  t.is(result.styleElements, 0);
+});
+
 test('It should return file size', t => {
   t.is(result.size, 753);
 });
@@ -23,12 +27,20 @@ test('It should return ratio of data URI size', t => {
   t.is(result.ratioOfDataUriSize, 0.10889774236387782);
 });
 
+test('It should return Gzipped Size', t => {
+  t.is(result.gzippedSize, 429);
+});
+
 test('It should return css rules', t => {
   t.is(result.rules, 10);
 });
 
 test('It should return css selectors', t => {
   t.is(result.selectors, 15);
+});
+
+test('It should return declarations', t => {
+  t.is(result.declarations, 23);
 });
 
 test('It should return simplicity', t => {
@@ -63,16 +75,28 @@ test('It should return total unique font sizes', t => {
   t.is(result.totalUniqueFontSizes, 5);
 });
 
-test('It should return total unique colors', t => {
-  t.is(result.totalUniqueColors, 2);
+test('It should return Unique Font Sizes', t => {
+  t.is(result.uniqueFontSizes[0], '10px');
 });
 
 test('It should return total unique font families', t => {
   t.is(result.totalUniqueFontFamilies, 0);
 });
 
+test('It should return total unique colors', t => {
+  t.is(result.totalUniqueColors, 2);
+});
+
+test('It should return unique colors', t => {
+  t.is(result.uniqueColors[0], '#333333');
+});
+
 test('It should return total unique background images', t => {
   t.is(result.totalUniqueBackgroundImages, 1);
+});
+
+test('It should return unique background images', t => {
+  t.is(result.uniqueBackgroundImages[0], 'data:image/gif;base64,R0lGODlhAQABAIAAAP//////zCH5BAEHAAAALAAAAAABAAEAAAICRAEAOw==');
 });
 
 test('It should return id selectors', t => {
@@ -97,6 +121,10 @@ test('It should return important keywords', t => {
 
 test('It should return float properties', t => {
   t.is(result.floatProperties, 1);
+});
+
+test('It should return properties count', t => {
+  t.is(result.propertiesCount[0].count, 5);
 });
 
 test('It should return media queries"', t => {

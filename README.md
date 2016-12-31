@@ -278,16 +278,14 @@ $ stylestats path/to/stylesheet.css -c .stylestatsrc
 
 ### `new StyleStats(stylesheet, [config])`
 
-1. `stylesheet` Required `String|Array` Stylesheet file path or its array.
+1. `stylesheet` Required `String|Array` Stylesheet's file path or its array.
 2. `config` Optional `String|Object` Configuration JSON file path or object.
 
 #### `config`
 
 Config list is show to [default.json](https://github.com/t32k/stylestats/blob/master/assets/default.json)
 
-### `StyleStats#parse([flag])`
-
-`. `flag` Optional `Boolean` Return prettified data.
+### `StyleStats#parse()`
 
 ```javascript
 const StyleStats = require('stylestats');
@@ -296,6 +294,16 @@ const stats = new StyleStats('path/to/stylesheet.css');
 stats.parse()
   .then((result) => console.log(JSON.stringify(result, null, 2)))
   .catch((err) => console.log(error));
+```
+
+### `StyleStats#prettify(result)`
+
+1. `result` Required `Object` Result StyleStats parsed.
+
+```javascript
+
+=stats.parse()
+  .then((result) => stats.prettify(result));
 ```
 
 ## Example

@@ -86,3 +86,10 @@ test('It should return bytes of css strings', async t => {
   const result = await stats.parse();
   t.is(result.size, 17);
 });
+
+test('It should return prettified data', async t => {
+  const stats = new StyleStats('body{color:green}');
+  let result = await stats.parse();
+  result = stats.prettify(result);
+  t.is(result.Simplicity, '100.0%');
+});
