@@ -32,7 +32,7 @@
 		"assets"
 	],
 	"scripts": {
-		"test": "xo && nyc ava",
+		"test": "xo && ava",
 		"lint": "xo",
 		"watch": "watch 'npm run lint'",
 		"build": "BABEL_ENV=production babel --out-dir=dist index.js"
