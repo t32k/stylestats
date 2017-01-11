@@ -41,7 +41,7 @@
   },
   "ava":{
     "require":[
-      "babel-core/register"
+      "babel-register"
     ]
   },
   "xo":{
