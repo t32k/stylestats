@@ -36,7 +36,7 @@ test('It should return gzipped size if option object is given', async t => {
 test('It should return file size if CSS URL is given', async t => {
   const stats = new StyleStats('https://t32k.me/static/assets/css/main.css');
   const result = await stats.parse();
-  t.is(result.size, 70);
+  t.is(result.size, 53);
 });
 
 test('It should throw error if CSS of specified URL is invalid', async t => {
