@@ -302,7 +302,7 @@ stats.parse()
 
 ```javascript
 
-=stats.parse()
+stats.parse()
   .then((result) => stats.prettify(result));
 ```
 
