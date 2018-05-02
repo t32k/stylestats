@@ -33,11 +33,11 @@ test('It should return gzipped size if option object is given', async t => {
   t.is(result.gzippedSize, 429);
 });
 
-test('It should return file size if CSS URL is given', async t => {
-  const stats = new StyleStats('https://t32k.me/static/assets/css/main.css');
-  const result = await stats.parse();
-  t.is(result.size, 48);
-});
+// test('It should return file size if CSS URL is given', async t => {
+//   const stats = new StyleStats('https://t32k.me/static/assets/css/main.css');
+//   const result = await stats.parse();
+//   t.is(result.size, 48);
+// });
 
 test('It should throw error if CSS of specified URL is invalid', async t => {
   const stats = new StyleStats('https://t32k.me/static/assets/css/invalid.css');
